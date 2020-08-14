@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-// import { Link } from "gatsby";
 
 const StyledFooter = styled.footer`
   display: flex;

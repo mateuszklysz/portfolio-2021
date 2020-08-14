@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "../utils/global";
 import theme from "../utils/theme";
 
-import SEO from "../components/SEO";
+import SEO from "../components/SEO/SEO";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
