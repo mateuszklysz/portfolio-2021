@@ -9,6 +9,12 @@ const StyledContainer = styled.nav`
   position: relative;
   height: 100px;
   background-color: ${({ theme: { color } }) => color.primary};
+  ${media.desktopL`
+  height: 90px;
+  `}
+  ${media.desktopS`
+  height: 75px;
+  `}
   ${media.tablet`
     display:none;
   `}
@@ -19,6 +25,12 @@ const StyledLogo = styled(Logo)`
   top: 50%;
   left: 100px;
   transform: translate(0, -50%);
+  ${media.desktopL`
+  width:40px;
+  `}
+  ${media.desktopS`
+  height: 35px;
+  `}
 `;
 
 const StyledMenu = styled.ul`
@@ -32,12 +44,24 @@ const StyledMenu = styled.ul`
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  ${media.desktopL`
+  width:250px;
+  `}
+  ${media.desktopS`
+  height: 230px;
+  `}
 `;
 const StyledLink = styled(Link)`
   font-family: ${({ theme: { font } }) => font.family.montserrat};
   font-size: ${({ theme: { font } }) => font.size.m};
   color: ${({ theme: { color } }) => color.white};
   text-decoration: none;
+  ${media.desktopL`
+  font-size: ${({ theme: { font } }) => font.size.s};
+  `}
+  ${media.desktopS`
+  font-size: ${({ theme: { font } }) => font.size.xs};
+  `}
 `;
 
 const StyledHamburger = styled(Hamburger)`

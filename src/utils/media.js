@@ -1,9 +1,10 @@
 import { css } from "styled-components";
 const sizes = {
-  desktop: 1150,
+  desktopL: 1150,
+  desktopS: 860,
   tablet: 768,
-  phone: 576,
-  ip4: 420,
+  phone: 600,
+  ip4: 360,
 };
 export default Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`

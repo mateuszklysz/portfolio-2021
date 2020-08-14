@@ -12,10 +12,12 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 `;
 
 const StyledMain = styled.main`
-  margin: 0 100px;
+  width: 100vw;
+  margin: auto;
   flex: 1 0 auto;
 `;
 
