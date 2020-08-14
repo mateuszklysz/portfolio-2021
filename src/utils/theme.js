@@ -8,10 +8,10 @@ const theme = {
     size: {
       xs: "9px",
       s: "14px",
-      m: "26px",
-      l: "42px",
-      xl: "72px",
-      xxl: "94px",
+      m: "18px",
+      l: "36px",
+      xl: "68px",
+      xxl: "84px",
     },
     family: {
       montserrat: "'Montserrat', sans-serif",

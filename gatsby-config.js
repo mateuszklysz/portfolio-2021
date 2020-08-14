@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `src/images/icon.png`,
+        icon: `src/assets/images/icon.png`,
       },
     },
     `gatsby-plugin-layout`,
@@ -34,5 +34,6 @@ module.exports = {
         displayName: true,
       },
     },
+    `gatsby-plugin-react-svg`,
   ],
 };
