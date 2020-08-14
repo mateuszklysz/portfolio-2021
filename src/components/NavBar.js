@@ -52,28 +52,26 @@ const StyledHamburger = styled(Hamburger)`
   `}
 `;
 
-const NavBar = () => {
-  return (
-    <>
-      <StyledContainer>
-        <Link to="/">
-          <StyledLogo />
-        </Link>
-        <StyledMenu>
-          <li>
-            <StyledLink to="/projects">Projekty</StyledLink>
-          </li>
-          <li>
-            <StyledLink to="/about">O mnie</StyledLink>
-          </li>
-          <li>
-            <StyledLink to="/contact">Kontakt</StyledLink>
-          </li>
-        </StyledMenu>
-      </StyledContainer>
-      <StyledHamburger />
-    </>
-  );
-};
+const NavBar = () => (
+  <>
+    <StyledContainer>
+      <Link to="/">
+        <StyledLogo />
+      </Link>
+      <StyledMenu>
+        <li>
+          <StyledLink to="/projects">Projekty</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/about">O mnie</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/contact">Kontakt</StyledLink>
+        </li>
+      </StyledMenu>
+    </StyledContainer>
+    <StyledHamburger />
+  </>
+);
 
 export default NavBar;

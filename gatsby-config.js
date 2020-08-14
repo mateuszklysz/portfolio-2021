@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mateusz Kłysz - Portfolio`,
     description: `Proste portfolio napisane przy użyciu Gatsby, frameworku bazowanego na React`,
-    author: `@nickyy00`,
+    author: `Mateusz Kłysz`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
