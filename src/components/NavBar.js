@@ -45,8 +45,8 @@ const StyledHamburger = styled(Hamburger)`
   position: fixed;
   right: 30px;
   bottom: 30px;
-  width: 60px;
-  height: 39px;
+  width: 35px;
+  height: 30.33px;
   ${media.tablet`
     display:block;
   `}
