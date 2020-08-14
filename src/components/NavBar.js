@@ -17,14 +17,14 @@ const StyledContainer = styled.nav`
 const StyledLogo = styled(Logo)`
   position: absolute;
   top: 50%;
-  left: 60px;
+  left: 100px;
   transform: translate(0, -50%);
 `;
 
 const StyledMenu = styled.ul`
   position: absolute;
   top: 50%;
-  right: 60px;
+  right: 100px;
   transform: translate(0, -50%);
   width: 385px;
   display: flex;

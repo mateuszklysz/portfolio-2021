@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
-    body{
+    body,html{
         box-sizing:border-box;
         background-color:${({ theme: { color } }) => color.primary};
         font-family:${({

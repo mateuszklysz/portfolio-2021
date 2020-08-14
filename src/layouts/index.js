@@ -15,6 +15,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledMain = styled.main`
+  margin: 0 100px;
   flex: 1 0 auto;
 `;
 
