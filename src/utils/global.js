@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
     body,html{
-        box-sizing:border-box;
+        box-sizing: border-box;
         background-color:${({ theme: { color } }) => color.primary};
         font-family:${({
           theme: {
