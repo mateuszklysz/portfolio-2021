@@ -5,7 +5,7 @@ import media from "../utils/media";
 import Cube from "./Cube/Cube";
 
 const StyledContainer = styled.section`
-  margin: 100px 100px 40px 100px;
+  margin: 0 100px 40px 100px;
   /* background-color: red; */
   height: 700px;
   display: flex;

@@ -29,11 +29,12 @@ const StyledList = styled.ul`
   `}
 `;
 
-const StyledProject = styled.li`
+const StyledProject = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1c1c1c;
+  text-decoration: none;
   margin: 0 50px;
   width: 500px;
   height: 500px;
@@ -57,40 +58,38 @@ const ShortProjects = () => (
       vertical={false}
     >
       <StyledList>
-        <Link to="/404">
-          <StyledProject>
-            {" "}
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-        </Link>
-        <StyledProject>
+        <StyledProject to="/404">
           <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
             produkcja w toku...
           </h2>
         </StyledProject>
-        <StyledProject>
+
+        <StyledProject to="/404">
           <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
             produkcja w toku...
           </h2>
         </StyledProject>
-        <StyledProject>
+        <StyledProject to="/404">
           <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
             produkcja w toku...
           </h2>
         </StyledProject>
-        <StyledProject>
+        <StyledProject to="/404">
           <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
             produkcja w toku...
           </h2>
         </StyledProject>
-        <StyledProject>
+        <StyledProject to="/404">
           <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
             produkcja w toku...
           </h2>
         </StyledProject>
-        <StyledProject>
+        <StyledProject to="/404">
+          <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
+            produkcja w toku...
+          </h2>
+        </StyledProject>
+        <StyledProject to="/404">
           <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
             produkcja w toku...
           </h2>
