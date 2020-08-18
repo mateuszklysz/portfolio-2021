@@ -110,6 +110,7 @@ const StyledButton = styled(AniLink)`
   font-weight: bold;
   box-sizing: border-box;
   ${media.phone`
+    width: 100px;
     line-height: 40px;
   `}
 `;
