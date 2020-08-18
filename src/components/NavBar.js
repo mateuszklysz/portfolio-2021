@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
@@ -79,57 +79,35 @@ const StyledHamburger = styled(Hamburger)`
 `;
 
 const NavBar = () => {
-  const [logoTl] = useState(
-    gsap.timeline({
-      paused: true,
-    })
-  );
-  const [aboutTl] = useState(
-    gsap.timeline({
-      paused: true,
-      defaults: { duration: 0.15, ease: "power0.easeNone" },
-    })
-  );
-  const [contactTl] = useState(
-    gsap.timeline({
-      paused: true,
-      defaults: { duration: 0.15, ease: "power0.easeNone" },
-    })
-  );
-
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const logoRef = useRef(null);
 
-  useEffect(() => {
-    aboutTl
-      .to(aboutRef.current, { top: "+=50" })
-      .to(aboutRef.current, { top: "-=50", duration: 0 })
-      .to(aboutRef.current, { top: "0" })
-      .reverse();
-
-    contactTl
-      .to(contactRef.current, { top: "+=50" })
-      .to(contactRef.current, { top: "-=50", duration: 0 })
-      .to(contactRef.current, { top: "0" })
-      .reverse();
-
-    logoTl
-      .to(logoRef.current, {
-        duration: 0.3,
-        scale: "-=0.1",
-      })
-      .reverse();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const toggleLogoTimeline = () => {
-    logoTl.reversed(!logoTl.reversed());
+  const handleLogoAnimation = scale => {
+    const tl = gsap.timeline({
+      defaults: { duration: 0.15, ease: "power0.easeNone" },
+    });
+    tl.to(logoRef.current, {
+      duration: 0.3,
+      scale: scale,
+    });
   };
 
-  const toggleMenuTimeline = tl => {
-    tl.reversed(!tl.reversed());
+  const handleMenuAnimation = (item, mode) => {
+    console.log(mode);
+    const tl = gsap.timeline({
+      defaults: { duration: 0.15, ease: "power0.easeNone" },
+    });
+    if (mode) {
+      tl.to(item.current, { top: "+=50" })
+        .to(item.current, { top: "-=100", duration: 0 })
+        .to(item.current, { top: "0" });
+    } else {
+      tl.play()
+        .to(item.current, { top: "-=50" })
+        .to(item.current, { top: "+=100", duration: 0 })
+        .to(item.current, { top: "0" });
+    }
   };
 
   return (
@@ -137,8 +115,8 @@ const NavBar = () => {
       <StyledContainer>
         <StyledLogoContainer
           ref={logoRef}
-          onMouseOver={toggleLogoTimeline}
-          onMouseOut={toggleLogoTimeline}
+          onMouseEnter={() => handleLogoAnimation(0.9)}
+          onMouseLeave={() => handleLogoAnimation(1)}
         >
           <StyledLink paintDrip hex="#121212" to="/">
             <StyledLogo />
@@ -148,8 +126,8 @@ const NavBar = () => {
         <StyledMenu>
           <li>
             <StyledLink
-              onMouseOver={() => toggleMenuTimeline(aboutTl)}
-              onMouseOut={() => toggleMenuTimeline(aboutTl)}
+              onMouseEnter={() => handleMenuAnimation(aboutRef, 1)}
+              onMouseLeave={() => handleMenuAnimation(aboutRef, 0)}
               paintDrip
               hex="#121212"
               to="about"
@@ -161,8 +139,8 @@ const NavBar = () => {
             <StyledLink
               fade
               to="contact"
-              onMouseOver={() => toggleMenuTimeline(contactTl)}
-              onMouseOut={() => toggleMenuTimeline(contactTl)}
+              onMouseEnter={() => handleMenuAnimation(contactRef, 1)}
+              onMouseLeave={() => handleMenuAnimation(contactRef, 0)}
             >
               <StyledSpan ref={contactRef}>Kontakt</StyledSpan>
             </StyledLink>
