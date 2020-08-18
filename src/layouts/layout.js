@@ -7,6 +7,7 @@ import theme from "../utils/theme";
 
 import SEO from "../components/SEO/SEO";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const StyledContainer = styled.section`
   display: flex;
@@ -28,6 +29,7 @@ export default ({ children }) => {
         <StyledContainer>
           <NavBar />
           {children}
+          <Footer />
         </StyledContainer>
       </ThemeProvider>
     </>

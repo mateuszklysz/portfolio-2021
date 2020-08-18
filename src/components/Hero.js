@@ -62,7 +62,7 @@ const StyledCubeContainer = styled.div`
 const StyledName = styled.h3`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xm};
-  padding-left: 4px;
+  padding-left: 5px;
 
   ${media.desktopL`
     font-size: ${({ theme: { font } }) => font.size.m}
