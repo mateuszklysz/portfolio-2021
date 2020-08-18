@@ -119,10 +119,11 @@ const StyledMotto = styled.h2`
 const StyledIconsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 20px 0 0 10px;
   width: 200px;
   height: 50px;
   ${media.phone`
+    margin-left: 0;
     height:40px;
     width: 150px;
    `}
@@ -148,7 +149,7 @@ const StyledButton = styled(AniLink)`
   `}
 `;
 
-const StyledGithub = styled(AniLink)`
+const StyledGithub = styled.a`
   border: none;
   background: none;
   outline: none;
@@ -211,7 +212,7 @@ const Hero = () => {
           <StyledButton paintDrip hex="#121212" to="about">
             O MNIE
           </StyledButton>
-          <StyledGithub to="https://github.com/mateuszklysz" target="_blank">
+          <StyledGithub href="https://github.com/mateuszklysz" target="_blank">
             <Img fluid={childImageSharp.fluid} />
           </StyledGithub>
         </StyledIconsContainer>
