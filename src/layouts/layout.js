@@ -21,6 +21,15 @@ const StyledContainer = styled.section`
   `}
 `;
 
+const StyledScroll = styled.div`
+  width: 100%;
+  height: calc(100vh - 100px);
+
+  ${media.tablet`
+    height: auto;
+  `}
+`;
+
 export default ({ children }) => {
   useEffect(() => {
     Scrollbar.initAll();
@@ -33,16 +42,10 @@ export default ({ children }) => {
         <GlobalStyle />
         <StyledContainer>
           <NavBar />
-          <div
-            data-scrollbar
-            style={{
-              width: "100%",
-              height: "calc(100vh - 100px)",
-            }}
-          >
+          <StyledScroll data-scrollbar>
             {children}
             <Footer />
-          </div>
+          </StyledScroll>
         </StyledContainer>
       </ThemeProvider>
     </>
