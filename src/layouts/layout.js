@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import media from "../utils/media";
+import Scrollbar from "smooth-scrollbar";
 
+import media from "../utils/media";
 import GlobalStyle from "../utils/global";
 import theme from "../utils/theme";
 
@@ -21,6 +22,10 @@ const StyledContainer = styled.section`
 `;
 
 export default ({ children }) => {
+  useEffect(() => {
+    Scrollbar.initAll();
+    Scrollbar.detachStyle();
+  }, []);
   return (
     <>
       <SEO />
@@ -28,8 +33,16 @@ export default ({ children }) => {
         <GlobalStyle />
         <StyledContainer>
           <NavBar />
-          {children}
-          <Footer />
+          <div
+            data-scrollbar
+            style={{
+              width: "100%",
+              height: "calc(100vh - 100px)",
+            }}
+          >
+            {children}
+            <Footer />
+          </div>
         </StyledContainer>
       </ThemeProvider>
     </>
