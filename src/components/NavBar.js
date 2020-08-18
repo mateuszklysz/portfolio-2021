@@ -85,13 +85,13 @@ const NavBar = () => {
   const [aboutTl] = useState(
     gsap.timeline({
       paused: true,
-      defaults: { duration: 0.2, ease: "power0.easeNone" },
+      defaults: { duration: 0.15, ease: "power0.easeNone" },
     })
   );
   const [contactTl] = useState(
     gsap.timeline({
       paused: true,
-      defaults: { duration: 0.2, ease: "power0.easeNone" },
+      defaults: { duration: 0.15, ease: "power0.easeNone" },
     })
   );
 
@@ -102,13 +102,13 @@ const NavBar = () => {
   useEffect(() => {
     aboutTl
       .to(aboutRef.current, { top: "+=50" })
-      .to(aboutRef.current, { top: "-=100", duration: 0 })
+      .to(aboutRef.current, { top: "-=50", duration: 0 })
       .to(aboutRef.current, { top: "0" })
       .reverse();
 
     contactTl
       .to(contactRef.current, { top: "+=50" })
-      .to(contactRef.current, { top: "-=100", duration: 0 })
+      .to(contactRef.current, { top: "-=50", duration: 0 })
       .to(contactRef.current, { top: "0" })
       .reverse();
 
