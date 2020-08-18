@@ -85,7 +85,7 @@ const NavBar = () => {
 
   const handleLogoAnimation = scale => {
     const tl = gsap.timeline({
-      defaults: { duration: 0.15, ease: "power0.easeNone" },
+      defaults: { ease: "power0.easeNone" },
     });
     tl.to(logoRef.current, {
       duration: 0.3,

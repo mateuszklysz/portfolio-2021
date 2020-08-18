@@ -94,7 +94,7 @@ const StyledIconsContainer = styled.div`
    `}
 `;
 
-const StyledButton = styled(AniLink)`
+const StyledButton = styled.p`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xs};
   background-color: ${({ theme: { color } }) => color.primary};
@@ -130,6 +130,8 @@ const StyledGithub = styled.a`
 
 const HeroText = () => {
   const textContainerRef = useRef(null);
+  const buttonRef = useRef(null);
+  const githubRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3" } });
@@ -161,17 +163,42 @@ const HeroText = () => {
       }
     `
   );
-
+  const handleButtonAnimation = (item, scale) => {
+    const tl = gsap.timeline({
+      defaults: { ease: "power0.easeNone" },
+    });
+    tl.to(item.current, {
+      duration: 0.3,
+      scale: scale,
+    });
+  };
   return (
     <StyledTextContainer ref={textContainerRef}>
       <StyledName>{siteMetadata.author}</StyledName>
       <StyledProfession>Front-end Developer</StyledProfession>
       <StyledMotto>Skupiam się na czystym i prostym kodzie</StyledMotto>
       <StyledIconsContainer>
-        <StyledButton paintDrip hex="#121212" to="about">
-          O MNIE
+        <StyledButton
+          ref={buttonRef}
+          onMouseEnter={() => handleButtonAnimation(buttonRef, 0.95)}
+          onMouseLeave={() => handleButtonAnimation(buttonRef, 1)}
+        >
+          <AniLink
+            paintDrip
+            hex="#121212"
+            to="about"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            O MNIE
+          </AniLink>
         </StyledButton>
-        <StyledGithub href="https://github.com/mateuszklysz" target="_blank">
+        <StyledGithub
+          href="https://github.com/mateuszklysz"
+          target="_blank"
+          ref={githubRef}
+          onMouseEnter={() => handleButtonAnimation(githubRef, 0.95)}
+          onMouseLeave={() => handleButtonAnimation(githubRef, 1)}
+        >
           <Img fluid={childImageSharp.fluid} />
         </StyledGithub>
       </StyledIconsContainer>
