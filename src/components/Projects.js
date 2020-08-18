@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
 import gsap from "gsap";
-import { Link } from "gatsby";
+
 import media from "../utils/media";
+import Project from "./Project";
 
 const StyledText = styled.h2`
   padding-left: 100px;
@@ -24,40 +25,16 @@ const StyledList = styled.ul`
   width: 500px;
   flex-direction: column;
   flex-wrap: wrap;
+
   ${media.desktopS`
   height: 400px;
   `}
+
   ${media.phone`
   height: 350px;
   margin-top: 25px;
   margin-left: 30px;
   margin-bottom: 30px;
-  `}
-`;
-
-const StyledProject = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1c1c;
-  text-decoration: none;
-  margin-right: 100px;
-  width: 500px;
-  height: 500px;
-  border-radius: 25px;
-  ${media.desktopS`
-    height: 400px;
-    width: 400px;
-  `}
-  ${media.phone`
-    margin-right: 50px;
-    height: 300px;
-    width: 300px;
-  `}
-  ${media.ip4`
-    margin-right: 25px;
-    height: 250px;
-    width: 250px;
   `}
 `;
 
@@ -88,41 +65,12 @@ const ShortProjects = () => {
         vertical={false}
       >
         <StyledList ref={listRef}>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
-          <StyledProject to="/404">
-            <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
-              produkcja w toku...
-            </h2>
-          </StyledProject>
+          <Project />
+          <Project />
+          <Project />
+          <Project />
+          <Project />
+          <Project />
         </StyledList>
       </ScrollContainer>
     </>

@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
+
 import media from "../utils/media";
+
 import Logo from "../assets/svg/icon.svg";
 import Hamburger from "../assets/svg/hamburger.svg";
 
