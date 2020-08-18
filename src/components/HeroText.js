@@ -25,18 +25,21 @@ const StyledName = styled.h3`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xm};
   padding-left: 5px;
+  position: relative;
+  top: 10px;
 
   ${media.desktopL`
-    font-size: ${({ theme: { font } }) => font.size.m}
+    font-size: ${({ theme: { font } }) => font.size.m};
     padding-left: 0;
    `}
 
   ${media.phone`
-    font-size: ${({ theme: { font } }) => font.size.xs}
+    position: static;
+    font-size: ${({ theme: { font } }) => font.size.xs};
   `}
 
   ${media.ip4`
-    font-size: ${({ theme: { font } }) => font.size.s}
+    font-size: ${({ theme: { font } }) => font.size.s};
   `}
 `;
 
@@ -55,7 +58,7 @@ const StyledProfession = styled.h1`
   `}
 
   ${media.ip4`
-    font-size: 30px}
+    font-size: 30px};
   `}
 `;
 
@@ -70,11 +73,11 @@ const StyledMotto = styled.h2`
    `}
 
   ${media.phone`
-    font-size: ${({ theme: { font } }) => font.size.m}
+    font-size: ${({ theme: { font } }) => font.size.m};
   `}
 
   ${media.ip4`
-    font-size: ${({ theme: { font } }) => font.size.s}
+    font-size: ${({ theme: { font } }) => font.size.s};
   `}
 `;
 
@@ -97,7 +100,7 @@ const StyledButton = styled(AniLink)`
   background-color: ${({ theme: { color } }) => color.primary};
   text-align: center;
   line-height: 50px;
-  width: 100px;
+  width: 130px;
   height: 100%;
   outline: none;
   cursor: pointer;

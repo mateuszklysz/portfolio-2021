@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-// import media from "../utils/media";
+import { useStaticQuery, graphql } from "gatsby";
+import media from "../utils/media";
 
 const StyledContainer = styled.footer`
   background-color: ${({ theme: { color } }) => color.primary};
@@ -10,14 +11,35 @@ const StyledContainer = styled.footer`
   text-align: center;
   width: 100%;
   height: 80px;
+  ${media.phone`
+    font-size: ${({ theme: { font } }) => font.size.s};
+  `}
 `;
 
-const Footer = () => (
-  <>
-    <StyledContainer>
-      <p>© 2020 Mateusz Kłysz. All rights reserved</p>
-    </StyledContainer>
-  </>
-);
+const Footer = () => {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            author
+            date
+          }
+        }
+      }
+    `
+  );
+  return (
+    <>
+      <StyledContainer>
+        <p>
+          © {siteMetadata.date} {siteMetadata.author}. All rights reserved
+        </p>
+      </StyledContainer>
+    </>
+  );
+};
 
 export default Footer;

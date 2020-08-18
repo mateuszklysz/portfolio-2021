@@ -3,6 +3,7 @@ module.exports = {
     title: `Mateusz Kłysz - Portfolio`,
     description: `Proste portfolio napisane przy użyciu Gatsby, frameworku bazowanego na React`,
     author: `Mateusz Kłysz`,
+    date: `2020`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
