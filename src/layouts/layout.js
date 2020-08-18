@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import media from "../utils/media";
 
 import GlobalStyle from "../utils/global";
 import theme from "../utils/theme";
@@ -10,8 +11,12 @@ import NavBar from "../components/NavBar";
 const StyledContainer = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 100px;
   width: 100%;
+
+  ${media.tablet`
+    margin-top: 50px;
+  `}
 `;
 
 export default ({ children }) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
@@ -7,6 +7,9 @@ import Logo from "../assets/svg/cube.svg";
 import Hamburger from "../assets/svg/hamburger.svg";
 
 const StyledContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 100;
   position: fixed;
   left: 0;
@@ -20,19 +23,23 @@ const StyledContainer = styled.nav`
   `}
 `;
 
+const StyledLogoContainer = styled.div`
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+`;
+
 const StyledLogo = styled(Logo)`
-  position: absolute;
-  top: 50%;
-  left: 100px;
-  transform: translate(0, -50%);
+  width: 60px;
+  height: 60px;
 `;
 
 const StyledMenu = styled.ul`
   z-index: 100;
-  position: absolute;
-  top: 50%;
-  right: 100px;
-  transform: translate(0, -50%);
+  margin-right: 100px;
   width: 385px;
   display: flex;
   height: 100%;
@@ -54,6 +61,7 @@ const StyledLink = styled(AniLink)`
 const StyledSpan = styled.span`
   position: relative;
 `;
+
 const StyledHamburger = styled(Hamburger)`
   z-index: 100;
   display: none;
@@ -62,57 +70,84 @@ const StyledHamburger = styled(Hamburger)`
   bottom: 30px;
   width: 35px;
   height: 30.33px;
+
   ${media.tablet`
     display:block;
   `}
 `;
 
 const NavBar = () => {
+  const [logoTl] = useState(
+    gsap.timeline({
+      paused: true,
+    })
+  );
+  const [aboutTl] = useState(
+    gsap.timeline({
+      paused: true,
+      defaults: { duration: 0.2, ease: "power0.easeNone" },
+    })
+  );
+  const [contactTl] = useState(
+    gsap.timeline({
+      paused: true,
+      defaults: { duration: 0.2, ease: "power0.easeNone" },
+    })
+  );
+
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
+  const logoRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3" } });
-    tl.fromTo(
-      aboutRef.current,
-      { top: "-=30", autoAlpha: 0 },
-      { duration: 0.7, top: "0", autoAlpha: 1 }
-    ).fromTo(
-      contactRef.current,
-      { top: "-=30", autoAlpha: 0 },
-      { duration: 0.7, top: "0", autoAlpha: 1 },
-      "-=0.5"
-    );
+    aboutTl
+      .to(aboutRef.current, { top: "+=50" })
+      .to(aboutRef.current, { top: "-=100", duration: 0 })
+      .to(aboutRef.current, { top: "0" })
+      .reverse();
+
+    contactTl
+      .to(contactRef.current, { top: "+=50" })
+      .to(contactRef.current, { top: "-=100", duration: 0 })
+      .to(contactRef.current, { top: "0" })
+      .reverse();
+
+    logoTl
+      .to(logoRef.current, {
+        duration: 0.3,
+        scale: "-=0.1",
+      })
+      .reverse();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleAnimate = item => {
-    const tl = gsap.timeline();
-    tl.fromTo(
-      item.current,
-      { top: "0" },
-      { duration: 0.3, top: "+=50" }
-    ).fromTo(
-      item.current,
-      { top: "-50" },
-      {
-        top: "+=50",
-        duration: 0.3,
-        ease: "power3",
-      },
-      "-=0.2"
-    );
+  const toggleLogoTimeline = () => {
+    logoTl.reversed(!logoTl.reversed());
+  };
+
+  const toggleMenuTimeline = tl => {
+    tl.reversed(!tl.reversed());
   };
 
   return (
     <>
       <StyledContainer>
-        <AniLink paintDrip hex="#121212" to="/">
-          <StyledLogo />
-        </AniLink>
+        <StyledLogoContainer
+          ref={logoRef}
+          onMouseOver={toggleLogoTimeline}
+          onMouseOut={toggleLogoTimeline}
+        >
+          <StyledLink paintDrip hex="#121212" to="/">
+            <StyledLogo />
+          </StyledLink>
+        </StyledLogoContainer>
+
         <StyledMenu>
           <li>
             <StyledLink
-              onMouseEnter={() => handleAnimate(aboutRef)}
+              onMouseOver={() => toggleMenuTimeline(aboutTl)}
+              onMouseOut={() => toggleMenuTimeline(aboutTl)}
               paintDrip
               hex="#121212"
               to="about"
@@ -124,7 +159,8 @@ const NavBar = () => {
             <StyledLink
               fade
               to="contact"
-              onMouseEnter={() => handleAnimate(contactRef)}
+              onMouseOver={() => toggleMenuTimeline(contactTl)}
+              onMouseOut={() => toggleMenuTimeline(contactTl)}
             >
               <StyledSpan ref={contactRef}>Kontakt</StyledSpan>
             </StyledLink>

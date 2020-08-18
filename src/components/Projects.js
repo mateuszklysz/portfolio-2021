@@ -52,6 +52,7 @@ const StyledProject = styled(Link)`
 
 const ShortProjects = () => {
   const textRef = useRef(null);
+  const listRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3" } });
@@ -59,6 +60,11 @@ const ShortProjects = () => {
       textRef.current,
       { x: "-=100", autoAlpha: 0 },
       { duration: 2, x: "0", autoAlpha: 1 }
+    ).fromTo(
+      listRef.current,
+      { x: "-=100", autoAlpha: 0 },
+      { duration: 2, x: "0", autoAlpha: 1 },
+      "-=1"
     );
   }, []);
 
@@ -70,13 +76,12 @@ const ShortProjects = () => {
         hideScrollbars={true}
         vertical={false}
       >
-        <StyledList>
+        <StyledList ref={listRef}>
           <StyledProject to="/404">
             <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
               produkcja w toku...
             </h2>
           </StyledProject>
-
           <StyledProject to="/404">
             <h2 style={{ color: "white", opacity: "0.4", fontSize: "24px" }}>
               produkcja w toku...

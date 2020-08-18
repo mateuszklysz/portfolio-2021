@@ -7,8 +7,7 @@ import Cube from "./Cube/Cube";
 
 const StyledContainer = styled.section`
   margin: 0 100px 40px 100px;
-  /* background-color: red; */
-  height: 700px;
+  height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,10 +18,6 @@ const StyledContainer = styled.section`
     height: auto;
     flex-direction: column;
  `}
-
-  ${media.tablet`
-    margin-top: 50px;
-  `}
 `;
 
 const StyledTextContainer = styled.div`
