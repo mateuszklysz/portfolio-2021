@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledContainer = styled.section`
-  margin: 100px;
+  margin: 50px 100px;
   height: 100vh;
 `;
 
