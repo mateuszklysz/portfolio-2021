@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import gsap from "gsap";
 import media from "../utils/media";
 import Cube from "./Cube/Cube";
 
@@ -114,6 +115,23 @@ const StyledMotto = styled.h2`
 `;
 
 const Hero = () => {
+  const textContainerRef = useRef(null);
+  const cubeContainerRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power3" } });
+    tl.fromTo(
+      textContainerRef.current,
+      { x: "-=300", autoAlpha: 0 },
+      { duration: 2, x: "0", autoAlpha: 1 }
+    ).fromTo(
+      cubeContainerRef.current,
+      { x: "-=300", autoAlpha: 0 },
+      { duration: 2, x: "0", autoAlpha: 1 },
+      "-=2"
+    );
+  }, []);
+
   const {
     site: { siteMetadata },
   } = useStaticQuery(
@@ -130,12 +148,12 @@ const Hero = () => {
 
   return (
     <StyledContainer>
-      <StyledTextContainer>
+      <StyledTextContainer ref={textContainerRef}>
         <StyledName>{siteMetadata.author}</StyledName>
         <StyledProfession>Front-end Developer</StyledProfession>
         <StyledMotto>Skupiam się na czystym i prostym kodzie</StyledMotto>
       </StyledTextContainer>
-      <StyledCubeContainer>
+      <StyledCubeContainer ref={cubeContainerRef}>
         <Cube />
       </StyledCubeContainer>
     </StyledContainer>

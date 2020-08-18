@@ -1,11 +1,11 @@
 import React from "react";
 import Hero from "../components/Hero";
-import ShortProjects from "../components/ShortProjects";
+import Projects from "../components/Projects";
 
 const IndexPage = () => (
   <>
     <Hero />
-    <ShortProjects />
+    <Projects />
   </>
 );
 

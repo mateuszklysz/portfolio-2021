@@ -7,10 +7,10 @@ import theme from "../utils/theme";
 import SEO from "../components/SEO/SEO";
 import NavBar from "../components/NavBar";
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
 `;
 

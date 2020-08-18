@@ -27,7 +27,6 @@ module.exports = {
         icon: `src/assets/images/icon.png`,
       },
     },
-    `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -35,5 +34,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-svg`,
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/layouts/layout.js`),
+      },
+    },
   ],
 };
