@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { useStaticQuery, graphql } from "gatsby";
 import gsap from "gsap";
 import media from "../utils/media";
@@ -26,6 +27,7 @@ const StyledTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-weight: bold;
 
   ${media.desktopL`
     text-align: center;
@@ -58,18 +60,19 @@ const StyledCubeContainer = styled.div`
 const StyledName = styled.h3`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xm};
-  font-weight: lighter;
+  padding-left: 4px;
 
   ${media.desktopS`
     font-size: ${({ theme: { font } }) => font.size.m}
+    padding-left: 0;
    `}
 
   ${media.phone`
-    font-size: ${({ theme: { font } }) => font.size.s}
+    font-size: ${({ theme: { font } }) => font.size.xs}
   `}
 
   ${media.ip4`
-    font-size: ${({ theme: { font } }) => font.size.xs}
+    font-size: ${({ theme: { font } }) => font.size.s}
   `}
 `;
 
@@ -80,6 +83,7 @@ const StyledProfession = styled.h1`
 
   ${media.desktopS`
     font-size: ${({ theme: { font } }) => font.size.xl}
+    padding-left: 0;
    `}
 
   ${media.phone`
@@ -94,10 +98,11 @@ const StyledProfession = styled.h1`
 const StyledMotto = styled.h2`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.l};
-  font-weight: lighter;
+  padding-left: 2px;
 
   ${media.desktopS`
     font-size: ${({ theme: { font } }) => font.size.xm}
+    padding-left: 0;
    `}
 
   ${media.phone`
@@ -105,8 +110,25 @@ const StyledMotto = styled.h2`
   `}
 
   ${media.ip4`
-    font-size: ${({ theme: { font } }) => font.size.xs}
+    font-size: ${({ theme: { font } }) => font.size.s}
   `}
+`;
+
+const StyledButton = styled(AniLink)`
+  color: ${({ theme: { color } }) => color.white};
+  font-size: ${({ theme: { font } }) => font.size.xs};
+  background-color: ${({ theme: { color } }) => color.primary};
+  text-align: center;
+  line-height: 50px;
+  margin-top: 20px;
+  width: 100px;
+  height: 50px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-weight: bold;
 `;
 
 const Hero = () => {
@@ -147,6 +169,9 @@ const Hero = () => {
         <StyledName>{siteMetadata.author}</StyledName>
         <StyledProfession>Front-end Developer</StyledProfession>
         <StyledMotto>Skupiam się na czystym i prostym kodzie</StyledMotto>
+        <StyledButton paintDrip hex="#121212" to="about">
+          O MNIE
+        </StyledButton>
       </StyledTextContainer>
       <StyledCubeContainer ref={cubeContainerRef}>
         <Cube />

@@ -6,8 +6,8 @@ const theme = {
   },
   font: {
     size: {
-      xs: "12px",
-      s: "16px",
+      s: "12px",
+      xs: "16px",
       m: "18px",
       xm: "20px",
       l: "36px",
