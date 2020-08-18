@@ -8,6 +8,10 @@ import media from "../utils/media";
 const StyledText = styled.h2`
   padding-left: 100px;
   color: ${({ theme: { color } }) => color.white};
+  ${media.phone`
+  padding-left: 50px;
+  font-size:${({ theme: { font } }) => font.size.m}
+  `}
 `;
 
 const StyledList = styled.ul`
@@ -25,8 +29,9 @@ const StyledList = styled.ul`
   `}
   ${media.phone`
   height: 350px;
-  margin-left: 0;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-bottom: 30px;
   `}
 `;
 
@@ -36,7 +41,7 @@ const StyledProject = styled(Link)`
   align-items: center;
   background-color: #1c1c1c;
   text-decoration: none;
-  margin: 0 50px;
+  margin-right: 100px;
   width: 500px;
   height: 500px;
   border-radius: 25px;
@@ -45,8 +50,14 @@ const StyledProject = styled(Link)`
     width: 400px;
   `}
   ${media.phone`
-    height: 350px;
-    width: 350px;
+    margin-right: 50px;
+    height: 300px;
+    width: 300px;
+  `}
+  ${media.ip4`
+    margin-right: 25px;
+    height: 250px;
+    width: 250px;
   `}
 `;
 
@@ -59,12 +70,12 @@ const ShortProjects = () => {
     tl.fromTo(
       textRef.current,
       { x: "-=100", autoAlpha: 0 },
-      { duration: 2, x: "0", autoAlpha: 1 }
+      { duration: 3, x: "0", autoAlpha: 1, delay: 0.5 }
     ).fromTo(
       listRef.current,
       { x: "-=100", autoAlpha: 0 },
       { duration: 2, x: "0", autoAlpha: 1 },
-      "-=1"
+      "-=2.5"
     );
   }, []);
 
