@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import media from "../utils/media";
+import { graphql } from "gatsby";
 
 import FirstSection from "../components/About/FirstSection";
 import SecondSection from "../components/About/SecondSection";
@@ -41,18 +42,33 @@ const StyledNameText = styled.h2`
   `}
 `;
 
-const Projects = () => (
-  <>
-    <StyledContainer>
-      <StyledTextContainer>
-        <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
-        <StyledNameText>Mateusz Kłysz</StyledNameText>
-      </StyledTextContainer>
-      <FirstSection />
-      <SecondSection />
-    </StyledContainer>
-    <Skills />
-  </>
-);
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+  }
+`;
 
+const Projects = ({
+  data: {
+    site: { siteMetadata },
+  },
+}) => {
+  return (
+    <>
+      <StyledContainer>
+        <StyledTextContainer>
+          <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
+          <StyledNameText>{siteMetadata.author}</StyledNameText>
+        </StyledTextContainer>
+        <FirstSection />
+        <SecondSection />
+      </StyledContainer>
+      <Skills />
+    </>
+  );
+};
 export default Projects;
