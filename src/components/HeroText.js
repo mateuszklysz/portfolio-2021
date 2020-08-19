@@ -115,6 +115,14 @@ const StyledButton = styled.p`
   `}
 `;
 
+const StyledButtonLink = styled(AniLink)`
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+`;
+
 const StyledGithub = styled.a`
   border: none;
   background: none;
@@ -183,14 +191,9 @@ const HeroText = () => {
           onMouseEnter={() => handleButtonAnimation(buttonRef, 0.95)}
           onMouseLeave={() => handleButtonAnimation(buttonRef, 1)}
         >
-          <AniLink
-            paintDrip
-            hex="#121212"
-            to="about"
-            style={{ color: "inherit", textDecoration: "none" }}
-          >
+          <StyledButtonLink paintDrip hex="#121212" to="about">
             O MNIE
-          </AniLink>
+          </StyledButtonLink>
         </StyledButton>
         <StyledGithub
           href="https://github.com/mateuszklysz"

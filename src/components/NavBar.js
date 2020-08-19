@@ -94,7 +94,6 @@ const NavBar = () => {
   };
 
   const handleMenuAnimation = (item, mode) => {
-    console.log(mode);
     const tl = gsap.timeline({
       defaults: { duration: 0.15, ease: "power0.easeNone" },
     });
