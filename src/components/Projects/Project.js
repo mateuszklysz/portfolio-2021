@@ -8,7 +8,7 @@ const StyledProject = styled(AniLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1c1c1c;
+  background-color: ${({ theme: { color } }) => color.secondary};
   text-decoration: none;
   margin-right: 100px;
   width: 500px;

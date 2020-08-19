@@ -4,6 +4,7 @@ import media from "../utils/media";
 
 import FirstSection from "../components/About/FirstSection";
 import SecondSection from "../components/About/SecondSection";
+import Skills from "../components/About/Skills";
 
 const StyledContainer = styled.section`
   margin: 50px 200px;
@@ -50,6 +51,7 @@ const Projects = () => (
       <FirstSection />
       <SecondSection />
     </StyledContainer>
+    <Skills />
   </>
 );
 

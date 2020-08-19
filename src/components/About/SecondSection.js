@@ -19,24 +19,13 @@ const StyledSecondSection = styled.section`
   `}
 `;
 
-const StyledSecondImage = styled(Img)`
-  width: 500px;
-
-  ${media.phone`
-    width: 300px;
-  `}
-
-  ${media.ip4`
-    width: 250px;
-  `}
-`;
-
 const StyledSecondTextContainer = styled.div`
   display: flex;
   height: 100%;
   width: 500px;
   margin: auto 0;
   padding-right: 50px;
+  text-align: right;
   font-size: ${({ theme: { font } }) => font.size.xxm};
   font-weight: bold;
 
@@ -57,6 +46,18 @@ const StyledSecondTextContainer = styled.div`
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.xs};
     width: 100%;
+  `}
+`;
+
+const StyledSecondImage = styled(Img)`
+  width: 500px;
+
+  ${media.phone`
+    width: 300px;
+  `}
+
+  ${media.ip4`
+    width: 250px;
   `}
 `;
 
