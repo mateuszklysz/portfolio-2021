@@ -92,6 +92,11 @@ const StyledIconsContainer = styled.div`
     height:40px;
     width: 150px;
    `}
+
+  ${media.ip4`
+    width: 120px;
+    height:30px;
+   `}
 `;
 
 const StyledButton = styled.p`
@@ -113,6 +118,12 @@ const StyledButton = styled.p`
     width: 100px;
     line-height: 40px;
   `}
+
+  ${media.ip4`
+    font-size: ${({ theme: { font } }) => font.size.s};
+    width: 70px;
+    line-height: 30px;
+   `}
 `;
 
 const StyledButtonLink = styled(AniLink)`
@@ -123,7 +134,7 @@ const StyledButtonLink = styled(AniLink)`
   height: 100%;
 `;
 
-const StyledGithub = styled.a`
+const StyledGithubLink = styled.a`
   border: none;
   background: none;
   outline: none;
@@ -133,6 +144,11 @@ const StyledGithub = styled.a`
   ${media.phone`
     width: 40px;
     height: 40px;
+   `}
+
+  ${media.ip4`
+    width: 30px;
+    height: 30px;
    `}
 `;
 
@@ -195,7 +211,7 @@ const HeroText = () => {
             O MNIE
           </StyledButtonLink>
         </StyledButton>
-        <StyledGithub
+        <StyledGithubLink
           href="https://github.com/mateuszklysz"
           target="_blank"
           ref={githubRef}
@@ -203,7 +219,7 @@ const HeroText = () => {
           onMouseLeave={() => handleButtonAnimation(githubRef, 1)}
         >
           <Img fluid={childImageSharp.fluid} />
-        </StyledGithub>
+        </StyledGithubLink>
       </StyledIconsContainer>
     </StyledTextContainer>
   );
