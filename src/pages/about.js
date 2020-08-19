@@ -6,8 +6,10 @@ import { graphql } from "gatsby";
 import FirstSection from "../components/About/FirstSection";
 import SecondSection from "../components/About/SecondSection";
 import Skills from "../components/About/Skills";
+import InfoSection from "../components/About/InfoSection";
 
 const StyledContainer = styled.section`
+  position: relative;
   margin: 50px auto;
   padding: 0 100px;
   max-width: 1250px;
@@ -70,6 +72,9 @@ const Projects = ({
         <SecondSection />
       </StyledContainer>
       <Skills />
+      <StyledContainer>
+        <InfoSection />
+      </StyledContainer>
     </>
   );
 };
