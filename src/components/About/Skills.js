@@ -4,6 +4,7 @@ import media from "../../utils/media";
 
 const StyledContainer = styled.section`
   display: flex;
+  justify-content: center;
   background-color: ${({ theme: { color } }) => color.secondary};
   height: 850px;
   width: 100%;
@@ -24,11 +25,15 @@ const StyledDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 40%;
   height: 100%;
 
   ${media.desktopS`
     font-size: ${({ theme: { font } }) => font.size.xm};
+  `}
+
+  ${media.tablet`
+    width: 50%;
   `}
 
   ${media.phone`
