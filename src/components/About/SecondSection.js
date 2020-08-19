@@ -79,17 +79,15 @@ const SecondSection = () => {
   );
 
   return (
-    <>
-      <StyledSecondSection>
-        <StyledSecondTextContainer>
-          <p>
-            Moje hobby to grafika komputerowa, animacje 2D i 3D oraz gry
-            komputerowe
-          </p>
-        </StyledSecondTextContainer>
-        <StyledSecondImage fluid={childImageSharp.fluid} />
-      </StyledSecondSection>
-    </>
+    <StyledSecondSection>
+      <StyledSecondTextContainer>
+        <p>
+          Moje hobby to grafika komputerowa, animacje 2D i 3D oraz gry
+          komputerowe
+        </p>
+      </StyledSecondTextContainer>
+      <StyledSecondImage fluid={childImageSharp.fluid} />
+    </StyledSecondSection>
   );
 };
 

@@ -77,18 +77,16 @@ const FirstSection = () => {
   );
 
   return (
-    <>
-      <StyledFirstSection>
-        <StyledFirstImage fluid={childImageSharp.fluid} />
-        <StyledFirstTextContainer>
-          <p>
-            Interesują mnie trendy w zakresie projektowania stron WWW, user
-            experiance oraz user interface design. Zawsze stawiam na nowoczesne
-            rozwiązania.
-          </p>
-        </StyledFirstTextContainer>
-      </StyledFirstSection>
-    </>
+    <StyledFirstSection>
+      <StyledFirstImage fluid={childImageSharp.fluid} />
+      <StyledFirstTextContainer>
+        <p>
+          Interesują mnie trendy w zakresie projektowania stron WWW, user
+          experiance oraz user interface design. Zawsze stawiam na nowoczesne
+          rozwiązania.
+        </p>
+      </StyledFirstTextContainer>
+    </StyledFirstSection>
   );
 };
 

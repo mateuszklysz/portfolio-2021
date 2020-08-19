@@ -14,11 +14,9 @@ const StyledText = styled.h1`
 `;
 
 const NotFoundPage = () => (
-  <>
-    <StyledContainer>
-      <StyledText>Nie znaleziono strony...</StyledText>
-    </StyledContainer>
-  </>
+  <StyledContainer>
+    <StyledText>Nie znaleziono strony...</StyledText>
+  </StyledContainer>
 );
 
 export default NotFoundPage;

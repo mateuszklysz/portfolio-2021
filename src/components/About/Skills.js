@@ -74,31 +74,29 @@ const StyledText = styled.p`
 `;
 
 const Skills = () => (
-  <>
-    <StyledContainer>
-      <StyledDiv>
-        <StyledCanName>Co potrafię</StyledCanName>
-        <StyledText>
-          Semantic HTML
-          <br /> Styled Components
-          <br /> React / Gatsby
-          <br /> JS ES6
-          <br /> GSAP
-          <br /> Sass
-        </StyledText>
-      </StyledDiv>
-      <StyledDiv>
-        <StyledLearnName>Czego się uczę</StyledLearnName>
-        <StyledText>
-          Vue.js/Gridsome <br /> TypeScript
-          <br /> Three.js
-          <br /> Firebase
-          <br /> Electron
-          <br /> React Native
-        </StyledText>
-      </StyledDiv>
-    </StyledContainer>
-  </>
+  <StyledContainer>
+    <StyledDiv>
+      <StyledCanName>Co potrafię</StyledCanName>
+      <StyledText>
+        Semantic HTML
+        <br /> Styled Components
+        <br /> React / Gatsby
+        <br /> JS ES6
+        <br /> GSAP
+        <br /> Sass
+      </StyledText>
+    </StyledDiv>
+    <StyledDiv>
+      <StyledLearnName>Czego się uczę</StyledLearnName>
+      <StyledText>
+        Vue.js/Gridsome <br /> TypeScript
+        <br /> Three.js
+        <br /> Firebase
+        <br /> Electron
+        <br /> React Native
+      </StyledText>
+    </StyledDiv>
+  </StyledContainer>
 );
 
 export default Skills;
