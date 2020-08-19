@@ -179,7 +179,7 @@ const LeftComponent = () => {
         }
         file(relativePath: { eq: "github.png" }) {
           childImageSharp {
-            fluid(maxHeight: 54) {
+            fluid(maxHeight: 100) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
