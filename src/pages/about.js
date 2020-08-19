@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import media from "../utils/media";
 import { graphql } from "gatsby";
+import Scrollbar from "smooth-scrollbar";
 
 import FirstSection from "../components/About/FirstSection";
 import SecondSection from "../components/About/SecondSection";
 import Skills from "../components/About/Skills";
 import InfoSection from "../components/About/InfoSection";
 import MoreSection from "../components/About/MoreSection";
+import Footer from "../components/Footer/Footer";
+
+const StyledScroll = styled.div`
+  width: 100%;
+  height: calc(100vh - 100px);
+
+  ${media.tablet`
+    height: auto;
+  `}
+`;
 
 const StyledContainer = styled.section`
   position: relative;
@@ -62,21 +73,32 @@ const Projects = ({
     site: { siteMetadata },
   },
 }) => {
+  const scrollbar = useRef(null);
+
+  useEffect(() => {
+    Scrollbar.initAll();
+    Scrollbar.detachStyle();
+    scrollbar.current.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <StyledContainer>
-        <StyledTextContainer>
-          <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
-          <StyledNameText>{siteMetadata.author}</StyledNameText>
-        </StyledTextContainer>
-        <FirstSection />
-        <SecondSection />
-      </StyledContainer>
-      <Skills />
-      <StyledContainer>
-        <InfoSection />
-        <MoreSection />
-      </StyledContainer>
+      <StyledScroll ref={scrollbar} data-scrollbar>
+        <StyledContainer>
+          <StyledTextContainer>
+            <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
+            <StyledNameText>{siteMetadata.author}</StyledNameText>
+          </StyledTextContainer>
+          <FirstSection />
+          <SecondSection />
+        </StyledContainer>
+        <Skills />
+        <StyledContainer>
+          <InfoSection />
+          <MoreSection />
+        </StyledContainer>
+        <Footer />
+      </StyledScroll>
     </>
   );
 };
