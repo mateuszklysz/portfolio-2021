@@ -100,9 +100,9 @@ const StyledIconsContainer = styled.div`
 `;
 
 const StyledButton = styled.p`
-  color: ${({ theme: { color } }) => color.white};
+  color: ${({ theme: { color } }) => color.black};
   font-size: ${({ theme: { font } }) => font.size.xs};
-  background-color: ${({ theme: { color } }) => color.primary};
+  background-color: ${({ theme: { color } }) => color.white};
   text-align: center;
   line-height: 50px;
   width: 130px;
