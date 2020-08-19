@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1>
   Mateusz Kłysz - Portfolio
 </h1>
 
