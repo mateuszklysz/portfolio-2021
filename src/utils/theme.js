@@ -10,6 +10,7 @@ const theme = {
       xs: "16px",
       m: "18px",
       xm: "20px",
+      xxm: "30px",
       l: "36px",
       xl: "68px",
       xxl: "84px",

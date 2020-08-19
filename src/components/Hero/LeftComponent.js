@@ -187,6 +187,7 @@ const LeftComponent = () => {
       }
     `
   );
+
   const handleButtonAnimation = (item, scale) => {
     const tl = gsap.timeline({
       defaults: { ease: "power0.easeNone" },
