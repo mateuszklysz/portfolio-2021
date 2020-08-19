@@ -7,7 +7,6 @@ import media from "../../utils/media";
 const StyledSecondSection = styled.section`
   margin: 100px 0;
   display: flex;
-  flex-shrink: 0;
   justify-content: space-around;
   color: ${({ theme: { color } }) => color.white};
   width: 100%;

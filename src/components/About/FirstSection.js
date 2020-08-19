@@ -7,7 +7,6 @@ import media from "../../utils/media";
 const StyledFirstSection = styled.section`
   margin: 100px 0;
   display: flex;
-  flex-shrink: 0;
   justify-content: space-around;
   color: ${({ theme: { color } }) => color.white};
   width: 100%;
@@ -21,6 +20,7 @@ const StyledFirstSection = styled.section`
 
 const StyledFirstImage = styled(Img)`
   width: 500px;
+
   ${media.phone`
     width: 300px;
   `}
