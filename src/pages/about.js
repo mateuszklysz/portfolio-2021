@@ -7,6 +7,7 @@ import FirstSection from "../components/About/FirstSection";
 import SecondSection from "../components/About/SecondSection";
 import Skills from "../components/About/Skills";
 import InfoSection from "../components/About/InfoSection";
+import MoreSection from "../components/About/MoreSection";
 
 const StyledContainer = styled.section`
   position: relative;
@@ -74,6 +75,7 @@ const Projects = ({
       <Skills />
       <StyledContainer>
         <InfoSection />
+        <MoreSection />
       </StyledContainer>
     </>
   );

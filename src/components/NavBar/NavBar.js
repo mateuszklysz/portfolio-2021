@@ -129,7 +129,7 @@ const NavBar = () => {
               onMouseLeave={() => handleMenuAnimation(aboutRef, 0)}
               paintDrip
               hex="#121212"
-              to="about"
+              to="/about"
             >
               <StyledSpan ref={aboutRef}>O mnie</StyledSpan>
             </StyledLink>
@@ -137,7 +137,7 @@ const NavBar = () => {
           <li>
             <StyledLink
               fade
-              to="contact"
+              to="/contact"
               onMouseEnter={() => handleMenuAnimation(contactRef, 1)}
               onMouseLeave={() => handleMenuAnimation(contactRef, 0)}
             >
