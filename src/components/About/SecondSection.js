@@ -5,9 +5,9 @@ import Img from "gatsby-image";
 import media from "../../utils/media";
 
 const StyledSecondSection = styled.section`
-  margin: 100px 0;
+  margin: 100px 0 140px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   color: ${({ theme: { color } }) => color.white};
   width: 100%;
 

@@ -8,9 +8,11 @@ import SecondSection from "../components/About/SecondSection";
 import Skills from "../components/About/Skills";
 
 const StyledContainer = styled.section`
-  margin: 50px 200px;
-
+  margin: 50px auto;
+  padding: 0 100px;
+  max-width: 1250px;
   ${media.tablet`
+    padding: 0;
     margin: 0 100px;
   `}
   ${media.phone`
