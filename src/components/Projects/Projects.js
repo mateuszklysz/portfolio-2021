@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
 import gsap from "gsap";
 
-import media from "../utils/media";
+import media from "../../utils/media";
 import Project from "./Project";
 
 const StyledText = styled.h2`

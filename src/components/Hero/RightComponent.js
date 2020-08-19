@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
-import media from "../utils/media";
-import Cube from "./Cube/Cube";
+import media from "../../utils/media";
+import Cube from "../Cube/Cube";
 
 const StyledCubeContainer = styled.div`
   z-index: 1;
@@ -26,7 +26,7 @@ const StyledCubeContainer = styled.div`
   `}
 `;
 
-const HeroCube = () => {
+const RightComponent = () => {
   const cubeContainerRef = useRef(null);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ const HeroCube = () => {
     </StyledCubeContainer>
   );
 };
-export default HeroCube;
+export default RightComponent;

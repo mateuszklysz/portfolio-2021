@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-import media from "../utils/media";
+import media from "../../utils/media";
 
 const StyledContainer = styled.footer`
   background-color: ${({ theme: { color } }) => color.primary};

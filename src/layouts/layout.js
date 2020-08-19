@@ -7,8 +7,8 @@ import GlobalStyle from "../utils/global";
 import theme from "../utils/theme";
 
 import SEO from "../components/SEO/SEO";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 const StyledContainer = styled.section`
   display: flex;

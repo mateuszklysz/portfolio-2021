@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import media from "../utils/media";
+import media from "../../utils/media";
 
-import HeroText from "./HeroText";
-import HeroCube from "./HeroCube";
+import LeftComponent from "./LeftComponent";
+import RightComponent from "./RightComponent";
 
 const StyledContainer = styled.section`
   display: flex;
@@ -22,8 +22,8 @@ const StyledContainer = styled.section`
 
 const Hero = () => (
   <StyledContainer>
-    <HeroText />
-    <HeroCube />
+    <LeftComponent />
+    <RightComponent />
   </StyledContainer>
 );
 

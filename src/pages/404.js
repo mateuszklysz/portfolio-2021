@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+const StyledContainer = styled.section`
+  height: calc(100vh - 100px);
+`;
+
 const StyledText = styled.h1`
   font-size: ${({ theme: { font } }) => font.size.l};
   text-align: center;
@@ -11,7 +15,9 @@ const StyledText = styled.h1`
 
 const NotFoundPage = () => (
   <>
-    <StyledText>Nie znaleziono strony...</StyledText>
+    <StyledContainer>
+      <StyledText>Nie znaleziono strony...</StyledText>
+    </StyledContainer>
   </>
 );
 

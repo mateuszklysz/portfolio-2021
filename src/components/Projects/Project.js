@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-import media from "../utils/media";
+import media from "../../utils/media";
 
 const StyledProject = styled(AniLink)`
   display: flex;

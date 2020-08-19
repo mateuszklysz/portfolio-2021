@@ -4,7 +4,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import gsap from "gsap";
-import media from "../utils/media";
+import media from "../../utils/media";
 
 const StyledTextContainer = styled.div`
   position: relative;
@@ -152,7 +152,7 @@ const StyledGithubLink = styled.a`
    `}
 `;
 
-const HeroText = () => {
+const LeftComponent = () => {
   const textContainerRef = useRef(null);
   const buttonRef = useRef(null);
   const githubRef = useRef(null);
@@ -224,4 +224,4 @@ const HeroText = () => {
     </StyledTextContainer>
   );
 };
-export default HeroText;
+export default LeftComponent;

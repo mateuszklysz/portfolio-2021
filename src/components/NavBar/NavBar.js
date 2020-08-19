@@ -3,10 +3,10 @@ import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
 
-import media from "../utils/media";
+import media from "../../utils/media";
 
-import Logo from "../assets/svg/icon.svg";
-import Hamburger from "../assets/svg/hamburger.svg";
+import Logo from "../../assets/svg/icon.svg";
+import Hamburger from "../../assets/svg/hamburger.svg";
 
 const StyledContainer = styled.nav`
   display: flex;
