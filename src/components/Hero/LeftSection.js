@@ -130,7 +130,12 @@ const LeftComponent = () => {
     <StyledTextContainer ref={textContainerRef}>
       <StyledName>{siteMetadata.author}</StyledName>
       <StyledProfession>Front-end Developer</StyledProfession>
-      <StyledMotto>Skupiam się na czystym i prostym kodzie</StyledMotto>
+      <StyledMotto>
+        Skupiam się na czystym i prostym{" "}
+        <span style={{ color: "#c17900" }}>
+          {"<"}kodzie{">"}
+        </span>
+      </StyledMotto>
       <StyledIconsContainer>
         <Button text="O mnie" to="/about" />
         <Github />
