@@ -16,12 +16,12 @@ const StyledCubeContainer = styled.div`
   `}
 
   ${media.phone`
-    min-width: 700px;
+    min-width: 350px;
     height: 350px;
   `}
 
   ${media.ip4`
-    min-width: 700px;
+    min-width: 300px;
     height: 300px;
   `}
 `;
