@@ -46,7 +46,7 @@ const StyledCode = styled(Code)`
   `}
 
   ${media.ip4`
-    right: -100px;
+    right: -20px;
     height:270px;
     width:270px;
    `}
