@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import gsap from "gsap";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import media from "../../utils/media";
@@ -26,7 +27,7 @@ const StyledSecondTextContainer = styled.div`
   padding-right: 50px;
   text-align: right;
   font-size: ${({ theme: { font } }) => font.size.xxm};
-  font-weight: bold;
+  /* font-weight: bold; */
 
   ${media.desktopL`
     font-size: 23px;
@@ -61,6 +62,8 @@ const StyledSecondImage = styled(Img)`
 `;
 
 const SecondSection = () => {
+  const sectionRef = useRef(null);
+
   const {
     file: { childImageSharp },
   } = useStaticQuery(
@@ -78,12 +81,23 @@ const SecondSection = () => {
     `
   );
 
+  useEffect(() => {
+    gsap.fromTo(
+      sectionRef.current,
+      { x: "+=300", autoAlpha: 0 },
+      { duration: 3, x: "0", autoAlpha: 1 }
+    );
+  }, []);
+
   return (
-    <StyledSecondSection>
+    <StyledSecondSection ref={sectionRef}>
       <StyledSecondTextContainer>
         <p>
-          Moje hobby to grafika komputerowa, animacje 2D i 3D oraz gry
-          komputerowe
+          Moje hobby to&nbsp;
+          <strong style={{ color: "#4c8c4a" }}>
+            grafika komputerowa, animacje 2D i 3D oraz gry komputerowe.
+          </strong>
+          &nbsp;Gdyby nie front-end pewnie poszedłbym w któryś z tych kierunków.
         </p>
       </StyledSecondTextContainer>
       <StyledSecondImage fluid={childImageSharp.fluid} />

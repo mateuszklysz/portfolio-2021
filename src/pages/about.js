@@ -80,9 +80,8 @@ const Projects = ({
   const scrollbar = useRef(null);
   const nameRef = useRef(null);
 
-  gsap.registerPlugin(TextPlugin);
-
   const textAnimation = () => {
+    gsap.registerPlugin(TextPlugin);
     gsap.to(nameRef.current, {
       duration: 1.2,
       text: siteMetadata.author,

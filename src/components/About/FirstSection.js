@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import gsap from "gsap";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import media from "../../utils/media";
@@ -37,7 +38,7 @@ const StyledFirstTextContainer = styled.div`
   margin: auto 0;
   padding-left: 50px;
   font-size: ${({ theme: { font } }) => font.size.xxm};
-  font-weight: bold;
+  /* font-weight: bold; */
 
   ${media.desktopL`
     font-size: 23px;
@@ -59,6 +60,8 @@ const StyledFirstTextContainer = styled.div`
 `;
 
 const FirstSection = () => {
+  const sectionRef = useRef(null);
+
   const {
     file: { childImageSharp },
   } = useStaticQuery(
@@ -76,14 +79,24 @@ const FirstSection = () => {
     `
   );
 
+  useEffect(() => {
+    gsap.fromTo(
+      sectionRef.current,
+      { x: "-=300", autoAlpha: 0 },
+      { duration: 3, x: "0", autoAlpha: 1 }
+    );
+  }, []);
+
   return (
-    <StyledFirstSection>
+    <StyledFirstSection ref={sectionRef}>
       <StyledFirstImage fluid={childImageSharp.fluid} />
       <StyledFirstTextContainer>
         <p>
-          Interesują mnie trendy w zakresie projektowania stron WWW, user
-          experiance oraz user interface design. Zawsze stawiam na nowoczesne
-          rozwiązania.
+          Interesują mnie trendy w zakresie&nbsp;
+          <strong style={{ color: "#f05545" }}>
+            projektowania stron WWW, user experiance oraz user interface design.
+          </strong>
+          &nbsp;Zawsze stawiam na nowoczesne rozwiązania.
         </p>
       </StyledFirstTextContainer>
     </StyledFirstSection>

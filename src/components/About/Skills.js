@@ -91,20 +91,21 @@ const Skills = () => (
         Semantic HTML
         <br /> Styled Components
         <br /> React / Gatsby
+        <br /> Git / Github
         <br /> JS ES6
-        <br /> GSAP
         <br /> Sass
-        <br /> Git
       </StyledText>
     </StyledDiv>
     <StyledDiv>
       <StyledLearnName>Czego się uczę</StyledLearnName>
       <StyledText>
-        Vue.js/Gridsome <br /> TypeScript
-        <br /> Three.js
-        <br /> Firebase
-        <br /> Electron
+        GSAP
+        <br />
+        Vue.js/Gridsome
+        <br /> TypeScript
         <br /> React Native
+        <br /> Three.js
+        <br /> Electron
       </StyledText>
     </StyledDiv>
   </StyledContainer>
