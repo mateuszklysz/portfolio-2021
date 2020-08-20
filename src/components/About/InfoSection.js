@@ -54,7 +54,7 @@ const StyledCode = styled(Code)`
 const InfoSection = () => (
   <StyledContainer>
     <StyledText>
-      Progamowaniem zajmuję się od małego. Od zawsze interesowały mnie produkcje
+      Programowaniem zajmuję się od małego. Od zawsze ciekawiły mnie produkcje
       gier komputerowych, dlatego też szybko zaintersowałem się językiem{" "}
       <span style={{ color: "#4f83cc" }}>C++</span>.
       <br /> <br />

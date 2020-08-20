@@ -5,14 +5,22 @@ import gsap from "gsap";
 
 import media from "../../utils/media";
 import Project from "./Project";
+import ScrollImage from "../../assets/svg/scroll.svg";
 
-const StyledText = styled.h2`
+const StyledProjectsText = styled.div`
+  display: flex;
   padding-left: 100px;
   color: ${({ theme: { color } }) => color.white};
   ${media.phone`
   padding-left: 50px;
   font-size:${({ theme: { font } }) => font.size.m}
   `}
+`;
+
+const StyledScrollImage = styled(ScrollImage)`
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
 `;
 
 const StyledList = styled.ul`
@@ -41,8 +49,18 @@ const StyledList = styled.ul`
 const ShortProjects = () => {
   const textRef = useRef(null);
   const listRef = useRef(null);
+  const scrollImgRef = useRef(null);
 
-  useEffect(() => {
+  const animations = () => {
+    const [elements] = scrollImgRef.current.children;
+    const dot = elements.getElementById("dot");
+
+    gsap.fromTo(
+      dot,
+      { x: "0", opacity: 0.1 },
+      { x: "-=65", opacity: 1, duration: 2, repeat: -1 }
+    );
+
     const tl = gsap.timeline({ defaults: { ease: "power3" } });
     tl.fromTo(
       textRef.current,
@@ -54,11 +72,21 @@ const ShortProjects = () => {
       { duration: 2, x: "0", autoAlpha: 1 },
       "-=2.5"
     );
+  };
+
+  useEffect(() => {
+    animations();
   }, []);
 
   return (
     <>
-      <StyledText ref={textRef}>Projekty</StyledText>
+      <StyledProjectsText ref={textRef}>
+        <h1>Projekty</h1>
+        <div ref={scrollImgRef}>
+          <StyledScrollImage />
+        </div>
+      </StyledProjectsText>
+
       <ScrollContainer
         className="container"
         hideScrollbars={true}
