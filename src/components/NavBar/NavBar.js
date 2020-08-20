@@ -146,22 +146,23 @@ const NavBar = () => {
 
     if (showMenu) {
       gsap.to(hamburgerRef.current, {
-        right: 0,
-        duration: 0.5,
-        ease: "Power4.easeInOut",
+        x: "-420px",
+        duration: 0.3,
+        ease: "Power4.easeOut",
       });
-      gsap.fromTo(rec3, { width: "100%" }, { width: "60%" });
-      gsap.fromTo(rec2, { width: "100%" }, { width: "80%" });
+      gsap.fromTo(rec3, { width: "100%" }, { width: "60%", duration: 0.2 });
+      gsap.fromTo(rec2, { width: "100%" }, { width: "80%", duration: 0.2 });
     } else {
       gsap.to(hamburgerRef.current, {
-        right: "-420px",
-        duration: 0.5,
-        ease: "Power4.easeInOut",
+        x: 0,
+        duration: 0.3,
+        ease: "Power4.easeIn",
       });
-      gsap.fromTo(rec3, { width: "60%" }, { width: "100%" });
-      gsap.fromTo(rec2, { width: "80%" }, { width: "100%" });
+      gsap.fromTo(rec3, { width: "60%" }, { width: "100%", duration: 0.2 });
+      gsap.fromTo(rec2, { width: "80%" }, { width: "100%", duration: 0.2 });
     }
   };
+
   return (
     <>
       <StyledContainer>
