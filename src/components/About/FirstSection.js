@@ -82,7 +82,7 @@ const FirstSection = () => {
   useEffect(() => {
     gsap.fromTo(
       sectionRef.current,
-      { x: "-=300", autoAlpha: 0 },
+      { x: "-=100", autoAlpha: 0 },
       { duration: 3, x: "0", autoAlpha: 1 }
     );
   }, []);
