@@ -15,9 +15,7 @@ import MoreSection from "../components/About/MoreSection";
 import Footer from "../components/Footer/Footer";
 
 const ScrollContainer = styled.div`
-  width: 100%;
   height: calc(100vh - 100px);
-
   ${media.tablet`
     height: auto;
   `}
