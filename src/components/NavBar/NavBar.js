@@ -55,6 +55,9 @@ const StyledLink = styled(AniLink)`
   font-size: ${({ theme: { font } }) => font.size.m};
   color: ${({ theme: { color } }) => color.white};
   text-decoration: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
   overflow: hidden;
   padding: 5px;
   display: block;
@@ -129,8 +132,7 @@ const NavBar = () => {
         .to(item.current, { top: "-=100", duration: 0 })
         .to(item.current, { top: "0" });
     } else {
-      tl.play()
-        .to(item.current, { top: "-=50" })
+      tl.to(item.current, { top: "-=50" })
         .to(item.current, { top: "+=100", duration: 0 })
         .to(item.current, { top: "0" });
     }
@@ -186,10 +188,11 @@ const NavBar = () => {
           </li>
           <li>
             <StyledLink
-              fade
-              to="/contact"
               onMouseEnter={() => handleMenuAnimation(contactRef, 1)}
               onMouseLeave={() => handleMenuAnimation(contactRef, 0)}
+              paintDrip
+              hex="#121212"
+              to="/contact"
             >
               <StyledSpan ref={contactRef}>Kontakt</StyledSpan>
             </StyledLink>
@@ -199,10 +202,9 @@ const NavBar = () => {
       <div ref={hamburgerIconRef}>
         <StyledHamburgerIcon onClick={handleHamburger} />
       </div>
-
       <StyledHamburgerMenu ref={hamburgerRef}>
         <StyledLink onClick={handleHamburger} paintDrip hex="#121212" to="/">
-          <StyledSpan ref={aboutRef}>Home</StyledSpan>
+          Home
         </StyledLink>
         <StyledLink
           onClick={handleHamburger}
@@ -210,10 +212,15 @@ const NavBar = () => {
           hex="#121212"
           to="/about"
         >
-          <StyledSpan ref={aboutRef}>O mnie</StyledSpan>
+          O mnie
         </StyledLink>
-        <StyledLink onClick={handleHamburger} fade to="/contact">
-          <StyledSpan ref={contactRef}>Kontakt</StyledSpan>
+        <StyledLink
+          onClick={handleHamburger}
+          paintDrip
+          hex="#121212"
+          to="/contact"
+        >
+          Kontakt
         </StyledLink>
       </StyledHamburgerMenu>
     </>
