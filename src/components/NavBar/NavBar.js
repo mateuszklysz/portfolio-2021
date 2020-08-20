@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
@@ -58,14 +58,18 @@ const StyledLink = styled(AniLink)`
   overflow: hidden;
   padding: 5px;
   display: block;
+
+  ${media.tablet`
+  font-size: ${({ theme: { font } }) => font.size.xm};
+  `}
 `;
 
 const StyledSpan = styled.span`
   position: relative;
 `;
 
-const StyledHamburger = styled(Hamburger)`
-  z-index: 100;
+const StyledHamburgerIcon = styled(Hamburger)`
+  z-index: 101;
   display: none;
   position: fixed;
   right: 30px;
@@ -78,10 +82,32 @@ const StyledHamburger = styled(Hamburger)`
   `}
 `;
 
+const StyledHamburgerMenu = styled.nav`
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  background-color: ${({ theme: { color } }) => color.black};
+  top: 0;
+  right: -420px;
+  width: 40%;
+  height: 100vh;
+
+  ${media.tablet`
+    display: block;
+    display:flex;
+  `}
+`;
+
 const NavBar = () => {
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const logoRef = useRef(null);
+  const hamburgerRef = useRef(null);
+
+  let [showMenu, setShowMenu] = useState(false);
 
   const handleLogoAnimation = scale => {
     const tl = gsap.timeline({
@@ -109,6 +135,23 @@ const NavBar = () => {
     }
   };
 
+  const handleHamburger = () => {
+    setShowMenu((showMenu = !showMenu));
+
+    if (showMenu) {
+      gsap.to(hamburgerRef.current, {
+        right: 0,
+        duration: 0.5,
+        ease: "Power4.easeInOut",
+      });
+    } else {
+      gsap.to(hamburgerRef.current, {
+        right: "-420px",
+        duration: 0.5,
+        ease: "Power4.easeInOut",
+      });
+    }
+  };
   return (
     <>
       <StyledContainer>
@@ -121,7 +164,6 @@ const NavBar = () => {
             <StyledLogo />
           </StyledLink>
         </StyledLogoContainer>
-
         <StyledMenu>
           <li>
             <StyledLink
@@ -146,7 +188,23 @@ const NavBar = () => {
           </li>
         </StyledMenu>
       </StyledContainer>
-      <StyledHamburger />
+      <StyledHamburgerIcon onClick={handleHamburger} />
+      <StyledHamburgerMenu ref={hamburgerRef}>
+        <StyledLink onClick={handleHamburger} paintDrip hex="#121212" to="/">
+          <StyledSpan ref={aboutRef}>Home</StyledSpan>
+        </StyledLink>
+        <StyledLink
+          onClick={handleHamburger}
+          paintDrip
+          hex="#121212"
+          to="/about"
+        >
+          <StyledSpan ref={aboutRef}>O mnie</StyledSpan>
+        </StyledLink>
+        <StyledLink onClick={handleHamburger} fade to="/contact">
+          <StyledSpan ref={contactRef}>Kontakt</StyledSpan>
+        </StyledLink>
+      </StyledHamburgerMenu>
     </>
   );
 };
