@@ -12,8 +12,13 @@ const StyledContainer = styled.section`
   ${media.desktopL`
     height: 600px;
   `}
+
   ${media.phone`
     height: 400px;
+  `}
+
+  ${media.ip4`
+    height: 350px;
   `}
 `;
 
@@ -74,7 +79,7 @@ const StyledText = styled.p`
   `}
 
   ${media.ip4`
-    line-height: 30px;
+    line-height: 25px;
   `}
 `;
 
@@ -89,6 +94,7 @@ const Skills = () => (
         <br /> JS ES6
         <br /> GSAP
         <br /> Sass
+        <br /> Git
       </StyledText>
     </StyledDiv>
     <StyledDiv>
