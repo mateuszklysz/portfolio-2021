@@ -28,6 +28,7 @@ const StyledText = styled.p`
 `;
 
 const StyledCode = styled(Code)`
+  z-index: -1;
   position: absolute;
   right: 200px;
   opacity: 10%;
