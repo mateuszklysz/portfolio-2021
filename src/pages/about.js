@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import media from "../utils/media";
-import { graphql } from "gatsby";
+import gsap from "gsap";
+import TextPlugin from "gsap/TextPlugin";
 import Scrollbar from "smooth-scrollbar";
+import { graphql } from "gatsby";
+
+import media from "../utils/media";
 
 import FirstSection from "../components/About/FirstSection";
 import SecondSection from "../components/About/SecondSection";
@@ -11,7 +14,7 @@ import InfoSection from "../components/About/InfoSection";
 import MoreSection from "../components/About/MoreSection";
 import Footer from "../components/Footer/Footer";
 
-const StyledScroll = styled.div`
+const ScrollContainer = styled.div`
   width: 100%;
   height: calc(100vh - 100px);
 
@@ -50,6 +53,7 @@ const StyledAboutText = styled.h1`
     font-size: ${({ theme: { font } }) => font.size.m};
   `}
 `;
+
 const StyledNameText = styled.h2`
   font-size: ${({ theme: { font } }) => font.size.xl};
 
@@ -74,20 +78,32 @@ const Projects = ({
   },
 }) => {
   const scrollbar = useRef(null);
+  const nameRef = useRef(null);
+
+  gsap.registerPlugin(TextPlugin);
+
+  const textAnimation = () => {
+    gsap.to(nameRef.current, {
+      duration: 1.2,
+      text: siteMetadata.author,
+      ease: "none",
+    });
+  };
 
   useEffect(() => {
     Scrollbar.initAll();
     Scrollbar.detachStyle();
     scrollbar.current.scrollTo(0, 0);
-  }, []);
+    textAnimation();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
-      <StyledScroll ref={scrollbar} data-scrollbar>
+      <ScrollContainer ref={scrollbar} data-scrollbar>
         <StyledContainer>
           <StyledTextContainer>
             <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
-            <StyledNameText>{siteMetadata.author}</StyledNameText>
+            <StyledNameText ref={nameRef} />
           </StyledTextContainer>
           <FirstSection />
           <SecondSection />
@@ -98,7 +114,7 @@ const Projects = ({
           <MoreSection />
         </StyledContainer>
         <Footer />
-      </StyledScroll>
+      </ScrollContainer>
     </>
   );
 };
