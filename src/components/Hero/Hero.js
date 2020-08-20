@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import media from "../../utils/media";
 
-import LeftComponent from "./LeftComponent";
-import RightComponent from "./RightComponent";
+import LeftSection from "./LeftSection";
+import RightSection from "./RightSection";
 
 const StyledContainer = styled.section`
   display: flex;
@@ -22,8 +22,8 @@ const StyledContainer = styled.section`
 
 const Hero = () => (
   <StyledContainer>
-    <LeftComponent />
-    <RightComponent />
+    <LeftSection />
+    <RightSection />
   </StyledContainer>
 );
 
