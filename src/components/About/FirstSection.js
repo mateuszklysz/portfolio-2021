@@ -93,7 +93,7 @@ const FirstSection = () => {
       <StyledFirstTextContainer>
         <p>
           Interesują mnie trendy w zakresie&nbsp;
-          <strong style={{ color: "#f05545" }}>
+          <strong style={{ color: "#5472d3" }}>
             projektowania stron WWW, user experiance oraz user interface design.
           </strong>
           &nbsp;Zawsze stawiam na nowoczesne rozwiązania.
