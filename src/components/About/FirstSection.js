@@ -38,7 +38,6 @@ const StyledFirstTextContainer = styled.div`
   margin: auto 0;
   padding-left: 50px;
   font-size: ${({ theme: { font } }) => font.size.xxm};
-  /* font-weight: bold; */
 
   ${media.desktopL`
     font-size: 23px;

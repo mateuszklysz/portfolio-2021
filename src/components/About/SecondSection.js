@@ -27,7 +27,6 @@ const StyledSecondTextContainer = styled.div`
   padding-right: 50px;
   text-align: right;
   font-size: ${({ theme: { font } }) => font.size.xxm};
-  /* font-weight: bold; */
 
   ${media.desktopL`
     font-size: 23px;
