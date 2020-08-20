@@ -14,6 +14,9 @@ const StyledButton = styled.p`
   height: 100%;
   outline: none;
   cursor: pointer;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
   text-decoration: none;
   border: 2px solid white;
   border-radius: 20px;
@@ -35,8 +38,6 @@ const StyledButtonLink = styled(AniLink)`
   display: block;
   color: inherit;
   text-decoration: none;
-  width: 100%;
-  height: 100%;
 `;
 
 const Button = ({ text, to }) => {
