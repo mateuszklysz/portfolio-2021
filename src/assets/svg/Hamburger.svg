@@ -1,5 +1,7 @@
-<svg width="45" height="39" viewBox="0 0 45 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="45" height="9" rx="4.5" fill="white"/>
-<rect y="15" width="45" height="9" rx="4.5" fill="white"/>
-<rect y="30" width="45" height="9" rx="4.5" fill="white"/>
+<svg width="35" height="31" viewBox="0 0 35 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Hamburger">
+<rect id="rec1" x="35" y="30.3333" width="35" height="7" rx="3.5" transform="rotate(-180 35 30.3333)" fill="white"/>
+<rect id="rec2" x="35" y="18.6667" width="35" height="7" rx="3.5" transform="rotate(-180 35 18.6667)" fill="white"/>
+<rect id="rec3" x="35" y="7" width="35" height="7" rx="3.5" transform="rotate(-180 35 7)" fill="white"/>
+</g>
 </svg>

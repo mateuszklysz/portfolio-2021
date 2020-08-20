@@ -106,6 +106,7 @@ const NavBar = () => {
   const contactRef = useRef(null);
   const logoRef = useRef(null);
   const hamburgerRef = useRef(null);
+  const hamburgerIconRef = useRef(null);
 
   let [showMenu, setShowMenu] = useState(false);
 
@@ -137,6 +138,9 @@ const NavBar = () => {
 
   const handleHamburger = () => {
     setShowMenu((showMenu = !showMenu));
+    const [elements] = hamburgerIconRef.current.children;
+    const rec3 = elements.getElementById("rec3");
+    const rec2 = elements.getElementById("rec2");
 
     if (showMenu) {
       gsap.to(hamburgerRef.current, {
@@ -144,12 +148,16 @@ const NavBar = () => {
         duration: 0.5,
         ease: "Power4.easeInOut",
       });
+      gsap.fromTo(rec3, { width: "100%" }, { width: "60%" });
+      gsap.fromTo(rec2, { width: "100%" }, { width: "80%" });
     } else {
       gsap.to(hamburgerRef.current, {
         right: "-420px",
         duration: 0.5,
         ease: "Power4.easeInOut",
       });
+      gsap.fromTo(rec3, { width: "60%" }, { width: "100%" });
+      gsap.fromTo(rec2, { width: "80%" }, { width: "100%" });
     }
   };
   return (
@@ -188,7 +196,10 @@ const NavBar = () => {
           </li>
         </StyledMenu>
       </StyledContainer>
-      <StyledHamburgerIcon onClick={handleHamburger} />
+      <div ref={hamburgerIconRef}>
+        <StyledHamburgerIcon onClick={handleHamburger} />
+      </div>
+
       <StyledHamburgerMenu ref={hamburgerRef}>
         <StyledLink onClick={handleHamburger} paintDrip hex="#121212" to="/">
           <StyledSpan ref={aboutRef}>Home</StyledSpan>
