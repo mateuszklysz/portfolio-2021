@@ -6,22 +6,22 @@ import Cube from "../Cube/Cube";
 
 const StyledCubeContainer = styled.div`
   z-index: 1;
-  min-width: 700px;
+  width: 700px;
   height: 700px;
   outline: none;
 
   ${media.desktopS`
-    min-width: 700px;
+    width: 500px;
     height: 500px;
   `}
 
   ${media.phone`
-    min-width: 350px;
+    width: 350px;
     height: 350px;
   `}
 
   ${media.ip4`
-    min-width: 300px;
+    width: 300px;
     height: 300px;
   `}
 `;
