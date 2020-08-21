@@ -11,7 +11,7 @@ const StyledCubeContainer = styled.div`
   outline: none;
 
   ${media.desktopS`
-    min-width: 500px;
+    min-width: 700px;
     height: 500px;
   `}
 

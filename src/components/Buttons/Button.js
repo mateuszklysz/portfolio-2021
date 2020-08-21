@@ -6,7 +6,7 @@ import media from "../../utils/media";
 
 const StyledButton = styled.p`
   color: ${({ theme: { color } }) => color.black};
-  font-size: ${({ theme: { font } }) => font.size.xs};
+  font-size: ${({ theme: { font } }) => font.size.m};
   background-color: ${({ theme: { color } }) => color.white};
   text-align: center;
   line-height: 50px;
@@ -23,6 +23,7 @@ const StyledButton = styled.p`
   font-weight: bold;
   box-sizing: border-box;
   ${media.phone`
+    font-size: ${({ theme: { font } }) => font.size.xs};
     width: 100px;
     line-height: 40px;
   `}

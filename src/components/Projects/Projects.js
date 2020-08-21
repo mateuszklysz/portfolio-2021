@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
 import gsap from "gsap";
@@ -78,6 +79,34 @@ const ShortProjects = () => {
     animations();
   }, []);
 
+  const {
+    allMdx: { edges },
+  } = useStaticQuery(
+    graphql`
+      query {
+        allMdx {
+          edges {
+            node {
+              id
+              frontmatter {
+                title
+                slug
+                index
+                featuredImage {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
   return (
     <>
       <StyledProjectsText ref={textRef}>
@@ -93,12 +122,14 @@ const ShortProjects = () => {
         vertical={false}
       >
         <StyledList ref={listRef}>
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
+          {edges.map(project => (
+            <Project
+              name={project.node.frontmatter.title}
+              img={project.node.frontmatter.featuredImage.childImageSharp}
+              slug={project.node.frontmatter.slug}
+              key={project.node.id}
+            />
+          ))}
         </StyledList>
       </ScrollContainer>
     </>
