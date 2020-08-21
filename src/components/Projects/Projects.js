@@ -91,7 +91,6 @@ const ShortProjects = () => {
               frontmatter {
                 title
                 slug
-                index
                 featuredImage {
                   childImageSharp {
                     fluid {
