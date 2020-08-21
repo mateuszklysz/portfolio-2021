@@ -69,7 +69,6 @@ const SecondSection = () => {
     graphql`
       query {
         file(relativePath: { eq: "aae.jpg" }) {
-          size
           childImageSharp {
             fluid(maxWidth: 2000) {
               ...GatsbyImageSharpFluid
