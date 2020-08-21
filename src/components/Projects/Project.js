@@ -5,10 +5,13 @@ import Img from "gatsby-image";
 
 import media from "../../utils/media";
 
-const StyledContainer = styled.div`
+const StyledContainer = styled(AniLink)`
   position: relative;
   margin-right: 100px;
   border-radius: 25px;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
   width: 500px;
   height: 500px;
   background-color: ${({ theme: { color } }) => color.secondary};
@@ -31,19 +34,15 @@ const StyledContainer = styled.div`
   `};
 `;
 
-const StyledLink = styled(AniLink)`
+const StyledText = styled.div`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xxm};
   font-weight: bold;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
   text-decoration: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
   text-align: center;
 `;
 
@@ -53,17 +52,14 @@ const StyledImage = styled(Img)`
   top: 0;
   width: 100%;
   height: 100%;
-  /* filter: blur(4px); */
   opacity: 30%;
 `;
 
 const Project = ({ name, img, slug }) => (
   <>
-    <StyledContainer>
+    <StyledContainer to={slug} paintDrip hex="#121212">
       <StyledImage fluid={img.fluid} />
-      <StyledLink to={slug} paintDrip hex="#121212">
-        {name}
-      </StyledLink>
+      <StyledText>{name}</StyledText>
     </StyledContainer>
   </>
 );

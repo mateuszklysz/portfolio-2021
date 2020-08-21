@@ -52,7 +52,7 @@ const ShortProjects = () => {
   const listRef = useRef(null);
   const scrollImgRef = useRef(null);
 
-  const animations = () => {
+  const containerAnimation = () => {
     const [elements] = scrollImgRef.current.children;
     const dot = elements.getElementById("dot");
 
@@ -76,7 +76,7 @@ const ShortProjects = () => {
   };
 
   useEffect(() => {
-    animations();
+    containerAnimation();
   }, []);
 
   const {
@@ -84,7 +84,7 @@ const ShortProjects = () => {
   } = useStaticQuery(
     graphql`
       query {
-        allMdx {
+        allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
           edges {
             node {
               id
