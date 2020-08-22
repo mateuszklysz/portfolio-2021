@@ -48,7 +48,7 @@ const Button = ({ text, to }) => {
     });
     tl.to(item.current, {
       duration: 0.3,
-      scale: scale,
+      scale,
     });
   };
   return (

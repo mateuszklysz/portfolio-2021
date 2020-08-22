@@ -115,11 +115,7 @@ const ShortProjects = () => {
         </div>
       </StyledProjectsText>
 
-      <ScrollContainer
-        className="container"
-        hideScrollbars={true}
-        vertical={false}
-      >
+      <ScrollContainer className="container" hideScrollbars vertical={false}>
         <StyledList ref={listRef}>
           {edges.map(project => (
             <Project

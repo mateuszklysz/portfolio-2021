@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import media from "../utils/media";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import media from "../utils/media";
 
 import Button from "../components/Buttons/ExternalButton";
 

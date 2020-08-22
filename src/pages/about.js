@@ -92,7 +92,7 @@ const Projects = ({
     Scrollbar.detachStyle();
     scrollbar.current.scrollTo(0, 0);
     textAnimation();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

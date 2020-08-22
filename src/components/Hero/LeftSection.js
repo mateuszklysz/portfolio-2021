@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-import media from "../../utils/media";
 import gsap from "gsap";
+import media from "../../utils/media";
 
 import Button from "../Buttons/Button";
 import Github from "../Buttons/Github";

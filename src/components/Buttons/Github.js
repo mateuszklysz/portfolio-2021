@@ -51,7 +51,7 @@ const Github = () => {
     });
     tl.to(item.current, {
       duration: 0.3,
-      scale: scale,
+      scale,
     });
   };
 

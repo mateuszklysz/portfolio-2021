@@ -22,6 +22,7 @@ const StyledButton = styled.p`
   border-radius: 20px;
   font-weight: bold;
   box-sizing: border-box;
+
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.xs};
     width: 100px;
@@ -50,7 +51,7 @@ const Button = ({ text, to }) => {
     });
     tl.to(item.current, {
       duration: 0.3,
-      scale: scale,
+      scale,
     });
   };
   return (

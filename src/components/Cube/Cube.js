@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import media from "../../utils/media";
 import { Canvas, useFrame } from "react-three-fiber";
+import media from "../../utils/media";
 
 const StyledCanvas = styled(Canvas)`
   width: 700px;
@@ -33,14 +33,14 @@ const Box = () => {
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial
         attach="material"
-        color={"#212121"}
+        color="#212121"
         transparent
         opacity={1}
       />
     </mesh>
   );
 };
-//0 2 10
+
 const Cube = () => {
   return (
     <>

@@ -111,7 +111,7 @@ const NavBar = () => {
   const hamburgerRef = useRef(null);
   const hamburgerIconRef = useRef(null);
 
-  let [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleLogoAnimation = scale => {
     const tl = gsap.timeline({
@@ -119,7 +119,7 @@ const NavBar = () => {
     });
     tl.to(logoRef.current, {
       duration: 0.3,
-      scale: scale,
+      scale,
     });
   };
 
@@ -139,12 +139,12 @@ const NavBar = () => {
   };
 
   const handleHamburger = () => {
-    setShowMenu((showMenu = !showMenu));
+    setShowMenu(!showMenu);
     const [elements] = hamburgerIconRef.current.children;
     const rec3 = elements.getElementById("rec3");
     const rec2 = elements.getElementById("rec2");
 
-    if (showMenu) {
+    if (!showMenu) {
       gsap.to(hamburgerRef.current, {
         x: "-420px",
         duration: 0.3,

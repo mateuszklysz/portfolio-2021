@@ -16,7 +16,7 @@ const ScrollContainer = styled.div`
   `}
 `;
 
-const IndexPage = props => {
+const IndexPage = () => {
   const scrollbar = useRef(null);
 
   useEffect(() => {
