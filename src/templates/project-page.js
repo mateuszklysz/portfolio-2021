@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import Scrollbar from "smooth-scrollbar";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import media from "../utils/media";
 
 import Button from "../components/Buttons/ExternalButton";
+
+const ScrollContainer = styled.div`
+  height: calc(100vh - 100px);
+  ${media.tablet`
+    height: auto;
+  `}
+`;
 
 const StyledContainer = styled.div`
   display: flex;
@@ -31,7 +39,7 @@ const StyledContainerBody = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  margin: 50px auto;
+  margin: 50px auto 100px auto;
   padding: 0 100px;
   max-width: 1250px;
 
@@ -146,30 +154,40 @@ const StyledButtonContainer = styled.div`
 `;
 
 const ProjectPage = ({ data: { mdx } }) => {
+  const scrollbar = useRef(null);
+
+  useEffect(() => {
+    Scrollbar.initAll();
+    Scrollbar.detachStyle();
+    scrollbar.current.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <StyledContainer>
-        <StyledSection>
-          <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
-          <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
-          <StyledHeaderS>Data:</StyledHeaderS>
-          <StyledHeaderM>{mdx.frontmatter.date}</StyledHeaderM>
-          <StyledHeaderS>Technologie:</StyledHeaderS>
-          <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
-          <StyledButtonContainer>
-            <Button text="Link" to={mdx.frontmatter.site} />
-          </StyledButtonContainer>
-        </StyledSection>
-        <StyledSection>
-          <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
-        </StyledSection>
-      </StyledContainer>
-      <StyledContainerBody>
-        <StyledSectionBody>
-          <StyledHeaderS>Opis</StyledHeaderS>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </StyledSectionBody>
-      </StyledContainerBody>
+      <ScrollContainer ref={scrollbar} data-scrollbar>
+        <StyledContainer>
+          <StyledSection>
+            <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
+            <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
+            <StyledHeaderS>Data:</StyledHeaderS>
+            <StyledHeaderM>{mdx.frontmatter.date}</StyledHeaderM>
+            <StyledHeaderS>Technologie:</StyledHeaderS>
+            <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
+            <StyledButtonContainer>
+              <Button text="Link" to={mdx.frontmatter.site} />
+            </StyledButtonContainer>
+          </StyledSection>
+          <StyledSection>
+            <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
+          </StyledSection>
+        </StyledContainer>
+        <StyledContainerBody>
+          <StyledSectionBody>
+            <StyledHeaderS>Opis</StyledHeaderS>
+            <MDXRenderer>{mdx.body}</MDXRenderer>
+          </StyledSectionBody>
+        </StyledContainerBody>
+      </ScrollContainer>
     </>
   );
 };
