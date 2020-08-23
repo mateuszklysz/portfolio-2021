@@ -4,15 +4,11 @@ import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
 import Scrollbar from "smooth-scrollbar";
 import { graphql } from "gatsby";
-
 import media from "../utils/media";
-
-import FirstSection from "../components/About/FirstSection";
-import SecondSection from "../components/About/SecondSection";
 import Skills from "../components/About/Skills";
 import InfoSection from "../components/About/InfoSection";
 import MoreSection from "../components/About/MoreSection";
-import Footer from "../components/Footer/Footer";
+import HobbySection from "../components/About/HobbySection";
 
 const ScrollContainer = styled.div`
   height: calc(100vh - 100px);
@@ -38,7 +34,6 @@ const StyledContainer = styled.section`
 const StyledTextContainer = styled.header`
   width: 100%;
   color: ${({ theme: { color } }) => color.white};
-
   ${media.tablet`
     text-align: center;
   `}
@@ -46,7 +41,6 @@ const StyledTextContainer = styled.header`
 
 const StyledAboutText = styled.h1`
   font-size: ${({ theme: { font } }) => font.size.xm};
-
   ${media.tablet`
     font-size: ${({ theme: { font } }) => font.size.m};
   `}
@@ -54,7 +48,6 @@ const StyledAboutText = styled.h1`
 
 const StyledNameText = styled.h2`
   font-size: ${({ theme: { font } }) => font.size.xl};
-
   ${media.tablet`
     font-size: ${({ theme: { font } }) => font.size.l};
   `}
@@ -92,7 +85,7 @@ const Projects = ({
     Scrollbar.detachStyle();
     scrollbar.current.scrollTo(0, 0);
     textAnimation();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -102,15 +95,14 @@ const Projects = ({
             <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
             <StyledNameText ref={nameRef} />
           </StyledTextContainer>
-          <FirstSection />
-          <SecondSection />
+          <HobbySection />
+          <HobbySection second />
         </StyledContainer>
         <Skills />
         <StyledContainer>
           <InfoSection />
           <MoreSection />
         </StyledContainer>
-        <Footer />
       </ScrollContainer>
     </>
   );
