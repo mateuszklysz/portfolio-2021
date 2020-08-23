@@ -84,6 +84,7 @@ const Skills = () => (
         <br /> Git / Github
         <br /> JS ES6
         <br /> Sass
+        <br /> <span style={{ opacity: "50%" }}>...</span>
       </StyledText>
     </StyledDiv>
     <StyledDiv>
@@ -93,6 +94,7 @@ const Skills = () => (
         <br />
         Vue.js/Gridsome
         <br /> TypeScript
+        <br /> Webstorm
         <br /> React Native
         <br /> Three.js
         <br /> Electron

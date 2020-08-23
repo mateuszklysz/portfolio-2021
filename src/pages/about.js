@@ -9,6 +9,7 @@ import Skills from "../components/About/Skills";
 import InfoSection from "../components/About/InfoSection";
 import MoreSection from "../components/About/MoreSection";
 import HobbySection from "../components/About/HobbySection";
+import Footer from "../components/Footer/Footer";
 
 const ScrollContainer = styled.div`
   height: calc(100vh - 100px);
@@ -28,6 +29,14 @@ const StyledContainer = styled.section`
   `}
   ${media.phone`
     margin: 0 50px;
+  `}
+`;
+
+const StyledFooterContainer = styled.section`
+  position: relative;
+  margin: 50px auto;
+  ${media.tablet`
+    margin: auto;
   `}
 `;
 
@@ -103,6 +112,9 @@ const Projects = ({
           <InfoSection />
           <MoreSection />
         </StyledContainer>
+        <StyledFooterContainer>
+          <Footer />
+        </StyledFooterContainer>
       </ScrollContainer>
     </>
   );

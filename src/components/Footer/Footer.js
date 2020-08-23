@@ -14,6 +14,8 @@ const StyledContainer = styled.footer`
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.s};
   `}
+  ${media.ip4`
+  `}
 `;
 
 const Footer = () => {

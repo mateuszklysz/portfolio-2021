@@ -4,7 +4,7 @@ import gsap from "gsap";
 import media from "../../utils/media";
 import Cube from "../Cube/Cube";
 
-const StyledCubeContainer = styled.div`
+const StyledCubeContainer = styled.figure`
   z-index: 1;
   width: 700px;
   height: 700px;

@@ -34,13 +34,16 @@ const StyledList = styled.ul`
   flex-direction: column;
   flex-wrap: wrap;
   ${media.desktopS`
-  height: 400px;
+    height: 400px;
   `}
   ${media.phone`
-  height: 350px;
-  margin-top: 25px;
-  margin-left: 30px;
-  margin-bottom: 30px;
+    height: 300px;
+    margin-top: 25px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  `}
+  ${media.ip4`
+    height: 250px;
   `}
 `;
 
@@ -111,7 +114,6 @@ const ShortProjects = () => {
           <StyledScrollImage />
         </div>
       </StyledProjectsText>
-
       <ScrollContainer className="container" hideScrollbars vertical={false}>
         <StyledList ref={listRef}>
           {edges.map(project => (

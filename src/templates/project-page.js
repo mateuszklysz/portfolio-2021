@@ -14,7 +14,7 @@ const ScrollContainer = styled.div`
   `}
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.main`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -32,7 +32,7 @@ const StyledContainer = styled.div`
   `}
 `;
 
-const StyledContainerBody = styled.div`
+const StyledContainerBody = styled.article`
   display: flex;
   width: 100%;
   justify-content: center;
