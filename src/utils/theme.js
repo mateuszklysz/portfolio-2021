@@ -4,6 +4,9 @@ const theme = {
     secondary: "#1c1c1c",
     white: "#ffffff",
     black: "#000000",
+    yellow: "#c17900",
+    blue: "#5472d3",
+    green: "#4c8c4a",
   },
   font: {
     size: {

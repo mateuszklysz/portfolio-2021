@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
+  // Programmatically Creating Pages
   data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
