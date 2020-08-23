@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import media from "../../utils/media";
-
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
 
@@ -13,7 +12,6 @@ const StyledContainer = styled.section`
   align-items: center;
   font-family: ${({ theme: { font } }) => font.family.montserrat};
   color: ${({ theme: { color } }) => color.white};
-
   ${media.desktopL`
     height: auto;
     flex-direction: column;

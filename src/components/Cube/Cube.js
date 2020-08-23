@@ -6,17 +6,14 @@ import media from "../../utils/media";
 const StyledCanvas = styled(Canvas)`
   width: 700px;
   height: 700px;
-
   ${media.desktopS`
     width: 700px;
     height: 500px;
   `}
-
   ${media.phone`
     width: 350px;
     height: 350px;
   `}
-
   ${media.ip4`
     width: 300px;
     height: 300px;

@@ -1,10 +1,8 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-
 import media from "../utils/media";
 import GlobalStyle from "../utils/global";
 import theme from "../utils/theme";
-
 import SEO from "../components/SEO/SEO";
 import NavBar from "../components/NavBar/NavBar";
 
@@ -14,7 +12,6 @@ const StyledContainer = styled.section`
   margin-top: 100px;
   width: 100%;
   height: calc(100vh - 100px);
-
   ${media.tablet`
     margin-top: 50px;
     height: auto;

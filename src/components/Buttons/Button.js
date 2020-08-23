@@ -22,13 +22,11 @@ const StyledButton = styled.p`
   border-radius: 20px;
   font-weight: bold;
   box-sizing: border-box;
-
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.xs};
     width: 100px;
     line-height: 40px;
   `}
-
   ${media.ip4`
     font-size: ${({ theme: { font } }) => font.size.s};
     width: 70px;

@@ -2,9 +2,7 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
-
 import media from "../../utils/media";
-
 import Logo from "../../assets/svg/icon.svg";
 import Hamburger from "../../assets/svg/hamburger.svg";
 
@@ -19,7 +17,6 @@ const StyledContainer = styled.nav`
   height: 100px;
   width: 100%;
   background-color: ${({ theme: { color } }) => color.primary};
-
   ${media.tablet`
     display: none;
   `}
@@ -61,7 +58,6 @@ const StyledLink = styled(AniLink)`
   overflow: hidden;
   padding: 5px;
   display: block;
-
   ${media.tablet`
   font-size: ${({ theme: { font } }) => font.size.xm};
   `}
@@ -79,7 +75,6 @@ const StyledHamburgerIcon = styled(Hamburger)`
   bottom: 30px;
   width: 35px;
   height: 30.33px;
-
   ${media.tablet`
     display:block;
   `}
@@ -97,7 +92,6 @@ const StyledHamburgerMenu = styled.nav`
   right: -420px;
   width: 40%;
   height: 100vh;
-
   ${media.tablet`
     display: block;
     display:flex;

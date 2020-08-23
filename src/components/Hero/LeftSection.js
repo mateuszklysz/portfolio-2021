@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import gsap from "gsap";
 import media from "../../utils/media";
-
 import Button from "../Buttons/Button";
 import Github from "../Buttons/Github";
 
@@ -14,7 +13,6 @@ const StyledTextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   font-weight: bold;
-
   ${media.desktopL`
     text-align: center;
     align-items:center;
@@ -28,17 +26,14 @@ const StyledName = styled.h3`
   padding-left: 5px;
   position: relative;
   top: 10px;
-
   ${media.desktopL`
     font-size: ${({ theme: { font } }) => font.size.m};
     padding-left: 0;
    `}
-
   ${media.phone`
     position: static;
     font-size: ${({ theme: { font } }) => font.size.xs};
   `}
-
   ${media.ip4`
     font-size: ${({ theme: { font } }) => font.size.s};
   `}
@@ -48,16 +43,13 @@ const StyledProfession = styled.h1`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xxl};
   font-weight: bold;
-
   ${media.desktopL`
     font-size: ${({ theme: { font } }) => font.size.xl};
     padding-left: 0;
    `}
-
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.l};
   `}
-
   ${media.ip4`
     font-size: 30px};
   `}
@@ -67,16 +59,13 @@ const StyledMotto = styled.h2`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.l};
   padding-left: 2px; 
-
   ${media.desktopL`
     font-size: ${({ theme: { font } }) => font.size.xm};
     padding-left: 0;
    `}
-
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.m};
   `}
-
   ${media.ip4`
     font-size: ${({ theme: { font } }) => font.size.s};
   `}
@@ -93,7 +82,6 @@ const StyledIconsContainer = styled.div`
     height:40px;
     width: 150px;
    `}
-
   ${media.ip4`
     width: 120px;
     height:30px;

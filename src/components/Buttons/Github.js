@@ -19,7 +19,6 @@ const StyledGithubLink = styled.a`
     width: 40px;
     height: 40px;
    `}
-
   ${media.ip4`
     width: 30px;
     height: 30px;

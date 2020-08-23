@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
 import gsap from "gsap";
-
 import media from "../../utils/media";
 import Project from "./Project";
 import ScrollImage from "../../assets/svg/scroll.svg";
@@ -34,11 +33,9 @@ const StyledList = styled.ul`
   width: 500px;
   flex-direction: column;
   flex-wrap: wrap;
-
   ${media.desktopS`
   height: 400px;
   `}
-
   ${media.phone`
   height: 350px;
   margin-top: 25px;

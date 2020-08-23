@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from "gatsby-image";
-
 import media from "../../utils/media";
 
 const StyledContainer = styled(AniLink)`
@@ -15,18 +14,15 @@ const StyledContainer = styled(AniLink)`
   width: 500px;
   height: 500px;
   background-color: ${({ theme: { color } }) => color.secondary};
-    
   ${media.desktopS`
     height: 400px;
     width: 400px;
   `} 
-
   ${media.phone`
     margin-right: 50px;
     height: 300px;
     width: 300px;
   `} 
-
   ${media.ip4`
     margin-right: 25px;
     height: 250px;
