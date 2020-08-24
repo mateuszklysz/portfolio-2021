@@ -5,7 +5,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 import Mail from "../assets/svg/mail.svg";
 import media from "../utils/media";
-import KEYS from "../../KEYS.json";
 
 const StyledContainer = styled.section`
   min-height: calc(100vh - 200px);
@@ -171,14 +170,14 @@ const Contact = () => {
     } else {
       emailjs
         .send(
-          KEYS.SERVICE_ID,
-          KEYS.TEMPLATE_ID,
+          process.env.GATSBY_SERVICE_ID,
+          process.env.GATSBY_TEMPLATE_ID,
           {
             from_name: name,
             reply_to: email,
             message_html: content,
           },
-          KEYS.USERID
+          process.env.GATSBY_USERID
         )
         .then(() => {
           setDone(true);
@@ -240,7 +239,7 @@ const Contact = () => {
             />
             <StyledConfirmContainer>
               <ReCAPTCHA
-                sitekey={KEYS.SITE_KEY}
+                sitekey={process.env.GATSBY_SITE_KEY}
                 theme="dark"
                 onChange={value => (value ? setVerify(true) : null)}
                 onExpired={() => setVerify(false)}
