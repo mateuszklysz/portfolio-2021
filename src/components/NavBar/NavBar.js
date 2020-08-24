@@ -52,14 +52,11 @@ const StyledLink = styled(AniLink)`
   font-size: ${({ theme: { font } }) => font.size.m};
   color: ${({ theme: { color } }) => color.white};
   text-decoration: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
   overflow: hidden;
-  padding: 5px;
+  padding: 15px;
   display: block;
   ${media.tablet`
-  font-size: ${({ theme: { font } }) => font.size.xm};
+    font-size: ${({ theme: { font } }) => font.size.xm};
   `}
 `;
 
@@ -84,10 +81,10 @@ const StyledHamburgerMenu = styled.nav`
   display: none;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   z-index: 100;
   position: fixed;
-  background-color: ${({ theme: { color } }) => color.black};
+  background-color: ${({ theme: { color } }) => color.primary};
   top: 0;
   right: -420px;
   width: 40%;

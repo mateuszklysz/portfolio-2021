@@ -9,11 +9,11 @@ import NavBar from "../components/NavBar/NavBar";
 const StyledContainer = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  padding-top: 100px;
   width: 100%;
   height: calc(100vh - 100px);
   ${media.tablet`
-    margin-top: 50px;
+    padding-top: 50px;
     height: auto;
   `}
 `;

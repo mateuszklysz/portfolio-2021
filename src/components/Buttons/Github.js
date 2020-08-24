@@ -9,9 +9,6 @@ const StyledGithubLink = styled.a`
   border: none;
   background: none;
   outline: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
   cursor: pointer;
   width: 50px;
   height: 50px;

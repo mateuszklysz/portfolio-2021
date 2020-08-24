@@ -13,9 +13,6 @@ const StyledButton = styled.p`
   height: 100%;
   outline: none;
   cursor: pointer;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
   text-decoration: none;
   border: 2px solid white;
   border-radius: 20px;
