@@ -53,7 +53,7 @@ const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
 
   return (
     <StyledGithubLink
-      href={githubLink}
+      href={`${githubLink}`}
       target="_blank"
       ref={githubRef}
       onMouseEnter={() => handleButtonAnimation(githubRef, 0.95)}
