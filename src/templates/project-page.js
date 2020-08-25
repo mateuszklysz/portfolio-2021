@@ -6,6 +6,7 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import media from "../utils/media";
 import Button from "../components/Buttons/ExternalButton";
+import Github from "../components/Buttons/Github";
 
 const ScrollContainer = styled.div`
   height: calc(100vh - 100px);
@@ -119,18 +120,21 @@ const StyledHeaderS = styled.h2`
 
 const StyledButtonContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-top: 15px;
   height: 50px;
+  width: 200px;
   ${media.tablet`
-    justify-content:center;
     margin: 15px auto;
   `}
   ${media.phone`
     height: 45px;
+    width: 150px;
   `}
   ${media.ip4`
     height: 30px;
+    width: 120px;
   `}
 `;
 
@@ -156,6 +160,7 @@ const ProjectPage = ({ data: { mdx } }) => {
             <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
             <StyledButtonContainer>
               <Button text="Link" to={mdx.frontmatter.site} />
+              <Github githubLink={mdx.frontmatter.github} />
             </StyledButtonContainer>
           </StyledSection>
           <StyledSection>
@@ -183,6 +188,7 @@ export const query = graphql`
         date
         technologies
         site
+        github
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 2000) {

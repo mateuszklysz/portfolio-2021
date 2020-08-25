@@ -94,7 +94,7 @@ const Skills = () => (
         <br />
         Vue.js/Gridsome
         <br /> TypeScript
-        <br /> Webstorm
+        <br /> Terminal
         <br /> React Native
         <br /> Three.js
         <br /> Electron

@@ -22,9 +22,9 @@ const StyledGithubLink = styled.a`
    `}
 `;
 
-const Github = () => {
+const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
   const githubRef = useRef(null);
-
+  console.log(githubLink);
   const {
     file: { childImageSharp },
   } = useStaticQuery(
@@ -53,7 +53,7 @@ const Github = () => {
 
   return (
     <StyledGithubLink
-      href="https://github.com/mateuszklysz"
+      href={githubLink}
       target="_blank"
       ref={githubRef}
       onMouseEnter={() => handleButtonAnimation(githubRef, 0.95)}
