@@ -87,11 +87,17 @@ const StyledHamburgerMenu = styled.nav`
   background-color: ${({ theme: { color } }) => color.primary};
   top: 0;
   right: -420px;
-  width: 40%;
+  width: 30%;
   height: 100vh;
   ${media.tablet`
     display: block;
-    display:flex;
+    display: flex;
+  `}
+  ${media.phone`
+    width: 40%;
+  `}
+  ${media.ip4`
+    width: 50%;
   `}
 `;
 
