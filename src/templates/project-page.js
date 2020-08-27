@@ -28,6 +28,7 @@ const StyledContainer = styled.main`
 const StyledContainerBody = styled.article`
   display: flex;
   width: 100%;
+  height:200px;
   justify-content: center;
   margin: 50px auto 100px auto;
   padding: 0 100px;
@@ -38,6 +39,7 @@ const StyledContainerBody = styled.article`
   `}
   ${media.tablet`
     margin-bottom:50px;
+    height:auto;
   `}
 `;
 
@@ -139,6 +141,7 @@ const ProjectPage = ({ data: { mdx } }) => {
 
   return (
     <>
+    <div style={{minHeight: "calc(100% - 180px)"}}>
         <StyledContainer>
           <StyledSection>
             <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
@@ -162,6 +165,7 @@ const ProjectPage = ({ data: { mdx } }) => {
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </StyledSectionBody>
         </StyledContainerBody>
+        </div>
     </>
   );
 };
