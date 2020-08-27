@@ -12,11 +12,7 @@ const StyledContainer = styled.main`
   width: 100%;
   justify-content: center;
   margin: 50px auto;
-  padding: 0 100px;
   max-width: 1250px;
-  ${media.desktop`
-    padding: 0;
-  `}
   ${media.tablet`
     flex-direction: column;
     align-items: center;
@@ -27,26 +23,22 @@ const StyledContainer = styled.main`
 
 const StyledContainerBody = styled.article`
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: center;
-  margin: 50px auto 100px auto;
-  padding: 0 100px;
+  margin: 50px auto;
   max-width: 1250px;
-  ${media.desktop`
-    margin: auto;
-    padding: 0;
-  `}
-  ${media.tablet`
-    margin-bottom:50px;
+  ${media.desktopS`
+  width: 100%;
   `}
 `;
 
 const StyledSection = styled.section`
-  width: 50%;
+  width: 45%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-  ${media.desktop`
+
+  ${media.desktopS`
     width: 40%;
   `}
   ${media.laptop`
@@ -54,17 +46,15 @@ const StyledSection = styled.section`
   `}
   ${media.tablet`
     text-align: center;
-    width: 80%;
   `}
 `;
 
 const StyledSectionBody = styled.section`
-  width: 50%;
+  width: 100%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-  width: 100%;
-  ${media.desktop`
+  ${media.desktopS`
     font-size: calc(28px / 1.5);
     margin: 0 100px;
   `};
@@ -80,7 +70,7 @@ const StyledHeaderL = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-size: 64px;
   margin-bottom: 10px;
-  ${media.desktop`
+  ${media.desktopS`
     font-size: calc(64px / 1.5);
   `}
   ${media.tablet`
@@ -92,7 +82,7 @@ const StyledHeaderM = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-size: 30px;
   margin-bottom: 10px;
-  ${media.desktop`
+  ${media.desktopS`
     font-size: calc(30px / 1.5);
   `}
 `;
@@ -102,7 +92,7 @@ const StyledHeaderS = styled.h2`
   font-weight: lighter;
   font-size: 24px;
   margin-bottom: 10px;
-  ${media.desktop`
+  ${media.desktopS`
     font-size: calc(24px / 1.5);
   `}
   ${media.tablet`

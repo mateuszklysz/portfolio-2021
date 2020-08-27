@@ -13,7 +13,9 @@ const StyledTextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   font-weight: bold;
+  width: 550px;
   ${media.desktop`
+    width: auto;
     text-align: center;
     align-items:center;
     position: static;
@@ -117,9 +119,11 @@ const LeftComponent = () => {
   return (
     <StyledTextContainer ref={textContainerRef}>
       <StyledName>{siteMetadata.author}</StyledName>
-      <StyledProfession>Front-end Developer</StyledProfession>
+      <StyledProfession>
+        Front-end <br /> Developer
+      </StyledProfession>
       <StyledMotto>
-        Skupiam się na czystym i prostym{" "}
+        Skupiam się na czystym i<br /> prostym{" "}
         <span style={{ color: "#c17900" }}>
           {"<"}kodzie{">"}
         </span>
