@@ -9,7 +9,7 @@ const StyledContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   height: 250px;
-  ${media.desktopL`
+  ${media.desktop`
    height: 200px;
   `}
   ${media.tablet`

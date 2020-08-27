@@ -50,10 +50,10 @@ const StyledTextContainer = styled.div`
           padding-left: 50px;
         `}
   font-size: ${({ theme: { font } }) => font.size.xxm};
-  ${media.desktopL`
+  ${media.desktop`
     font-size: 23px;
   `}
-  ${media.desktopS`
+  ${media.laptop`
     font-size: ${({ theme: { font } }) => font.size.xm};
   `}
   ${media.tablet`

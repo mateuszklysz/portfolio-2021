@@ -7,20 +7,26 @@ const StyledContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 600px;
   ${media.phone`
     height: 500px;
+  `}
+  ${media.ip4`
+  height: 450px;
   `}
 `;
 
 const StyledText = styled.p`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xxm};
+  ${media.desktop`
+    font-size: 23px};
+  `}
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.xm};
   `}
   ${media.ip4`
-    font-size: ${({ theme: { font } }) => font.size.m};
+    font-size: ${({ theme: { font } }) => font.size.xs};
   `}
 `;
 
