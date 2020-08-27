@@ -33,11 +33,13 @@ const StyledContainerBody = styled.article`
 `;
 
 const StyledSection = styled.section`
-  width: 45%;
+  width: 50%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-
+  ${media.desktopL`
+    width: 40%;
+  `}
   ${media.desktopS`
     width: 40%;
   `}
