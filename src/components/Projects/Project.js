@@ -46,6 +46,7 @@ const StyledImage = styled(Img)`
   width: 100%;
   height: 100%;
   opacity: 30%;
+  border-radius: 25px;
 `;
 
 const Project = ({ name, img, slug }) => (
