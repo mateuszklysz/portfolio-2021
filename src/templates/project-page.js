@@ -12,7 +12,11 @@ const StyledContainer = styled.main`
   width: 100%;
   justify-content: center;
   margin: 50px auto;
+  padding: 0 100px;
   max-width: 1250px;
+  ${media.desktopL`
+    padding: 0;
+  `}
   ${media.tablet`
     flex-direction: column;
     align-items: center;
@@ -23,38 +27,44 @@ const StyledContainer = styled.main`
 
 const StyledContainerBody = styled.article`
   display: flex;
-  width: 80%;
-  justify-content: center;
-  margin: 50px auto;
-  max-width: 1250px;
-  ${media.desktopS`
   width: 100%;
+  justify-content: center;
+  margin: 50px auto 100px auto;
+  padding: 0 100px;
+  max-width: 1250px;
+  ${media.desktopL`
+    margin: auto;
+    padding: 0;
+  `}
+  ${media.tablet`
+    margin-bottom:50px;
   `}
 `;
 
 const StyledSection = styled.section`
-  width: 45%;
+  width: 50%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-
-  ${media.desktopS`
+  ${media.desktopL`
     width: 40%;
   `}
-  ${media.laptop`
+  ${media.desktopS`
     font-size: calc(28px / 1.5);
   `}
   ${media.tablet`
     text-align: center;
+    width: 70%;
   `}
 `;
 
 const StyledSectionBody = styled.section`
-  width: 100%;
+  width: 50%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-  ${media.desktopS`
+  width: 100%;
+  ${media.desktopL`
     font-size: calc(28px / 1.5);
     margin: 0 100px;
   `};
@@ -70,7 +80,7 @@ const StyledHeaderL = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-size: 64px;
   margin-bottom: 10px;
-  ${media.desktopS`
+  ${media.desktopL`
     font-size: calc(64px / 1.5);
   `}
   ${media.tablet`
@@ -82,7 +92,7 @@ const StyledHeaderM = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-size: 30px;
   margin-bottom: 10px;
-  ${media.desktopS`
+  ${media.desktopL`
     font-size: calc(30px / 1.5);
   `}
 `;
@@ -92,7 +102,7 @@ const StyledHeaderS = styled.h2`
   font-weight: lighter;
   font-size: 24px;
   margin-bottom: 10px;
-  ${media.desktopS`
+  ${media.desktopL`
     font-size: calc(24px / 1.5);
   `}
   ${media.tablet`
@@ -121,35 +131,38 @@ const StyledButtonContainer = styled.div`
 `;
 
 const ProjectPage = ({ data: { mdx } }) => {
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0,0)
   }, []);
 
   return (
     <>
-      <StyledContainer>
-        <StyledSection>
-          <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
-          <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
-          <StyledHeaderS>Data:</StyledHeaderS>
-          <StyledHeaderM>{mdx.frontmatter.date}</StyledHeaderM>
-          <StyledHeaderS>Technologie:</StyledHeaderS>
-          <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
-          <StyledButtonContainer>
-            <Button text="Link" to={mdx.frontmatter.site} />
-            <Github githubLink={mdx.frontmatter.github} />
-          </StyledButtonContainer>
-        </StyledSection>
-        <StyledSection>
-          <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
-        </StyledSection>
-      </StyledContainer>
-      <StyledContainerBody>
-        <StyledSectionBody>
-          <StyledHeaderS>Opis</StyledHeaderS>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </StyledSectionBody>
-      </StyledContainerBody>
+
+        <StyledContainer>
+          <StyledSection>
+            <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
+            <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
+            <StyledHeaderS>Data:</StyledHeaderS>
+            <StyledHeaderM>{mdx.frontmatter.date}</StyledHeaderM>
+            <StyledHeaderS>Technologie:</StyledHeaderS>
+            <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
+            <StyledButtonContainer>
+              <Button text="Link" to={mdx.frontmatter.site} />
+              <Github githubLink={mdx.frontmatter.github} />
+            </StyledButtonContainer>
+          </StyledSection>
+          <StyledSection>
+            <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
+          </StyledSection>
+        </StyledContainer>
+        <StyledContainerBody>
+          <StyledSectionBody>
+            <StyledHeaderS>Opis</StyledHeaderS>
+            <MDXRenderer>{mdx.body}</MDXRenderer>
+          </StyledSectionBody>
+        </StyledContainerBody>
+
     </>
   );
 };
