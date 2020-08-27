@@ -80,14 +80,13 @@ const StyledInput = styled.input`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xs};
   font-weight: bold;
-  border: 1px solid #525252;
+  border: none;
   width: 500px;
   height: 50px;
   margin: 15px 0;
   padding: 0 20px;
   &::placeholder {
     color: ${({ theme: { color } }) => color.white};
-    opacity: 60%;
   }
   ${media.laptop`
   width: 400px;
@@ -111,7 +110,7 @@ const StyledArea = styled.textarea`
   font-size: ${({ theme: { font } }) => font.size.xs};
   font-family: ${({ theme: { font } }) => font.family.openSans};
   font-weight: bold;
-  border: 1px solid #525252;
+  border: none;
   padding: 10px 20px;
   resize: none;
   width: 500px;
@@ -119,7 +118,6 @@ const StyledArea = styled.textarea`
   margin: 15px 0;
   &::placeholder {
     color: ${({ theme: { color } }) => color.white};
-    opacity: 60%;
   }
   ${media.laptop`
     width: 400px;
@@ -142,7 +140,7 @@ const StyledButton = styled.button`
   font-size: ${({ theme: { font } }) => font.size.xs};
   font-family: ${({ theme: { font } }) => font.family.openSans};
   font-weight: bold;
-  border: 1px solid #525252;
+  border: none;
   width: 180px;
   height: 74px;
   margin-left: 10px;
@@ -204,17 +202,17 @@ const Contact = () => {
             <StyledMail />
             <StyledInfoText>
               <span style={{ fontSize: "32px" }}>Numer telefonu:</span>
-              <br />{" "}
-              <a href="tel:+48111111111" style={{ color: "#5472d3" }}>
+              <br />
+              <a href="tel:+48111111111" style={{ color: "inherit" }}>
                 XXX XXX XXX
               </a>
             </StyledInfoText>
             <StyledInfoText>
               <span style={{ fontSize: "32px" }}>E-mail:</span>
-              <br />{" "}
+              <br />
               <a
                 href="mailto:mateuszklysz@outlook.com"
-                style={{ color: "#5472d3" }}
+                style={{ color: "inherit" }}
               >
                 mateuszklysz@outlook.com
               </a>
@@ -241,12 +239,12 @@ const Contact = () => {
               placeholder="Treść wiadomości..."
             />
             <StyledConfirmContainer>
-              {/* <ReCAPTCHA
+              <ReCAPTCHA
                 sitekey={process.env.GATSBY_SITE_KEY}
-                theme="dark"
                 onChange={value => (value ? setVerify(true) : null)}
+                theme="dark"
                 onExpired={() => setVerify(false)}
-              /> */}
+              />
               <StyledButton onClick={sendEmail}>
                 {done ? "Wysłano" : "Wyślij wiadomość"}
               </StyledButton>
