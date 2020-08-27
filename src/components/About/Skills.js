@@ -6,11 +6,8 @@ const StyledContainer = styled.section`
   display: flex;
   justify-content: center;
   background-color: ${({ theme: { color } }) => color.secondary};
-  height: 850px;
+  height: 600px;
   width: 100%;
-  ${media.desktopL`
-    height: 600px;
-  `}
   ${media.phone`
     height: 400px;
   `}
@@ -29,7 +26,7 @@ const StyledDiv = styled.div`
   align-items: center;
   width: 40%;
   height: 100%;
-  ${media.desktopS`
+  ${media.laptop`
     font-size: ${({ theme: { font } }) => font.size.xm};
   `}
   ${media.tablet`
@@ -62,7 +59,7 @@ const StyledLearnName = styled.h1`
 const StyledText = styled.p`
   text-align: center;
   line-height: 50px;
-  ${media.desktopS`
+  ${media.laptop`
   line-height: 40px;
   `}
   ${media.phone`

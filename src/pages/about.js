@@ -2,25 +2,16 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
-import Scrollbar from "smooth-scrollbar";
 import { graphql } from "gatsby";
 import media from "../utils/media";
 import Skills from "../components/About/Skills";
 import InfoSection from "../components/About/InfoSection";
 import MoreSection from "../components/About/MoreSection";
 import HobbySection from "../components/About/HobbySection";
-import Footer from "../components/Footer/Footer";
-
-const ScrollContainer = styled.div`
-  height: calc(100vh - 100px);
-  ${media.tablet`
-    height: auto;
-  `}
-`;
 
 const StyledContainer = styled.section`
   position: relative;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   padding: 0 100px;
   max-width: 1250px;
   ${media.tablet`
@@ -29,14 +20,6 @@ const StyledContainer = styled.section`
   `}
   ${media.phone`
     margin: 0 50px;
-  `}
-`;
-
-const StyledFooterContainer = styled.section`
-  position: relative;
-  margin: 50px auto;
-  ${media.tablet`
-    margin: auto;
   `}
 `;
 
@@ -77,7 +60,6 @@ const Projects = ({
     site: { siteMetadata },
   },
 }) => {
-  const scrollbar = useRef(null);
   const nameRef = useRef(null);
 
   const textAnimation = () => {
@@ -90,32 +72,25 @@ const Projects = ({
   };
 
   useEffect(() => {
-    Scrollbar.initAll();
-    Scrollbar.detachStyle();
-    scrollbar.current.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     textAnimation();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
-      <ScrollContainer ref={scrollbar} data-scrollbar>
-        <StyledContainer>
-          <StyledTextContainer>
-            <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
-            <StyledNameText ref={nameRef} />
-          </StyledTextContainer>
-          <HobbySection />
-          <HobbySection second />
-        </StyledContainer>
-        <Skills />
-        <StyledContainer>
-          <InfoSection />
-          <MoreSection />
-        </StyledContainer>
-        <StyledFooterContainer>
-          <Footer />
-        </StyledFooterContainer>
-      </ScrollContainer>
+      <StyledContainer>
+        <StyledTextContainer>
+          <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
+          <StyledNameText ref={nameRef} />
+        </StyledTextContainer>
+        <HobbySection />
+        <HobbySection second />
+      </StyledContainer>
+      <Skills />
+      <StyledContainer>
+        <InfoSection />
+        <MoreSection />
+      </StyledContainer>
     </>
   );
 };

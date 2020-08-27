@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Footer from "../components/Footer/Footer";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 import Mail from "../assets/svg/mail.svg";
@@ -25,7 +24,7 @@ const StyledEmailContainer = styled.form`
   justify-content: center;
   align-items: center;
   width: 500px;
-  ${media.desktopS`
+  ${media.laptop`
   width: 400px;
   `}
 `;
@@ -54,7 +53,7 @@ const StyledText = styled.h1`
 const StyledMail = styled(Mail)`
   width: 360px;
   height: 240px;
-  ${media.desktopS`
+  ${media.laptop`
     width:270px;
     height:180px;
   `};
@@ -90,7 +89,7 @@ const StyledInput = styled.input`
     color: ${({ theme: { color } }) => color.white};
     opacity: 60%;
   }
-  ${media.desktopS`
+  ${media.laptop`
   width: 400px;
   `}
   ${media.phone`
@@ -122,7 +121,7 @@ const StyledArea = styled.textarea`
     color: ${({ theme: { color } }) => color.white};
     opacity: 60%;
   }
-  ${media.desktopS`
+  ${media.laptop`
     width: 400px;
   `}
   ${media.phone`
@@ -132,7 +131,7 @@ const StyledArea = styled.textarea`
 
 const StyledConfirmContainer = styled.div`
   display: flex;
-  ${media.desktopS`
+  ${media.laptop`
     flex-direction:column;
   `}
 `;
@@ -147,7 +146,7 @@ const StyledButton = styled.button`
   width: 180px;
   height: 74px;
   margin-left: 10px;
-  ${media.desktopS`
+  ${media.laptop`
     width: 300px;
     margin: 10px 0;
     height: 50px;
@@ -160,6 +159,10 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const sendEmail = event => {
     event.preventDefault();
@@ -238,12 +241,12 @@ const Contact = () => {
               placeholder="Treść wiadomości..."
             />
             <StyledConfirmContainer>
-              <ReCAPTCHA
+              {/* <ReCAPTCHA
                 sitekey={process.env.GATSBY_SITE_KEY}
                 theme="dark"
                 onChange={value => (value ? setVerify(true) : null)}
                 onExpired={() => setVerify(false)}
-              />
+              /> */}
               <StyledButton onClick={sendEmail}>
                 {done ? "Wysłano" : "Wyślij wiadomość"}
               </StyledButton>
@@ -251,8 +254,6 @@ const Contact = () => {
           </StyledEmailContainer>
         </StyledMainContainer>
       </StyledContainer>
-
-      <Footer />
     </>
   );
 };

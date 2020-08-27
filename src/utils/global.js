@@ -13,7 +13,15 @@ const GlobalStyle = createGlobalStyle`
         theme: {
           font: { family },
         },
-      }) => family.openSans}
+      }) => family.openSans};
+    }
+    body::-webkit-scrollbar {
+      width: 0.5em;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      background-color: ${({ theme: { color } }) => color.white};
+      /* outline: 1px solid slategrey; */
     }
     input,
     textarea,

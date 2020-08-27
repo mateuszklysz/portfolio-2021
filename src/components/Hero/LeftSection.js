@@ -13,7 +13,7 @@ const StyledTextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   font-weight: bold;
-  ${media.desktopL`
+  ${media.desktop`
     text-align: center;
     align-items:center;
     position: static;
@@ -26,7 +26,7 @@ const StyledName = styled.h3`
   padding-left: 5px;
   position: relative;
   top: 10px;
-  ${media.desktopL`
+  ${media.desktop`
     font-size: ${({ theme: { font } }) => font.size.m};
     padding-left: 0;
    `}
@@ -43,7 +43,7 @@ const StyledProfession = styled.h1`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xxl};
   font-weight: bold;
-  ${media.desktopL`
+  ${media.desktop`
     font-size: ${({ theme: { font } }) => font.size.xl};
     padding-left: 0;
    `}
@@ -59,7 +59,7 @@ const StyledMotto = styled.h2`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.l};
   padding-left: 2px; 
-  ${media.desktopL`
+  ${media.desktop`
     font-size: ${({ theme: { font } }) => font.size.xm};
     padding-left: 0;
    `}

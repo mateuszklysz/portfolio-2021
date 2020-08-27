@@ -1,19 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Scrollbar from "smooth-scrollbar";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import media from "../utils/media";
 import Button from "../components/Buttons/ExternalButton";
 import Github from "../components/Buttons/Github";
-
-const ScrollContainer = styled.div`
-  height: calc(100vh - 100px);
-  ${media.tablet`
-    height: auto;
-  `}
-`;
 
 const StyledContainer = styled.main`
   display: flex;
@@ -22,7 +14,7 @@ const StyledContainer = styled.main`
   margin: 50px auto;
   padding: 0 100px;
   max-width: 1250px;
-  ${media.desktopL`
+  ${media.desktop`
     padding: 0;
   `}
   ${media.tablet`
@@ -40,7 +32,7 @@ const StyledContainerBody = styled.article`
   margin: 50px auto 100px auto;
   padding: 0 100px;
   max-width: 1250px;
-  ${media.desktopL`
+  ${media.desktop`
     margin: auto;
     padding: 0;
   `}
@@ -54,10 +46,10 @@ const StyledSection = styled.section`
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-  ${media.desktopL`
+  ${media.desktop`
     width: 40%;
   `}
-  ${media.desktopS`
+  ${media.laptop`
     font-size: calc(28px / 1.5);
   `}
   ${media.tablet`
@@ -72,7 +64,7 @@ const StyledSectionBody = styled.section`
   font-size: 28px;
   font-weight: bold;
   width: 100%;
-  ${media.desktopL`
+  ${media.desktop`
     font-size: calc(28px / 1.5);
     margin: 0 100px;
   `};
@@ -88,7 +80,7 @@ const StyledHeaderL = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-size: 64px;
   margin-bottom: 10px;
-  ${media.desktopL`
+  ${media.desktop`
     font-size: calc(64px / 1.5);
   `}
   ${media.tablet`
@@ -100,7 +92,7 @@ const StyledHeaderM = styled.h2`
   color: ${({ theme: { color } }) => color.white};
   font-size: 30px;
   margin-bottom: 10px;
-  ${media.desktopL`
+  ${media.desktop`
     font-size: calc(30px / 1.5);
   `}
 `;
@@ -110,7 +102,7 @@ const StyledHeaderS = styled.h2`
   font-weight: lighter;
   font-size: 24px;
   margin-bottom: 10px;
-  ${media.desktopL`
+  ${media.desktop`
     font-size: calc(24px / 1.5);
   `}
   ${media.tablet`
@@ -139,41 +131,35 @@ const StyledButtonContainer = styled.div`
 `;
 
 const ProjectPage = ({ data: { mdx } }) => {
-  const scrollbar = useRef(null);
-
   useEffect(() => {
-    Scrollbar.initAll();
-    Scrollbar.detachStyle();
-    scrollbar.current.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <ScrollContainer ref={scrollbar} data-scrollbar>
-        <StyledContainer>
-          <StyledSection>
-            <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
-            <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
-            <StyledHeaderS>Data:</StyledHeaderS>
-            <StyledHeaderM>{mdx.frontmatter.date}</StyledHeaderM>
-            <StyledHeaderS>Technologie:</StyledHeaderS>
-            <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
-            <StyledButtonContainer>
-              <Button text="Link" to={mdx.frontmatter.site} />
-              <Github githubLink={mdx.frontmatter.github} />
-            </StyledButtonContainer>
-          </StyledSection>
-          <StyledSection>
-            <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
-          </StyledSection>
-        </StyledContainer>
-        <StyledContainerBody>
-          <StyledSectionBody>
-            <StyledHeaderS>Opis</StyledHeaderS>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </StyledSectionBody>
-        </StyledContainerBody>
-      </ScrollContainer>
+      <StyledContainer>
+        <StyledSection>
+          <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
+          <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
+          <StyledHeaderS>Data:</StyledHeaderS>
+          <StyledHeaderM>{mdx.frontmatter.date}</StyledHeaderM>
+          <StyledHeaderS>Technologie:</StyledHeaderS>
+          <StyledHeaderM>{mdx.frontmatter.technologies}</StyledHeaderM>
+          <StyledButtonContainer>
+            <Button text="Link" to={mdx.frontmatter.site} />
+            <Github githubLink={mdx.frontmatter.github} />
+          </StyledButtonContainer>
+        </StyledSection>
+        <StyledSection>
+          <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
+        </StyledSection>
+      </StyledContainer>
+      <StyledContainerBody>
+        <StyledSectionBody>
+          <StyledHeaderS>Opis</StyledHeaderS>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </StyledSectionBody>
+      </StyledContainerBody>
     </>
   );
 };

@@ -6,19 +6,19 @@ import Cube from "../Cube/Cube";
 
 const StyledCubeContainer = styled.figure`
   z-index: 1;
-  width: 700px;
+  min-width: 700px;
   height: 700px;
   outline: none;
-  ${media.desktopS`
-    width: 500px;
+  ${media.laptop`
+    min-width: 500px;
     height: 500px;
   `}
   ${media.phone`
-    width: 350px;
+    min-width: 350px;
     height: 350px;
   `}
   ${media.ip4`
-    width: 300px;
+    min-width: 300px;
     height: 300px;
   `}
 `;

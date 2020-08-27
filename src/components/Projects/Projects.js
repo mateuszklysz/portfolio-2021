@@ -33,7 +33,7 @@ const StyledList = styled.ul`
   width: 500px;
   flex-direction: column;
   flex-wrap: wrap;
-  ${media.desktopS`
+  ${media.laptop`
     height: 400px;
   `}
   ${media.phone`

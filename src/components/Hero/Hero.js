@@ -12,7 +12,7 @@ const StyledContainer = styled.main`
   align-items: center;
   font-family: ${({ theme: { font } }) => font.family.montserrat};
   color: ${({ theme: { color } }) => color.white};
-  ${media.desktopL`
+  ${media.desktop`
     height: auto;
     flex-direction: column;
  `}

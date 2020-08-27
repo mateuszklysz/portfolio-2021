@@ -5,13 +5,14 @@ import GlobalStyle from "../utils/global";
 import theme from "../utils/theme";
 import SEO from "../components/SEO/SEO";
 import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 const StyledContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding-top: 100px;
   width: 100%;
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px); */
   ${media.tablet`
     padding-top: 50px;
     height: auto;
@@ -27,6 +28,7 @@ export default ({ children }) => {
         <StyledContainer>
           <NavBar />
           {children}
+          <Footer />
         </StyledContainer>
       </ThemeProvider>
     </>

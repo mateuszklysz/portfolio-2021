@@ -1,9 +1,10 @@
 import { css } from "styled-components";
 
 const sizes = {
-  desktopXL: 1550,
-  desktopL: 1300,
-  desktopS: 1120,
+  desktopL: 1550,
+  desktop: 1300,
+  desktopS: 1380,
+  laptop: 1120,
   tablet: 1024,
   phone: 600,
   ip4: 360,

@@ -11,7 +11,7 @@ const StyledContainer = styled(AniLink)`
   width: 500px;
   height: 500px;
   background-color: ${({ theme: { color } }) => color.secondary};
-  ${media.desktopS`
+  ${media.laptop`
     height: 400px;
     width: 400px;
   `} 
