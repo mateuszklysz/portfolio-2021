@@ -24,7 +24,6 @@ const StyledGithubLink = styled.a`
 
 const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
   const githubRef = useRef(null);
-  console.log(githubLink);
   const {
     file: { childImageSharp },
   } = useStaticQuery(
