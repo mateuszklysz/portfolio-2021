@@ -2,7 +2,7 @@
   "name": "my-website",
   "private": true,
   "description": "Mateusz Kłysz - Portfolio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Mateusz Kłysz <mateuszklysz@outlook.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
@@ -27,7 +27,6 @@
     "react-helmet": "^6.1.0",
     "react-indiana-drag-scroll": "^1.6.1",
     "react-three-fiber": "^4.2.20",
-    "smooth-scrollbar": "^8.5.2",
     "styled-components": "^5.1.1",
     "three": "^0.119.1"
   },
@@ -46,14 +45,13 @@
     "develop-mobile": "gatsby develop -H 192.168.1.5 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "serve": "gatsby serve -H 192.168.1.5 -p 8000",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/mateuszklysz/my-website"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/mateuszklysz/my-website/issues"
   }
 }
