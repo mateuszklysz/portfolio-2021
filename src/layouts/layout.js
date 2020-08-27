@@ -11,11 +11,10 @@ const StyledContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding-top: 100px;
+  min-height: calc(100vh - 100px);
   width: 100%;
-  /* height: calc(100vh - 100px); */
   ${media.tablet`
     padding-top: 50px;
-    height: auto;
   `}
 `;
 
