@@ -28,7 +28,7 @@ const StyledContainer = styled.main`
 const StyledContainerBody = styled.article`
   display: flex;
   width: 100%;
-  height:200px;
+  height: 200px;
   justify-content: center;
   margin: 50px auto 100px auto;
   padding: 0 100px;
@@ -57,7 +57,7 @@ const StyledSection = styled.section`
   ${media.tablet`
     text-align: center;
     margin-bottom: 30px;
-    width: 50%;
+    width: 60%;
   `}
 `;
 
@@ -134,14 +134,13 @@ const StyledButtonContainer = styled.div`
 `;
 
 const ProjectPage = ({ data: { mdx } }) => {
-
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-    <div style={{minHeight: "calc(100% - 180px)"}}>
+      <div style={{ minHeight: "calc(100% - 180px)" }}>
         <StyledContainer>
           <StyledSection>
             <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
@@ -165,7 +164,7 @@ const ProjectPage = ({ data: { mdx } }) => {
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </StyledSectionBody>
         </StyledContainerBody>
-        </div>
+      </div>
     </>
   );
 };
