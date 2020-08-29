@@ -81,7 +81,7 @@ const Projects = ({
         duration: 1,
         scrollTrigger: {
           trigger: skillsRef.current,
-          start: "-40% 40%",
+          start: "0 40%",
         },
       }
     );
@@ -95,7 +95,7 @@ const Projects = ({
         stagger: 0.5,
         scrollTrigger: {
           trigger: infoRef.current,
-          start: "-40% 40%",
+          start: "0 40%",
         },
       }
     );
