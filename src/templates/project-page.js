@@ -139,7 +139,8 @@ const ProjectPage = ({ data: { mdx } }) => {
   const imgRef = useRef(null);
   const bodyRef = useRef(null);
   const gsapAnimations = () => {
-    gsap.fromTo(
+    const tl = gsap.timeline();
+    tl.fromTo(
       infoRef.current.children,
       {
         x: "-=100",
@@ -152,27 +153,31 @@ const ProjectPage = ({ data: { mdx } }) => {
         stagger: 0.1,
       }
     );
-    gsap.fromTo(
+    tl.fromTo(
       imgRef.current.children,
       {
+        x: "-=20",
         autoAlpha: 0,
       },
       {
-        autoAlpha: 1,
-        duration: 2.5,
-      }
+        x: 0,
+        autoAlpha: 2,
+        duration: 1.5,
+      },
+      "-=0.5"
     );
-    gsap.fromTo(
+    tl.fromTo(
       bodyRef.current.children,
       {
-        y: "+=100",
+        y: "+=50",
         autoAlpha: 0,
       },
       {
         y: 0,
         autoAlpha: 1,
-        duration: 1.5,
-      }
+        duration: 1,
+      },
+      "-=1"
     );
   };
 
