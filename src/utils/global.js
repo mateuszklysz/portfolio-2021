@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body,html{
       box-sizing: border-box;
+      overscroll-behavior-y: none;
       background-color:${({ theme: { color } }) => color.primary};
       font-family:${({
         theme: {

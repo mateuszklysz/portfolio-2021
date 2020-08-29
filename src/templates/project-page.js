@@ -38,8 +38,8 @@ const StyledContainerBody = styled.article`
     padding: 0;
   `}
   ${media.tablet`
-    margin-bottom:50px;
-    height:auto;
+    margin-bottom: 50px;
+    height: auto;
   `}
 `;
 
