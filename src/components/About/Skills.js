@@ -70,34 +70,35 @@ const StyledText = styled.p`
   `}
 `;
 
-const Skills = () => (
-  <StyledContainer>
-    <StyledDiv>
-      <StyledCanName>Co potrafię</StyledCanName>
-      <StyledText>
-        Semantic HTML
-        <br /> Styled Components
-        <br /> React / Gatsby
-        <br /> Git / Github
-        <br /> JS ES6
-        <br /> Sass
-        <br /> <span style={{ opacity: "50%" }}>...</span>
-      </StyledText>
-    </StyledDiv>
-    <StyledDiv>
-      <StyledLearnName>Czego się uczę</StyledLearnName>
-      <StyledText>
-        GSAP
-        <br />
-        Vue.js/Gridsome
-        <br /> TypeScript
-        <br /> Terminal
-        <br /> React Native
-        <br /> Three.js
-        <br /> Electron
-      </StyledText>
-    </StyledDiv>
-  </StyledContainer>
-);
-
+const Skills = () => {
+  return (
+    <StyledContainer>
+      <StyledDiv>
+        <StyledCanName>Co potrafię</StyledCanName>
+        <StyledText>
+          Semantic HTML
+          <br /> Styled Components
+          <br /> React / Gatsby
+          <br /> Git / Github
+          <br /> JS ES6
+          <br /> Sass
+          <br /> <span style={{ opacity: "50%" }}>...</span>
+        </StyledText>
+      </StyledDiv>
+      <StyledDiv>
+        <StyledLearnName>Czego się uczę</StyledLearnName>
+        <StyledText>
+          GSAP
+          <br />
+          Vue.js/Gridsome
+          <br /> TypeScript
+          <br /> Terminal
+          <br /> React Native
+          <br /> Three.js
+          <br /> Electron
+        </StyledText>
+      </StyledDiv>
+    </StyledContainer>
+  );
+};
 export default Skills;

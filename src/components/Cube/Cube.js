@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "react-three-fiber";
 const Box = () => {
   const mesh = useRef();
   useFrame((state, delta) => {
-    mesh.current.rotation.y += delta / 5;
+    mesh.current.rotation.y += delta / 6;
   });
   return (
     <mesh ref={mesh}>

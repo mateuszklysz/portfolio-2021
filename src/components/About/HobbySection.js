@@ -115,13 +115,13 @@ const HobbySection = ({ second = false }) => {
       gsap.fromTo(
         firstSection.current,
         { x: "+=100", autoAlpha: 0 },
-        { duration: 3, x: "0", autoAlpha: 1 }
+        { duration: 2, x: "0", autoAlpha: 1 }
       );
     } else {
       gsap.fromTo(
         secondSection.current,
         { x: "-=100", autoAlpha: 0 },
-        { duration: 3, x: "0", autoAlpha: 1 }
+        { duration: 2, x: "0", autoAlpha: 1 }
       );
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
 import { graphql } from "gatsby";
 import media from "../utils/media";
@@ -61,19 +62,48 @@ const Projects = ({
   },
 }) => {
   const nameRef = useRef(null);
+  const skillsRef = useRef(null);
+  const infoRef = useRef(null);
 
-  const textAnimation = () => {
+  const gsapAnimations = () => {
     gsap.registerPlugin(TextPlugin);
+    gsap.registerPlugin(ScrollTrigger);
     gsap.to(nameRef.current, {
       duration: 1.2,
       text: siteMetadata.author,
       ease: "none",
     });
+    gsap.fromTo(
+      skillsRef.current.children,
+      { autoAlpha: 0 },
+      {
+        autoAlpha: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: skillsRef.current,
+          start: "-40% 40%",
+        },
+      }
+    );
+    gsap.fromTo(
+      infoRef.current.children,
+      { x: "-=100", autoAlpha: 0 },
+      {
+        x: 0,
+        autoAlpha: 1,
+        duration: 1,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: infoRef.current,
+          start: "-40% 40%",
+        },
+      }
+    );
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    textAnimation();
+    gsapAnimations();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -86,8 +116,10 @@ const Projects = ({
         <HobbySection />
         <HobbySection second />
       </StyledContainer>
-      <Skills />
-      <StyledContainer>
+      <div ref={skillsRef}>
+        <Skills />
+      </div>
+      <StyledContainer ref={infoRef}>
         <InfoSection />
         <MoreSection />
       </StyledContainer>

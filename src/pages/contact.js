@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 import styled from "styled-components";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
@@ -158,8 +159,27 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
 
+  const containerRef = useRef(null);
+
+  const gsapAnimations = () => {
+    gsap.fromTo(
+      containerRef.current.children,
+      {
+        x: "-=50",
+        autoAlpha: 0,
+      },
+      {
+        x: 0,
+        autoAlpha: 1,
+        duration: 1,
+        stagger: 0.5,
+      }
+    );
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    gsapAnimations();
   }, []);
 
   const sendEmail = event => {
@@ -195,7 +215,7 @@ const Contact = () => {
 
   return (
     <>
-      <StyledContainer>
+      <StyledContainer ref={containerRef}>
         <StyledText>Szukasz kontaktu?</StyledText>
         <StyledMainContainer>
           <aside>

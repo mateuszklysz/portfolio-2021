@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import gsap from "gsap";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -134,15 +135,57 @@ const StyledButtonContainer = styled.div`
 `;
 
 const ProjectPage = ({ data: { mdx } }) => {
+  const infoRef = useRef(null);
+  const imgRef = useRef(null);
+  const bodyRef = useRef(null);
+  const gsapAnimations = () => {
+    gsap.fromTo(
+      infoRef.current.children,
+      {
+        x: "-=100",
+        autoAlpha: 0,
+      },
+      {
+        x: 0,
+        autoAlpha: 1,
+        duration: 1,
+        stagger: 0.1,
+      }
+    );
+    gsap.fromTo(
+      imgRef.current.children,
+      {
+        autoAlpha: 0,
+      },
+      {
+        autoAlpha: 1,
+        duration: 2.5,
+      }
+    );
+    gsap.fromTo(
+      bodyRef.current.children,
+      {
+        y: "+=100",
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1.5,
+      }
+    );
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    gsapAnimations();
   }, []);
 
   return (
     <>
       <div style={{ minHeight: "calc(100% - 180px)" }}>
         <StyledContainer>
-          <StyledSection>
+          <StyledSection ref={infoRef}>
             <StyledHeaderS>Nazwa projektu:</StyledHeaderS>
             <StyledHeaderL>{mdx.frontmatter.title}</StyledHeaderL>
             <StyledHeaderS>Data:</StyledHeaderS>
@@ -154,12 +197,12 @@ const ProjectPage = ({ data: { mdx } }) => {
               <Github githubLink={mdx.frontmatter.github} />
             </StyledButtonContainer>
           </StyledSection>
-          <StyledSection>
+          <StyledSection ref={imgRef}>
             <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
           </StyledSection>
         </StyledContainer>
         <StyledContainerBody>
-          <StyledSectionBody>
+          <StyledSectionBody ref={bodyRef}>
             <StyledHeaderS>Opis</StyledHeaderS>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </StyledSectionBody>
