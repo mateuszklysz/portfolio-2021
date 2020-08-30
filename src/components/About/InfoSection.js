@@ -56,12 +56,12 @@ const InfoSection = () => (
   <StyledContainer>
     <StyledText>
       Programowaniem zajmuję się od małego. Od zawsze ciekawiły mnie produkcje
-      gier komputerowych, dlatego też szybko zaintersowałem się językiem{" "}
+      gier komputerowych, dlatego też szybko zainteresowałem się językiem{" "}
       <span style={{ color: "#4f83cc" }}>C++</span>.
       <br /> <br />
       Wstęp do <span style={{ color: "#ffb04c" }}>JavaScript</span> był dzięki
       temu bardzo płynny i prosty, a nauka nowych technologii ciekawa i nie
-      przytłaczająca
+      przytłaczająca.
     </StyledText>
     <StyledCode />
   </StyledContainer>
