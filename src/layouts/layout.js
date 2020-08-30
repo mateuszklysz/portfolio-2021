@@ -25,7 +25,10 @@ const StyledContainer = styled.section`
 export default ({ children }) => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
-  const mq = window.matchMedia("(max-width: 1024px)");
+  const mq =
+    typeof window !== `undefined`
+      ? window.matchMedia("(max-width: 1024px)")
+      : null;
   let scrollHeight;
 
   const setBodyHeight = () => {
