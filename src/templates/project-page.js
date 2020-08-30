@@ -169,7 +169,7 @@ const ProjectPage = ({ data: { mdx } }) => {
     tl.fromTo(
       bodyRef.current.children,
       {
-        y: "+=50",
+        y: "+=10",
         autoAlpha: 0,
       },
       {
