@@ -7,7 +7,7 @@ import RightSection from "./RightSection";
 const StyledContainer = styled.main`
   display: flex;
   margin: 0 auto 40px auto;
-  padding: 0 100px;
+  padding: 0 95px;
   height: 650px;
   max-width: 1500px;
   justify-content: space-between;
@@ -16,6 +16,11 @@ const StyledContainer = styled.main`
   color: ${({ theme: { color } }) => color.white};
   ${media.desktop`
     height: auto;
+    flex-direction: column;
+ `}
+  ${media.tablet`
+    height: auto;
+    padding: 0;
     flex-direction: column;
  `}
 `;
