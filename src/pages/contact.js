@@ -69,6 +69,7 @@ const StyledInfoText = styled.p`
   color: ${({ theme: { color } }) => color.white};
   font-weight: bold;
   padding-top: 25px;
+  text-decoration: none;
   ${media.tablet`
     padding: 25px 0;
     text-align: center;
@@ -223,8 +224,8 @@ const Contact = () => {
             <StyledInfoText>
               <span style={{ fontSize: "32px" }}>Numer telefonu:</span>
               <br />
-              <a href="tel:+48111111111" style={{ color: "inherit" }}>
-                XXX XXX XXX
+              <a href="tel:+48579971736" style={{ color: "inherit" }}>
+                579 971 736
               </a>
             </StyledInfoText>
             <StyledInfoText>
