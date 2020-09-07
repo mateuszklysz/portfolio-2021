@@ -56,11 +56,15 @@ const ShortProjects = () => {
     const [elements] = scrollImgRef.current.children;
     const dot = elements.getElementById("dot");
 
-    gsap.fromTo(
-      dot,
-      { x: "0", opacity: 0.1 },
-      { x: "-=65", opacity: 1, duration: 2, repeat: -1 }
-    );
+    const dotTl = gsap.timeline({
+      repeat: -1,
+      defaults: { ease: "power0", duration: 0.7 },
+    });
+    dotTl
+      .to(dot, { x: "0", opacity: 0, duration: 0 })
+      .to(dot, { x: "-=30", opacity: 1 })
+      .to(dot, { x: "-=30", opacity: 0 })
+      .to(dot, { x: "0", opacity: 0 });
 
     const tl = gsap.timeline({ defaults: { ease: "power3" } });
     tl.fromTo(
