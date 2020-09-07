@@ -69,7 +69,6 @@ const StyledInfoText = styled.p`
   color: ${({ theme: { color } }) => color.white};
   font-weight: bold;
   padding-top: 25px;
-  text-decoration: none;
   ${media.tablet`
     padding: 25px 0;
     text-align: center;
