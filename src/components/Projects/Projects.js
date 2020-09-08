@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
 import gsap from "gsap";
-import media from "../../utils/media";
 import Project from "./Project";
 import ScrollImage from "../../assets/svg/scroll.svg";
+import media from "../../utils/media";
 
 const StyledProjectsText = styled.div`
   display: flex;

@@ -12,7 +12,7 @@ import ThreeJS from "../../assets/svg/about/threejs.svg";
 import GraphQL from "../../assets/svg/about/graphql.svg";
 import Typescript from "../../assets/svg/about/typescript.svg";
 import GSAPIcon from "../../assets/svg/about/gsap.svg";
-import WebStorm from "../../assets/svg/about/webstorm.svg";
+import VSCode from "../../assets/svg/about/vscode.svg";
 
 const StyledWrapper = styled.section`
   display: flex;
@@ -213,9 +213,9 @@ const Skills = () => {
         </StyledOption>
         <StyledOption>
           <StyledIcon>
-            <WebStorm />
+            <VSCode />
           </StyledIcon>
-          <StyledText>WebStorm</StyledText>
+          <StyledText>VSCode</StyledText>
         </StyledOption>
       </StyledContainer>
     </StyledWrapper>
