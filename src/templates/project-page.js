@@ -42,6 +42,9 @@ const StyledContainerBody = styled.article`
     margin-bottom: 50px;
     height: auto;
   `}
+  ${media.phone`
+    margin-bottom: 20px;
+  `}
 `;
 
 const StyledSection = styled.section`
@@ -50,7 +53,7 @@ const StyledSection = styled.section`
   font-size: 28px;
   font-weight: bold;
   ${media.desktopL`
-    width: 40%;
+    width: 35%;
   `}
   ${media.desktopS`
     font-size: calc(28px / 1.5);
@@ -58,7 +61,7 @@ const StyledSection = styled.section`
   ${media.tablet`
     text-align: center;
     margin-bottom: 30px;
-    width: 60%;
+    width: 100%;
   `}
 `;
 
@@ -77,6 +80,9 @@ const StyledSectionBody = styled.section`
   `};
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.xs};
+  `}
+  ${media.ip4`
+  margin: 0 40px;
   `}
 `;
 
@@ -131,6 +137,24 @@ const StyledButtonContainer = styled.div`
   ${media.ip4`
     height: 30px;
     width: 120px;
+  `}
+`;
+
+const StyledImage = styled.div`
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+  ${media.desktopL`
+  width: 400px;
+  height: 400px;
+  `}
+  ${media.phone`
+  width: 300px;
+  height: 300px;
+  `}
+  ${media.ip4`
+  width: 250px;
+  height: 250px;
   `}
 `;
 
@@ -202,9 +226,9 @@ const ProjectPage = ({ data: { mdx } }) => {
               <Github githubLink={mdx.frontmatter.github} />
             </StyledButtonContainer>
           </StyledSection>
-          <StyledSection ref={imgRef}>
+          <StyledImage ref={imgRef}>
             <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
-          </StyledSection>
+          </StyledImage>
         </StyledContainer>
         <StyledContainerBody>
           <StyledSectionBody ref={bodyRef}>
