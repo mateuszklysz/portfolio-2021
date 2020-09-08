@@ -64,7 +64,7 @@ const ShortProjects = () => {
       .to(dot, { x: "0", opacity: 0, duration: 0 })
       .to(dot, { x: "-=30", opacity: 1 })
       .to(dot, { x: "-=30", opacity: 0 })
-      .to(dot, { x: "0", opacity: 0 });
+      .to(dot, { x: "0", opacity: 0, duration: 0.2 });
 
     const tl = gsap.timeline({ defaults: { ease: "power3" } });
     tl.fromTo(
