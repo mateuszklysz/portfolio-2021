@@ -257,7 +257,6 @@ const Contact = () => {
             />
             <StyledArea
               name="content"
-              as="textarea"
               value={content}
               onChange={event => setContent(event.target.value)}
               placeholder="Treść wiadomości..."
