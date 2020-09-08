@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import gsap from "gsap";
@@ -25,7 +25,6 @@ const StyledContainer = styled.section`
 export default ({ children }) => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
-  const [ready, setReady] = useState(false);
   const mq =
     typeof window !== `undefined`
       ? window.matchMedia("(max-width: 1024px)")
