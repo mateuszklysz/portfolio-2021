@@ -80,6 +80,7 @@ const StyledInput = styled.input`
   background-color: ${({ theme: { color } }) => color.secondary};
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xs};
+  line-height: normal;
   -webkit-user-select: text;
   font-weight: bold;
   border: none;
@@ -111,6 +112,7 @@ const StyledArea = styled.textarea`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xs};
   font-family: ${({ theme: { font } }) => font.family.openSans};
+  line-height: 1;
   -webkit-user-select: text;
   font-weight: bold;
   border: none;
