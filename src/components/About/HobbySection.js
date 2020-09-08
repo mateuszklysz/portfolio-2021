@@ -150,7 +150,7 @@ const HobbySection = ({ second = false }) => {
           <p>
             Interesują mnie trendy w zakresie&nbsp;
             <StyledStrong $second={second}>
-              projektowania stron WWW, user experiance oraz user interface
+              projektowania stron WWW, user experience oraz user interface
               design.
             </StyledStrong>
             &nbsp;Zawsze stawiam na nowoczesne rozwiązania.

@@ -15,7 +15,6 @@ const StyledContainer = styled.section`
   left: 0;
   height: calc(100% + 80px);
   width: 100%;
-  overflow: hidden;
   ${media.tablet`
     top: 0;
     padding-top: 50px;

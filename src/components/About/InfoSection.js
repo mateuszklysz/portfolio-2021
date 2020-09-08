@@ -60,8 +60,8 @@ const InfoSection = () => (
       <span style={{ color: "#4f83cc" }}>C++</span>.
       <br /> <br />
       Wstęp do <span style={{ color: "#ffb04c" }}>JavaScript</span> był dzięki
-      temu bardzo płynny i prosty, a nauka nowych technologii ciekawa i nie
-      przytłaczająca.
+      temu bardzo płynny i prosty, a nauka nowych technologii ciekawa i
+      nieprzytłaczająca.
     </StyledText>
     <StyledCode />
   </StyledContainer>

@@ -6,6 +6,11 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
     }
+    *:focus {
+      outline: 0;
+      outline-color: transparent;
+      outline-style: none;
+    }
     body,html{
       box-sizing: border-box;
       overscroll-behavior-y: none;
@@ -22,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
     
     body::-webkit-scrollbar-thumb {
       background-color: ${({ theme: { color } }) => color.white};
-      /* outline: 1px solid slategrey; */
     }
     input,
     textarea,
