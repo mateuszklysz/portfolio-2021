@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
-import media from "../../utils/media";
-import Code from "../../assets/svg/code.svg";
+import media from "../../../utils/media";
+import Code from "../../../assets/svg/code.svg";
 
-const StyledContainer = styled.section`
+export const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +15,7 @@ const StyledContainer = styled.section`
   `}
 `;
 
-const StyledText = styled.p`
+export const Text = styled.p`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xxm};
   ${media.desktop`
@@ -30,7 +29,7 @@ const StyledText = styled.p`
   `}
 `;
 
-const StyledCode = styled(Code)`
+export const StyledCode = styled(Code)`
   z-index: -1;
   position: absolute;
   right: 200px;
@@ -51,20 +50,3 @@ const StyledCode = styled(Code)`
     width:270px;
    `}
 `;
-
-const InfoSection = () => (
-  <StyledContainer>
-    <StyledText>
-      Programowaniem zajmuję się od małego. Od zawsze ciekawiły mnie produkcje
-      gier komputerowych, dlatego też szybko zainteresowałem się językiem{" "}
-      <span style={{ color: "#4f83cc" }}>C++</span>.
-      <br /> <br />
-      Wstęp do <span style={{ color: "#ffb04c" }}>JavaScript</span> był dzięki
-      temu bardzo płynny i prosty, a nauka nowych technologii ciekawa i
-      nieprzytłaczająca.
-    </StyledText>
-    <StyledCode />
-  </StyledContainer>
-);
-
-export default InfoSection;

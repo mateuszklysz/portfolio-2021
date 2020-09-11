@@ -1,50 +1,18 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
 import gsap from "gsap";
+import {
+  Container,
+  TextContainer,
+  AboutText,
+  NameText,
+} from "../styles/about.styles";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
 import { graphql } from "gatsby";
-import media from "../utils/media";
-import Skills from "../components/About/Skills";
-import InfoSection from "../components/About/InfoSection";
-import MoreSection from "../components/About/MoreSection";
-import HobbySection from "../components/About/HobbySection";
-
-const StyledContainer = styled.section`
-  position: relative;
-  margin: 50px auto 0 auto;
-  padding: 0 100px;
-  max-width: 1250px;
-  ${media.tablet`
-    padding: 0;
-    margin: 0 100px;
-  `}
-  ${media.phone`
-    margin: 0 50px;
-  `}
-`;
-
-const StyledTextContainer = styled.header`
-  width: 100%;
-  color: ${({ theme: { color } }) => color.white};
-  ${media.tablet`
-    text-align: center;
-  `}
-`;
-
-const StyledAboutText = styled.h1`
-  font-size: ${({ theme: { font } }) => font.size.xm};
-  ${media.tablet`
-    font-size: ${({ theme: { font } }) => font.size.m};
-  `}
-`;
-
-const StyledNameText = styled.h2`
-  font-size: ${({ theme: { font } }) => font.size.xl};
-  ${media.tablet`
-    font-size: ${({ theme: { font } }) => font.size.l};
-  `}
-`;
+import Skills from "../components/About/Skills/Skills";
+import Info from "../components/About/Info/Info";
+import More from "../components/About/More/More";
+import Hobby from "../components/About/Hobby/Hobby";
 
 export const query = graphql`
   query {
@@ -108,21 +76,21 @@ const Projects = ({
 
   return (
     <>
-      <StyledContainer>
-        <StyledTextContainer>
-          <StyledAboutText>KILKA SŁÓW O MNIE</StyledAboutText>
-          <StyledNameText ref={nameRef} />
-        </StyledTextContainer>
-        <HobbySection />
-        <HobbySection second />
-      </StyledContainer>
+      <Container>
+        <TextContainer>
+          <AboutText>KILKA SŁÓW O MNIE</AboutText>
+          <NameText ref={nameRef} />
+        </TextContainer>
+        <Hobby />
+        <Hobby second />
+      </Container>
       <div ref={skillsRef}>
         <Skills />
       </div>
-      <StyledContainer ref={infoRef}>
-        <InfoSection />
-        <MoreSection />
-      </StyledContainer>
+      <Container ref={infoRef}>
+        <Info />
+        <More />
+      </Container>
     </>
   );
 };

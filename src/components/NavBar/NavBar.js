@@ -1,105 +1,15 @@
 import React, { useRef, useState } from "react";
-import styled from "styled-components";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import gsap from "gsap";
-import media from "../../utils/media";
-import Logo from "../../assets/svg/icon.svg";
-import Hamburger from "../../assets/svg/hamburger_icon.svg";
-
-const StyledContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100px;
-  width: 100%;
-  background-color: ${({ theme: { color } }) => color.primary};
-  ${media.tablet`
-    display: none;
-  `}
-`;
-
-const StyledLogoContainer = styled.div`
-  margin-left: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-`;
-
-const StyledLogo = styled(Logo)`
-  width: 60px;
-  height: 60px;
-`;
-
-const StyledMenu = styled.ul`
-  z-index: 100;
-  margin-right: 100px;
-  width: 385px;
-  display: flex;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-`;
-
-const StyledLink = styled(AniLink)`
-  font-family: ${({ theme: { font } }) => font.family.montserrat};
-  font-size: ${({ theme: { font } }) => font.size.m};
-  color: ${({ theme: { color } }) => color.white};
-  text-decoration: none;
-  overflow: hidden;
-  padding: 15px;
-  display: block;
-  ${media.tablet`
-    font-size: ${({ theme: { font } }) => font.size.xm};
-  `}
-`;
-
-const StyledSpan = styled.span`
-  position: relative;
-`;
-
-const StyledHamburgerIcon = styled(Hamburger)`
-  z-index: 101;
-  display: none;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  width: 35px;
-  height: 30.33px;
-  ${media.tablet`
-    display:block;
-  `}
-`;
-
-const StyledHamburgerMenu = styled.nav`
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  z-index: 100;
-  position: fixed;
-  background-color: ${({ theme: { color } }) => color.primary};
-  top: 0;
-  right: -420px;
-  width: 30%;
-  height: 100vh;
-  ${media.tablet`
-    display: block;
-    display: flex;
-  `}
-  ${media.phone`
-    width: 40%;
-  `}
-  ${media.ip4`
-    width: 50%;
-  `}
-`;
+import {
+  Container,
+  LogoContainer,
+  StyledLogo,
+  Menu,
+  StyledLink,
+  StyledSpan,
+  HamburgerIcon,
+  HamburgerMenu,
+} from "./NavBar.styles";
 
 const NavBar = () => {
   const aboutRef = useRef(null);
@@ -107,7 +17,6 @@ const NavBar = () => {
   const logoRef = useRef(null);
   const hamburgerRef = useRef(null);
   const hamburgerIconRef = useRef(null);
-
   const [showMenu, setShowMenu] = useState(false);
 
   const handleLogoAnimation = scale => {
@@ -162,8 +71,8 @@ const NavBar = () => {
 
   return (
     <>
-      <StyledContainer>
-        <StyledLogoContainer
+      <Container>
+        <LogoContainer
           ref={logoRef}
           onMouseEnter={() => handleLogoAnimation(0.9)}
           onMouseLeave={() => handleLogoAnimation(1)}
@@ -171,8 +80,8 @@ const NavBar = () => {
           <StyledLink paintDrip hex="#121212" to="/">
             <StyledLogo />
           </StyledLink>
-        </StyledLogoContainer>
-        <StyledMenu>
+        </LogoContainer>
+        <Menu>
           <li>
             <StyledLink
               onMouseEnter={() => handleMenuAnimation(aboutRef, 1)}
@@ -195,12 +104,12 @@ const NavBar = () => {
               <StyledSpan ref={contactRef}>Kontakt</StyledSpan>
             </StyledLink>
           </li>
-        </StyledMenu>
-      </StyledContainer>
+        </Menu>
+      </Container>
       <div ref={hamburgerIconRef}>
-        <StyledHamburgerIcon onClick={handleHamburger} />
+        <HamburgerIcon onClick={handleHamburger} />
       </div>
-      <StyledHamburgerMenu ref={hamburgerRef}>
+      <HamburgerMenu ref={hamburgerRef}>
         <StyledLink onClick={handleHamburger} paintDrip hex="#121212" to="/">
           Home
         </StyledLink>
@@ -220,7 +129,7 @@ const NavBar = () => {
         >
           Kontakt
         </StyledLink>
-      </StyledHamburgerMenu>
+      </HamburgerMenu>
     </>
   );
 };

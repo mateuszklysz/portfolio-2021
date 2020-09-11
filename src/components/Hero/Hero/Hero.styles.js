@@ -1,10 +1,7 @@
-import React from "react";
 import styled from "styled-components";
-import media from "../../utils/media";
-import LeftSection from "./LeftSection";
-import RightSection from "./RightSection";
+import media from "../../../utils/media";
 
-const StyledContainer = styled.main`
+export const Container = styled.main`
   display: flex;
   margin: 0 auto 40px auto;
   padding: 0 95px;
@@ -24,12 +21,3 @@ const StyledContainer = styled.main`
     flex-direction: column;
  `}
 `;
-
-const Hero = () => (
-  <StyledContainer>
-    <LeftSection />
-    <RightSection />
-  </StyledContainer>
-);
-
-export default Hero;

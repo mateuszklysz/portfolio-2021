@@ -1,10 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from "gatsby-image";
-import media from "../../utils/media";
+import media from "../../../utils/media";
 
-const StyledContainer = styled(AniLink)`
+export const Container = styled(AniLink)`
   position: relative;
   margin-right: 100px;
   border-radius: 25px;
@@ -14,7 +13,7 @@ const StyledContainer = styled(AniLink)`
   ${media.laptop`
     height: 400px;
     width: 400px;
-  `} 
+  `}
   ${media.phone`
     margin-right: 50px;
     height: 300px;
@@ -27,7 +26,7 @@ const StyledContainer = styled(AniLink)`
   `};
 `;
 
-const StyledText = styled.div`
+export const Text = styled.div`
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.xxm};
   font-weight: bold;
@@ -39,7 +38,7 @@ const StyledText = styled.div`
   text-align: center;
 `;
 
-const StyledImage = styled(Img)`
+export const Image = styled(Img)`
   position: absolute;
   left: 0;
   top: 0;
@@ -48,14 +47,3 @@ const StyledImage = styled(Img)`
   opacity: 30%;
   border-radius: 25px;
 `;
-
-const Project = ({ name, img, slug }) => (
-  <>
-    <StyledContainer to={slug} paintDrip hex="#121212">
-      <StyledImage fluid={img.fluid} />
-      <StyledText>{name}</StyledText>
-    </StyledContainer>
-  </>
-);
-
-export default Project;

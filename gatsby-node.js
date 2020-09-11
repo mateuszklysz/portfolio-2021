@@ -19,7 +19,9 @@ exports.createPages = async ({ graphql, actions }) => {
   data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
-      component: require.resolve(`./src/templates/project-page.js`),
+      component: require.resolve(
+        `./src/templates/project-page/project-page.js`
+      ),
       context: { id: node.id },
     });
   });

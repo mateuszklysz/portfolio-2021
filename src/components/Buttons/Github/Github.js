@@ -1,26 +1,8 @@
 import React, { useRef } from "react";
-import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
+import { GithubLink } from "./Github.styles";
 import Img from "gatsby-image";
 import gsap from "gsap";
-import media from "../../utils/media";
-
-const StyledGithubLink = styled.a`
-  border: none;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  ${media.phone`
-    width: 40px;
-    height: 40px;
-   `}
-  ${media.ip4`
-    width: 30px;
-    height: 30px;
-   `}
-`;
 
 const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
   const githubRef = useRef(null);
@@ -51,7 +33,7 @@ const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
   };
 
   return (
-    <StyledGithubLink
+    <GithubLink
       href={`${githubLink}`}
       target="_blank"
       ref={githubRef}
@@ -59,7 +41,7 @@ const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
       onMouseLeave={() => handleButtonAnimation(githubRef, 1)}
     >
       <Img fluid={childImageSharp.fluid} />
-    </StyledGithubLink>
+    </GithubLink>
   );
 };
 export default Github;

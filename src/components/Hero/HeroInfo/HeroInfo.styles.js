@@ -1,12 +1,7 @@
-import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import { useStaticQuery, graphql } from "gatsby";
-import gsap from "gsap";
-import media from "../../utils/media";
-import Button from "../Buttons/Button";
-import Github from "../Buttons/Github";
+import media from "../../../utils/media";
 
-const StyledTextContainer = styled.div`
+export const TextContainer = styled.div`
   position: relative;
   bottom: 50px;
   display: flex;
@@ -22,7 +17,7 @@ const StyledTextContainer = styled.div`
    `}
 `;
 
-const StyledName = styled.h3`
+export const Name = styled.h3`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xm};
   padding-left: 5px;
@@ -41,7 +36,7 @@ const StyledName = styled.h3`
   `}
 `;
 
-const StyledProfession = styled.h1`
+export const Profession = styled.h1`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.xxl};
   font-weight: bold;
@@ -57,10 +52,10 @@ const StyledProfession = styled.h1`
   `}
 `;
 
-const StyledMotto = styled.h2`
+export const Motto = styled.h2`
   z-index: 2;
   font-size: ${({ theme: { font } }) => font.size.l};
-  padding-left: 2px; 
+  padding-left: 2px;
   ${media.desktop`
     font-size: ${({ theme: { font } }) => font.size.xm};
     padding-left: 0;
@@ -73,7 +68,7 @@ const StyledMotto = styled.h2`
   `}
 `;
 
-const StyledIconsContainer = styled.div`
+export const IconsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0 0 10px;
@@ -89,50 +84,3 @@ const StyledIconsContainer = styled.div`
     height:30px;
    `}
 `;
-
-const LeftComponent = () => {
-  const textContainerRef = useRef(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3" } });
-    tl.fromTo(
-      textContainerRef.current,
-      { x: "-=300", autoAlpha: 0 },
-      { duration: 2, x: "0", autoAlpha: 1 }
-    );
-  }, []);
-
-  const {
-    site: { siteMetadata },
-  } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            author
-          }
-        }
-      }
-    `
-  );
-
-  return (
-    <StyledTextContainer ref={textContainerRef}>
-      <StyledName>{siteMetadata.author}</StyledName>
-      <StyledProfession>
-        Front-end <br /> Developer
-      </StyledProfession>
-      <StyledMotto>
-        Skupiam się na czystym i<br /> prostym{" "}
-        <span style={{ color: "#c17900" }}>
-          {"<"}kodzie{">"}
-        </span>
-      </StyledMotto>
-      <StyledIconsContainer>
-        <Button text="O mnie" to="/about" />
-        <Github />
-      </StyledIconsContainer>
-    </StyledTextContainer>
-  );
-};
-export default LeftComponent;

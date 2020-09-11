@@ -1,10 +1,7 @@
-import React from "react";
 import styled from "styled-components";
-import media from "../../utils/media";
-import Button from "../Buttons/Button";
-import Github from "../Buttons/Github";
+import media from "../../../utils/media";
 
-const StyledContainer = styled.section`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +14,7 @@ const StyledContainer = styled.section`
   `}
 `;
 
-const StyledText = styled.p`
+export const Text = styled.p`
   font-size: ${({ theme: { font } }) => font.size.l};
   color: ${({ theme: { color } }) => color.white};
   font-weight: bold;
@@ -26,7 +23,7 @@ const StyledText = styled.p`
   `}
 `;
 
-const StyledButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
@@ -41,15 +38,3 @@ const StyledButtonContainer = styled.div`
     height: 30px;
   `}
 `;
-
-const MoreSection = () => (
-  <StyledContainer>
-    <StyledText>Chcesz dowiedzieć się więcej?</StyledText>
-    <StyledButtonContainer>
-      <Button text="Kontakt" to="/contact" />
-      <Github />
-    </StyledButtonContainer>
-  </StyledContainer>
-);
-
-export default MoreSection;
