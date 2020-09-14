@@ -7,6 +7,9 @@ export const Wrapper = styled.section`
   background-color: ${({ theme: { color } }) => color.secondary};
   height: 900px;
   width: 100%;
+  ${media.phone`
+    height: 600px;
+  `}
 `;
 
 export const Container = styled.div`
@@ -30,7 +33,6 @@ export const Option = styled.div`
       : css`
           background: linear-gradient(to right, #121212, #1c1c1c);
         `}
-
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -48,7 +50,17 @@ export const Option = styled.div`
   `}
   ${media.phone`
     width: 180px;
-  `}
+    height: 70px;
+    background:none;
+    ${({ color }) =>
+      color
+        ? css`
+            background: linear-gradient(to right, ${color}, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          `
+        : null}
+    `}
   ${media.ip4`
     width: 150px;
   `}
@@ -64,7 +76,7 @@ export const Header = styled.p`
     font-size: ${({ theme: { font } }) => font.size.xxm}
   `}
   ${media.phone`
-    font-size: ${({ theme: { font } }) => font.size.m}
+    font-size: ${({ theme: { font } }) => font.size.m};
   `}
   ${media.ip4`
     font-size: ${({ theme: { font } }) => font.size.xs}
@@ -105,7 +117,7 @@ export const Text = styled.p`
     font-size: ${({ theme: { font } }) => font.size.xm}
   `}
   ${media.phone`
-    font-size: ${({ theme: { font } }) => font.size.xs}
+    font-size: ${({ theme: { font } }) => font.size.xs};
   `}
   ${media.ip4`
     font-size: ${({ theme: { font } }) => font.size.s}
