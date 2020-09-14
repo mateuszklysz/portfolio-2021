@@ -12,8 +12,9 @@ export const Container = styled.main`
   font-family: ${({ theme: { font } }) => font.family.montserrat};
   color: ${({ theme: { color } }) => color.white};
   ${media.desktop`
-    height: auto;
-    flex-direction: column;
+    padding: 0 85px;
+    height: 550px;
+    justify-content: center;
  `}
   ${media.tablet`
     height: auto;

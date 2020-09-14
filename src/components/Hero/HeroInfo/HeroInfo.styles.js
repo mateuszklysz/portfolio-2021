@@ -9,7 +9,7 @@ export const TextContainer = styled.div`
   justify-content: center;
   font-weight: bold;
   width: 550px;
-  ${media.desktop`
+  ${media.tablet`
     width: auto;
     text-align: center;
     align-items:center;
@@ -42,7 +42,6 @@ export const Profession = styled.h1`
   font-weight: bold;
   ${media.desktop`
     font-size: ${({ theme: { font } }) => font.size.xl};
-    padding-left: 0;
    `}
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.l};

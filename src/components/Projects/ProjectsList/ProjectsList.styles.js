@@ -28,7 +28,7 @@ export const List = styled.ul`
   width: 500px;
   flex-direction: column;
   flex-wrap: wrap;
-  ${media.laptop`
+  ${media.desktop`
     height: 400px;
   `}
   ${media.phone`
