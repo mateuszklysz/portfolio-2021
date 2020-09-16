@@ -53,19 +53,19 @@ const NavBar = () => {
     if (!showMenu) {
       gsap.to(hamburgerRef.current, {
         x: "-420px",
-        duration: 0.3,
-        ease: "Power4.easeOut",
+        duration: 0.15,
+        ease: "Power3.easeOut ",
       });
-      gsap.fromTo(rec3, { width: "100%" }, { width: "60%", duration: 0.2 });
-      gsap.fromTo(rec2, { width: "100%" }, { width: "80%", duration: 0.2 });
+      gsap.fromTo(rec3, { width: "100%" }, { width: "60%", duration: 0.1 });
+      gsap.fromTo(rec2, { width: "100%" }, { width: "80%", duration: 0.1 });
     } else {
       gsap.to(hamburgerRef.current, {
         x: 0,
-        duration: 0.3,
+        duration: 0.2,
         ease: "Power4.easeIn",
       });
-      gsap.fromTo(rec3, { width: "60%" }, { width: "100%", duration: 0.2 });
-      gsap.fromTo(rec2, { width: "80%" }, { width: "100%", duration: 0.2 });
+      gsap.fromTo(rec3, { width: "60%" }, { width: "100%", duration: 0.1 });
+      gsap.fromTo(rec2, { width: "80%" }, { width: "100%", duration: 0.1 });
     }
   };
 
