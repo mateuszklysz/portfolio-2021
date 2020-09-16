@@ -76,10 +76,10 @@ export const Header = styled.p`
     font-size: ${({ theme: { font } }) => font.size.xxm}
   `}
   ${media.phone`
-    font-size: ${({ theme: { font } }) => font.size.m};
+    font-size: ${({ theme: { font } }) => font.size.xm};
   `}
   ${media.ip4`
-    font-size: ${({ theme: { font } }) => font.size.xs}
+    font-size: ${({ theme: { font } }) => font.size.xxs}
   `}
 `;
 
