@@ -33,6 +33,9 @@ const button = () => css`
   display: block;
   color: inherit;
   text-decoration: none;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 export const ButtonLink = styled(AniLink)`
