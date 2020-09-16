@@ -89,8 +89,8 @@ const ProjectPage = ({ data: { mdx } }) => {
             <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
           </StyledImage>
         </Container>
-        <ContainerBody>
-          <SectionBody ref={bodyRef}>
+        <ContainerBody ref={bodyRef}>
+          <SectionBody>
             <HeaderS>Opis</HeaderS>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </SectionBody>

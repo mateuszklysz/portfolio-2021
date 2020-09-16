@@ -22,7 +22,7 @@ export const Container = styled.main`
 export const ContainerBody = styled.article`
   display: flex;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   justify-content: center;
   margin: 50px auto 100px auto;
   padding: 0 100px;
@@ -59,11 +59,10 @@ export const Section = styled.section`
 `;
 
 export const SectionBody = styled.section`
-  width: 50%;
+  width: 100%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
   font-weight: bold;
-  width: 100%;
   ${media.desktopL`
     font-size: calc(28px / 1.5);
     margin: 0 100px;
@@ -75,7 +74,7 @@ export const SectionBody = styled.section`
     font-size: ${({ theme: { font } }) => font.size.xs};
   `}
   ${media.ip4`
-  margin: 0 40px;
+    margin: 0 40px;
   `}
 `;
 
