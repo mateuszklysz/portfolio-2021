@@ -2,7 +2,7 @@
   "name": "my-website",
   "private": true,
   "description": "Mateusz Kłysz - Portfolio",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Mateusz Kłysz <mateuszklysz@outlook.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.17",
