@@ -6,6 +6,7 @@ export const Wrapper = styled.section`
   max-width: 1250px;
   margin: auto;
   padding: 20px 100px 0 100px;
+  overflow: hidden;
   ${media.tablet`
     padding: 0 100px 25px 100px;
   `}
