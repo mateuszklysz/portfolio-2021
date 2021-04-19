@@ -60,7 +60,7 @@ const Projects = ({
         x: 0,
         autoAlpha: 1,
         duration: 1,
-        stagger: 0.5,
+        stagger: 0.7,
         scrollTrigger: {
           trigger: infoRef.current,
           start: "0 40%",
