@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Wrapper, Text, Container } from "../styles/contact.styles";
 import Aside from "../components/Contact/Aside/Aside";
-import Email from "../components/Contact/Email/Email";
+import Form from "../components/Contact/Form/Form";
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -34,7 +34,7 @@ const Contact = () => {
         <Text>Szukasz kontaktu?</Text>
         <Container>
           <Aside />
-          <Email />
+          <Form />
         </Container>
       </Wrapper>
     </>

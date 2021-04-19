@@ -69,6 +69,15 @@ export const StyledArea = styled.textarea`
   `}
 `;
 
+export const ErrorMessange = styled.p`
+  width: 100%;
+  margin-bottom: 15px;
+  color: ${({ theme: { color } }) => color.red};
+  ${media.tablet`
+    text-align: center;
+  `}
+`;
+
 export const ConfirmContainer = styled.div`
   display: flex;
   ${media.laptop`
@@ -82,6 +91,7 @@ export const Button = styled.button`
   font-size: ${({ theme: { font } }) => font.size.xs};
   font-family: ${({ theme: { font } }) => font.family.openSans};
   font-weight: bold;
+  cursor: pointer;
   border: none;
   width: 180px;
   height: 74px;
