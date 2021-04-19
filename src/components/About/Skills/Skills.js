@@ -10,7 +10,6 @@ import {
   Text,
 } from "./Skills.styles";
 import Html from "../../../assets/svg/about/html5.svg";
-import SCIcon from "../../../assets/svg/about/styled-components.svg";
 import Gatsby from "../../../assets/svg/about/gatsby.svg";
 import JSIcon from "../../../assets/svg/about/javascript.svg";
 import Sass from "../../../assets/svg/about/sass.svg";
