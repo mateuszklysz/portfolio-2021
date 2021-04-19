@@ -23,7 +23,6 @@ export const StyledInput = styled.input`
   border: none;
   width: 500px;
   height: 50px;
-  margin: 15px 0;
   padding: 0 20px;
   &::placeholder {
     color: ${({ theme: { color } }) => color.white};
@@ -57,7 +56,6 @@ export const StyledArea = styled.textarea`
   resize: none;
   width: 500px;
   height: 300px;
-  margin: 15px 0;
   &::placeholder {
     color: ${({ theme: { color } }) => color.white};
   }
