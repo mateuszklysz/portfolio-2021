@@ -17,19 +17,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `projects`,
-        path: `${__dirname}/src/projects/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `templates`,
         path: `${__dirname}/src/templates/`,
       },
     },
     `gatsby-plugin-mdx`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    "gatsby-transformer-sharp",
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -41,6 +35,14 @@ module.exports = {
         theme_color: `#212121`,
         display: `minimal-ui`,
         icon: `src/assets/images/icon.png`,
+      },
+    },
+    {
+      resolve: "gatsby-source-graphcms",
+      options: {
+        endpoint:
+          "https://api-eu-central-1.graphcms.com/v2/cknos54dl844s01xm5ym9b0s1/master",
+        buildMarkdownNodes: true,
       },
     },
     {

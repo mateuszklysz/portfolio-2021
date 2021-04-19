@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import ScrollContainer from "react-indiana-drag-scroll";
 import gsap from "gsap";
-import { List, ProjectsText, StyledScrollImage } from "./ProjectsList.styles";
+import {
+  Projects,
+  ProjectsText,
+  StyledScrollImage,
+} from "./ProjectsList.styles";
 import Project from "../Project/Project";
 
 const ProjectsList = () => {
@@ -41,54 +45,52 @@ const ProjectsList = () => {
     containerAnimation();
   }, []);
 
-  const {
-    allMdx: { edges },
-  } = useStaticQuery(
-    graphql`
-      query {
-        allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
-          edges {
-            node {
-              id
-              frontmatter {
-                title
-                slug
-                featuredImage {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allGraphCmsProject {
+            nodes {
+              title
+              slug
+              date
+              technologies
+              site
+              github
+              image {
+                url
               }
             }
           }
         }
-      }
-    `
-  );
-
-  return (
-    <>
-      <ProjectsText ref={textRef}>
-        <h1>Projekty</h1>
-        <div ref={scrollImgRef}>
-          <StyledScrollImage />
-        </div>
-      </ProjectsText>
-      <ScrollContainer className="container" hideScrollbars vertical={false}>
-        <List ref={listRef}>
-          {edges.map(project => (
-            <Project
-              name={project.node.frontmatter.title}
-              img={project.node.frontmatter.featuredImage.childImageSharp}
-              slug={project.node.frontmatter.slug}
-              key={project.node.id}
-            />
-          ))}
-        </List>
-      </ScrollContainer>
-    </>
+      `}
+      render={({ allGraphCmsProject: { nodes } }) => (
+        <>
+          <ProjectsText ref={textRef}>
+            <h1>Projekty</h1>
+            <div ref={scrollImgRef}>
+              <StyledScrollImage />
+            </div>
+          </ProjectsText>
+          <ScrollContainer
+            className="container"
+            hideScrollbars
+            vertical={false}
+          >
+            <Projects ref={listRef}>
+              {nodes.map(project => (
+                <Project
+                  name={project.title}
+                  img={project.image.url}
+                  slug={project.slug}
+                  key={project.slug}
+                />
+              ))}
+            </Projects>
+          </ScrollContainer>
+        </>
+      )}
+    />
   );
 };
 

@@ -17,7 +17,7 @@ import ThreeJS from "../../../assets/svg/about/threejs.svg";
 import GraphQL from "../../../assets/svg/about/graphql.svg";
 import Typescript from "../../../assets/svg/about/typescript.svg";
 import GSAPIcon from "../../../assets/svg/about/gsap.svg";
-import PWA from "../../../assets/svg/about/PWA.svg";
+import Pwa from "../../../assets/svg/about/PWA.svg";
 import Vue from "../../../assets/svg/about/vue.svg";
 
 const Skills = () => {
@@ -108,7 +108,7 @@ const Skills = () => {
         </Option>
         <Option>
           <Icon>
-            <PWA />
+            <Pwa />
           </Icon>
           <Text>PWA</Text>
         </Option>

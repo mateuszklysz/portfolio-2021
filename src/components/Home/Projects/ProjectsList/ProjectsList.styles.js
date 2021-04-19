@@ -18,7 +18,7 @@ export const StyledScrollImage = styled(ScrollImage)`
   margin-left: 15px;
 `;
 
-export const List = styled.ul`
+export const Projects = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;

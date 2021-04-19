@@ -16,9 +16,7 @@ const HobbySection = ({ second = false }) => {
           edges {
             node {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }
@@ -56,13 +54,19 @@ const HobbySection = ({ second = false }) => {
             kierunków.
           </p>
         </TextContainer>
-        <Image fluid={edges[0].node.childImageSharp.fluid} />
+        <Image
+          image={edges[0].node.childImageSharp.gatsbyImageData}
+          alt="Montowanie"
+        />
       </Section>
     );
   } else {
     return (
       <Section ref={secondSection} $second={second}>
-        <Image fluid={edges[1].node.childImageSharp.fluid} />
+        <Image
+          image={edges[1].node.childImageSharp.gatsbyImageData}
+          alt="Programowanie"
+        />
         <TextContainer $second={second}>
           <p>
             Interesują mnie trendy w zakresie&nbsp;

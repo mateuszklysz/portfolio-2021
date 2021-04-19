@@ -1,28 +1,25 @@
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const { data } = await graphql(`
+  const {
+    data: { allGraphCmsProject },
+  } = await graphql(`
     query {
-      allMdx {
-        edges {
-          node {
-            id
-            frontmatter {
-              slug
-            }
-          }
+      allGraphCmsProject {
+        nodes {
+          slug
         }
       }
     }
   `);
   // Programmatically Creating Pages
-  data.allMdx.edges.forEach(({ node }) => {
+  allGraphCmsProject.nodes.forEach(data => {
     createPage({
-      path: node.frontmatter.slug,
+      path: data.slug,
       component: require.resolve(
         `./src/templates/project-page/project-page.js`
       ),
-      context: { id: node.id },
+      context: { slug: data.slug },
     });
   });
 };

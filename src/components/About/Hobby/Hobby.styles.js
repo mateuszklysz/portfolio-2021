@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import media from "../../../utils/media";
 
 export const Section = styled.section`
@@ -22,7 +22,7 @@ export const Section = styled.section`
   `}
 `;
 
-export const Image = styled(Img)`
+export const Image = styled(GatsbyImage)`
   width: 500px;
   ${media.phone`
     width: 300px;

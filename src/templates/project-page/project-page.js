@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
@@ -18,7 +17,11 @@ import {
 import Button from "../../components/Buttons/Button/Button";
 import Github from "../../components/Buttons/Github/Github";
 
-const ProjectPage = ({ data: { mdx } }) => {
+const ProjectPage = ({
+  data: {
+    allGraphCmsProject: { nodes },
+  },
+}) => {
   const infoRef = useRef(null);
   const imgRef = useRef(null);
   const bodyRef = useRef(null);
@@ -39,7 +42,7 @@ const ProjectPage = ({ data: { mdx } }) => {
       }
     );
     tl.fromTo(
-      imgRef.current.children,
+      imgRef.current,
       {
         x: "-=20",
         autoAlpha: 0,
@@ -74,58 +77,59 @@ const ProjectPage = ({ data: { mdx } }) => {
     window.scrollTo(0, 0);
     gsapAnimations();
   }, []);
-
   return (
-    <>
-      <div style={{ minHeight: "calc(100% - 180px)" }}>
-        <Container>
-          <Section ref={infoRef}>
-            <HeaderS>Nazwa projektu:</HeaderS>
-            <HeaderL>{mdx.frontmatter.title}</HeaderL>
-            <HeaderS>Data:</HeaderS>
-            <HeaderM>{mdx.frontmatter.date}</HeaderM>
-            <HeaderS>Technologie:</HeaderS>
-            <HeaderM>{mdx.frontmatter.technologies}</HeaderM>
-            <ButtonContainer>
-              <Button text="Link" to={mdx.frontmatter.site} external={true} />
-              <Github githubLink={mdx.frontmatter.github} />
-            </ButtonContainer>
-          </Section>
-          <StyledImage ref={imgRef}>
-            <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
-          </StyledImage>
-        </Container>
-        <ColorfulBar ref={barRef}>OPIS PROJEKTU</ColorfulBar>
-        <ContainerBody ref={bodyRef}>
-          <SectionBody>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </SectionBody>
-        </ContainerBody>
-      </div>
-    </>
+    <div style={{ minHeight: "calc(100% - 180px)" }}>
+      <Container>
+        <Section ref={infoRef}>
+          <HeaderS>Nazwa projektu:</HeaderS>
+          <HeaderL>{nodes[0].title}</HeaderL>
+          <HeaderS>Data:</HeaderS>
+          <HeaderM>{nodes[0].date}</HeaderM>
+          <HeaderS>Technologie:</HeaderS>
+          <HeaderM>{nodes[0].technologies.join(", ")}</HeaderM>
+          <ButtonContainer>
+            <Button text="Link" to={nodes[0].site} external={true} />
+            <Github githubLink={nodes[0].github} />
+          </ButtonContainer>
+        </Section>
+        <StyledImage ref={imgRef} src={nodes[0].image.url} />
+      </Container>
+      <ColorfulBar ref={barRef}>OPIS PROJEKTU</ColorfulBar>
+      <ContainerBody ref={bodyRef}>
+        <SectionBody>
+          <MDXRenderer>
+            {nodes[0].content.markdownNode.childMdx.body}
+          </MDXRenderer>
+        </SectionBody>
+      </ContainerBody>
+    </div>
   );
 };
 
-export default ProjectPage;
-
 export const query = graphql`
-  query($id: String!) {
-    mdx(id: { eq: $id }) {
-      frontmatter {
-        title
-        date
-        technologies
-        site
-        github
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
+  query($slug: String!) {
+    allGraphCmsProject(filter: { slug: { eq: $slug } }) {
+      nodes {
+        content {
+          html
+          markdownNode {
+            childMdx {
+              body
             }
           }
         }
+        slug
+        title
+        technologies
+        github
+        date
+        site
+        image {
+          url
+        }
       }
-      body
     }
   }
 `;
+
+export default ProjectPage;

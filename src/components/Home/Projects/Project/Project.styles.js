@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Img from "gatsby-image";
 import media from "../../../../utils/media";
 
 export const Container = styled(AniLink)`
@@ -38,7 +37,7 @@ export const Text = styled.div`
   text-align: center;
 `;
 
-export const Image = styled(Img)`
+export const Image = styled.img`
   position: absolute;
   left: 0;
   top: 0;
