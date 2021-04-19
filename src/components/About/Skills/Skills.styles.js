@@ -31,7 +31,7 @@ export const Option = styled.div`
           background: linear-gradient(to right, ${color}, #1c1c1c);
         `
       : css`
-          background: linear-gradient(to right, #121212, #1c1c1c);
+          background: linear-gradient(to right, #212121, #1c1c1c);
         `}
   border-radius: 25px;
   display: flex;
@@ -50,19 +50,9 @@ export const Option = styled.div`
   `}
   ${media.phone`
     width: 180px;
-    height: 70px;
-    background:none;
-    ${({ color }) =>
-      color
-        ? css`
-            background: linear-gradient(to right, ${color}, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          `
-        : null}
-    `}
+    height: 70px;`}
   ${media.ip4`
-    width: 150px;
+    width: 145px;
   `}
 `;
 
