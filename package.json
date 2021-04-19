@@ -46,9 +46,9 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "develop-mobile": "gatsby develop -H 192.168.1.5 -p 8000",
+    "develop-mobile": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "serve": "gatsby serve -H 192.168.1.5 -p 8000",
+    "serve": "gatsby serve -H 0.0.0.0",
     "clean": "gatsby clean"
   },
   "repository": {
