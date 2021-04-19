@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Img from "gatsby-image";
-import media from "../../../utils/media";
+import media from "../../../../utils/media";
 
 export const Container = styled(AniLink)`
   position: relative;

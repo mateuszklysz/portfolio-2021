@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { CubeContainer } from "./HeroCube.styles";
 import gsap from "gsap";
-import Cube from "../../Cube/Cube";
+import Cube from "../../../Cube/Cube";
 
 const HeroCube = () => {
   const cubeContainerRef = useRef(null);

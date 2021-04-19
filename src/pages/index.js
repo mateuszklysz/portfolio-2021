@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Hero from "../components/Hero/Hero/Hero";
-import Projects from "../components/Projects/ProjectsList/ProjectsList";
+import Hero from "../components/Home/Hero/Hero/Hero";
+import Projects from "../components/Home/Projects/ProjectsList/ProjectsList";
 
 const IndexPage = () => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import ScrollImage from "../../../assets/svg/scroll.svg";
-import media from "../../../utils/media";
+import ScrollImage from "../../../../assets/svg/scroll.svg";
+import media from "../../../../utils/media";
 
 export const ProjectsText = styled.div`
   display: flex;

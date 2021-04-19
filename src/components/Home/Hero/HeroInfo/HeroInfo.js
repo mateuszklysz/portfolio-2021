@@ -8,8 +8,8 @@ import {
 } from "./HeroInfo.styles";
 import { useStaticQuery, graphql } from "gatsby";
 import gsap from "gsap";
-import Button from "../../Buttons/Button/Button";
-import Github from "../../Buttons/Github/Github";
+import Button from "../../../Buttons/Button/Button";
+import Github from "../../../Buttons/Github/Github";
 
 const HeroInfo = () => {
   const textContainerRef = useRef(null);
