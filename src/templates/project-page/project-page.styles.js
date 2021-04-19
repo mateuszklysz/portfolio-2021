@@ -15,8 +15,22 @@ export const Container = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: auto;
+    margin-top: auto;
   `}
+`;
+
+export const ColorfulBar = styled.div`
+  height: 50px;
+  background: linear-gradient(
+    90deg,
+    ${({ theme: { color } }) => color.blue} 0%,
+    ${({ theme: { color } }) => color.black} 100%
+  );
+  font-size: ${({ theme: { font } }) => font.size.m};
+  color: ${({ theme: { color } }) => color.white};
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
 `;
 
 export const ContainerBody = styled.article`
@@ -62,19 +76,18 @@ export const SectionBody = styled.section`
   width: 100%;
   color: ${({ theme: { color } }) => color.white};
   font-size: 28px;
-  font-weight: bold;
   ${media.desktopL`
     font-size: calc(28px / 1.5);
-    margin: 0 100px;
+    margin: 50px 100px;
   `};
   ${media.tablet`
-    margin: 0 60px;
+    margin: 50px 60px;
   `};
   ${media.phone`
     font-size: ${({ theme: { font } }) => font.size.xs};
   `}
   ${media.ip4`
-    margin: 0 40px;
+    margin: 50px 40px;
   `}
 `;
 

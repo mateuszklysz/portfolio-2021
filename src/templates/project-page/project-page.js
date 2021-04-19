@@ -6,6 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
   Container,
   ContainerBody,
+  ColorfulBar,
   Section,
   SectionBody,
   HeaderL,
@@ -21,6 +22,7 @@ const ProjectPage = ({ data: { mdx } }) => {
   const infoRef = useRef(null);
   const imgRef = useRef(null);
   const bodyRef = useRef(null);
+  const barRef = useRef(null);
   const gsapAnimations = () => {
     const tl = gsap.timeline();
     tl.fromTo(
@@ -47,10 +49,10 @@ const ProjectPage = ({ data: { mdx } }) => {
         autoAlpha: 2,
         duration: 1.5,
       },
-      "-=0.5"
+      "-=1"
     );
     tl.fromTo(
-      bodyRef.current.children,
+      [bodyRef.current.children, barRef.current],
       {
         y: "-=10",
         autoAlpha: 0,
@@ -59,8 +61,12 @@ const ProjectPage = ({ data: { mdx } }) => {
         y: 0,
         autoAlpha: 1,
         duration: 1,
+        stagger: {
+          each: 0.4,
+          from: "end",
+        },
       },
-      "-=1"
+      "-=1.1"
     );
   };
 
@@ -89,9 +95,9 @@ const ProjectPage = ({ data: { mdx } }) => {
             <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
           </StyledImage>
         </Container>
+        <ColorfulBar ref={barRef}>OPIS PROJEKTU</ColorfulBar>
         <ContainerBody ref={bodyRef}>
           <SectionBody>
-            <HeaderS>Opis</HeaderS>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </SectionBody>
         </ContainerBody>
