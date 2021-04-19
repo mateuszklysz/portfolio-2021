@@ -20,17 +20,22 @@ export const Container = styled.main`
 `;
 
 export const ColorfulBar = styled.div`
-  height: 50px;
+  height: 80px;
   background: linear-gradient(
     90deg,
     ${({ theme: { color } }) => color.blue} 0%,
     ${({ theme: { color } }) => color.black} 100%
   );
-  font-size: ${({ theme: { font } }) => font.size.m};
+  font-size: ${({ theme: { font } }) => font.size.xm};
   color: ${({ theme: { color } }) => color.white};
   text-align: center;
-  line-height: 50px;
+  line-height: 80px;
   font-weight: bold;
+  ${media.phone`
+  font-size: ${({ theme: { font } }) => font.size.m};
+    height: 50px;
+    line-height: 50px;
+  `}
 `;
 
 export const ContainerBody = styled.article`
