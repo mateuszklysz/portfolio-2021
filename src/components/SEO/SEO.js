@@ -1,36 +1,39 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 
-const SEO = () => {
-  const {
-    site: { siteMetadata },
-  } = useStaticQuery(
-    graphql`
+const SEO = () => (
+  <StaticQuery
+    query={graphql`
       query {
         site {
           siteMetadata {
+            description
             author
           }
         }
       }
-    `
-  );
-
-  return (
-    <Helmet>
-      <html lang="pl" />
-      <title>{siteMetadata.author} - Portfolio</title>
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"
-      ></meta>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
-  );
-};
+    `}
+    render={({
+      site: {
+        siteMetadata: { author, description },
+      },
+    }) => (
+      <Helmet>
+        <html lang="pl" />
+        <title>{author} - Portfolio</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
+        ></meta>
+        <meta name="description" content={description} />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+    )}
+  />
+);
 
 export default SEO;

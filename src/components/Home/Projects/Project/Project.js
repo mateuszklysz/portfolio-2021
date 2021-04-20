@@ -5,7 +5,7 @@ import { Image } from "./Project.styles";
 const Project = ({ name, img, slug }) => {
   return (
     <Container to={slug} paintDrip hex="#121212">
-      <Image src={img} />
+      <Image src={img} alt={name} />
       <Text>{name}</Text>
     </Container>
   );
