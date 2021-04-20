@@ -19,6 +19,7 @@ const Github = () => {
     <GithubLink
       href={"https://github.com/mateuszklysz"}
       target="_blank"
+      rel="noopener"
       ref={githubRef}
     >
       <GithubLogo

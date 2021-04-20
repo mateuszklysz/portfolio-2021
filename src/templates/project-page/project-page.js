@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
@@ -12,7 +13,7 @@ import {
   HeaderM,
   HeaderS,
   ButtonContainer,
-  StyledImage,
+  ImageContainer,
 } from "./project-page.styles";
 import Button from "../../components/Buttons/Button/Button";
 import Github from "../../components/Buttons/Github/Github";
@@ -77,6 +78,7 @@ const ProjectPage = ({
     window.scrollTo(0, 0);
     gsapAnimations();
   }, []);
+  console.log(bodyRef.current);
   return (
     <div style={{ minHeight: "calc(100% - 180px)" }}>
       <Container>
@@ -92,7 +94,12 @@ const ProjectPage = ({
             <Github githubLink={nodes[0].github} />
           </ButtonContainer>
         </Section>
-        <StyledImage ref={imgRef} src={nodes[0].image.url} />
+        <ImageContainer ref={imgRef}>
+          <GatsbyImage
+            image={nodes[0].image.gatsbyImageData}
+            alt={nodes[0].title}
+          />
+        </ImageContainer>
       </Container>
       <ColorfulBar ref={barRef}>OPIS PROJEKTU</ColorfulBar>
       <ContainerBody ref={bodyRef}>
@@ -118,14 +125,13 @@ export const query = graphql`
             }
           }
         }
-        slug
         title
         technologies
         github
         date
         site
         image {
-          url
+          gatsbyImageData(placeholder: BLURRED)
         }
       }
     }

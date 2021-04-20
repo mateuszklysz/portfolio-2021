@@ -150,7 +150,7 @@ export const ButtonContainer = styled.div`
   `}
 `;
 
-export const StyledImage = styled.img`
+export const ImageContainer = styled.div`
   width: 500px;
   height: 500px;
   margin: 20px;

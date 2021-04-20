@@ -58,7 +58,7 @@ const ProjectsList = () => {
               site
               github
               image {
-                url
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }
@@ -81,7 +81,7 @@ const ProjectsList = () => {
               {nodes.map(project => (
                 <Project
                   name={project.title}
-                  img={project.image.url}
+                  img={project.image.gatsbyImageData}
                   slug={project.slug}
                   key={project.slug}
                 />

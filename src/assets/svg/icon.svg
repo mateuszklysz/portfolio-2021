@@ -1,4 +1,6 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>Kostka</title>
+<desc>Logo strony</desc>
 <path d="M1.03226 14.5L32 1L62.9677 14.5V49.5L32 63L1.03226 49.5V14.5Z" fill="#121212"/>
 <path d="M1.03226 14.5L32 1L62.9677 14.5M1.03226 14.5L32 28M1.03226 14.5V49.5L32 63M62.9677 14.5L32 28M62.9677 14.5V49.5L32 63M32 28V63" stroke="white"/>
 </svg>
