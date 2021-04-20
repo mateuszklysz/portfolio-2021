@@ -78,7 +78,7 @@ const ProjectPage = ({
     window.scrollTo(0, 0);
     gsapAnimations();
   }, []);
-  console.log(bodyRef.current);
+
   return (
     <div style={{ minHeight: "calc(100% - 180px)" }}>
       <Container>
