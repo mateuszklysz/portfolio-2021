@@ -14,6 +14,15 @@ jobs:
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm i
+      - name: Create env file
+        run: |
+          touch .env.production
+          echo GATSBY_SERVICE_ID=${{ secrets.GATSBY_SERVICE_ID }} >> .env.production
+          echo GATSBY_SERVICE_ID=${{ secrets.GATSBY_SERVICE_ID }} >> .env.production
+          echo GATSBY_SITE_KEY=${{ secrets.GATSBY_SITE_KEY }} >> .env.production
+          echo GATSBY_TEMPLATE_ID=${{ secrets.GATSBY_TEMPLATE_ID }} >> .env.production
+          echo GATSBY_USERID=${{ secrets.GATSBY_USERID }} >> .env.production
+          cat .env.production
       - name: Build
         run: npm run build
       - name: Archive Production Artifact
