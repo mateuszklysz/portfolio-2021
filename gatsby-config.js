@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Mateusz Kłysz - Portfolio`,
-    description: `Proste portfolio napisane przy użyciu Gatsby, frameworku bazowanego na React`,
+    description: `Proste portfolio napisane przy użyciu GatsbyJS, frameworku bazowanego na React`,
     author: `Mateusz Kłysz`,
-    date: `2020`,
+    date: `2021`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,6 +21,12 @@ module.exports = {
         path: `${__dirname}/src/templates/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about`, `/contact`],
+      },
+    },
     `gatsby-plugin-mdx`,
     `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
@@ -28,13 +34,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `mateusz-klysz-portfolio`,
-        short_name: `mateusz-k`,
+        name: `Mateusz Kłysz - Portfolio`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#121212`,
         theme_color: `#212121`,
         display: `minimal-ui`,
-        icon: `src/assets/images/icon.png`,
+        icon: `${__dirname}/src/assets/images/icon.png`,
       },
     },
     {
