@@ -25,6 +25,7 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/about`, `/contact`],
+        appendScript: `${__dirname}/src/utils/sw.js`,
       },
     },
     `gatsby-plugin-mdx`,
