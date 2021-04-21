@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { GithubLink, GithubLogo } from "./Github.styles";
 import gsap from "gsap";
 
-const Github = () => {
+const Github = ({ githubLink = "https://github.com/mateuszklysz" }) => {
   const githubRef = useRef(null);
 
   const handleButtonAnimation = (item, scale) => {
@@ -17,7 +17,7 @@ const Github = () => {
 
   return (
     <GithubLink
-      href={"https://github.com/mateuszklysz"}
+      href={githubLink}
       target="_blank"
       rel="noopener"
       ref={githubRef}
