@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Logo from "../../assets/svg/icon.svg";
+import Logo from "../../assets/svg/logo.svg";
 import Hamburger from "../../assets/svg/hamburger_icon.svg";
 import media from "../../utils/media";
 

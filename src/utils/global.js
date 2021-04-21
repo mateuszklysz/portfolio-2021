@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
           font: { family },
         },
       }) => family.openSans};
+      padding-top: env(safe-area-inset-top);
+      padding-left: env(safe-area-inset-left);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-right: env(safe-area-inset-right);
     }
     body::-webkit-scrollbar {
       width: 0.5em;

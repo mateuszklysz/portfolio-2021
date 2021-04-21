@@ -40,7 +40,7 @@ const Form = () => {
     if (!email.includes("@")) {
       setError(state => ({
         ...state,
-        email: "Wpisz poprawny email",
+        email: "Wpisz poprawny adres e-mail",
       }));
     } else {
       setError(state => ({

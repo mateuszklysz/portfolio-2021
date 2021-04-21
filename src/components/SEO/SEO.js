@@ -21,10 +21,10 @@ const SEO = () => (
     }) => (
       <Helmet>
         <html lang="pl" />
-        <title>{author} - Portfolio</title>
+        <title>Portfolio - {author}</title>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
+          content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover"
         ></meta>
         <meta name="description" content={description} />
         <link
