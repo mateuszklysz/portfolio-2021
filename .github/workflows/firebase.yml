@@ -14,6 +14,8 @@ jobs:
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm i
+      - name: Wipe cache folder
+        run: npm run clean
       - name: Create env file
         run: |
           touch .env.production
