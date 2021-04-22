@@ -21,13 +21,7 @@ module.exports = {
         path: `${__dirname}/src/templates/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/about`, `/contact`],
-        appendScript: `${__dirname}/src/utils/sw.js`,
-      },
-    },
+    'gatsby-plugin-offline',
     `gatsby-plugin-mdx`,
     `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
