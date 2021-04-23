@@ -7,7 +7,22 @@ exports.createPages = async ({ graphql, actions }) => {
     query {
       allGraphCmsProject {
         nodes {
+          content {
+            markdownNode {
+              childMdx {
+                body
+              }
+            }
+          }
+          title
+          technologies
+          github
+          date
+          site
           slug
+          image {
+            gatsbyImageData(placeholder: BLURRED)
+          }
         }
       }
     }
@@ -19,7 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: require.resolve(
         `./src/templates/project-page/project-page.js`
       ),
-      context: { slug: data.slug },
+      context: { data: data },
     });
   });
 };

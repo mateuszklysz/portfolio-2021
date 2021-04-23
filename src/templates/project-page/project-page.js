@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
   Container,
@@ -18,11 +17,7 @@ import {
 import Button from "../../components/Buttons/Button/Button";
 import Github from "../../components/Buttons/Github/Github";
 
-const ProjectPage = ({
-  data: {
-    allGraphCmsProject: { nodes },
-  },
-}) => {
+const ProjectPage = ({ pageContext: { data } }) => {
   const infoRef = useRef(null);
   const imgRef = useRef(null);
   const bodyRef = useRef(null);
@@ -84,58 +79,28 @@ const ProjectPage = ({
       <Container>
         <Section ref={infoRef}>
           <HeaderS>Nazwa projektu:</HeaderS>
-          <HeaderL>{nodes[0].title}</HeaderL>
+          <HeaderL>{data.title}</HeaderL>
           <HeaderS>Data:</HeaderS>
-          <HeaderM>{nodes[0].date}</HeaderM>
+          <HeaderM>{data.date}</HeaderM>
           <HeaderS>Technologie:</HeaderS>
-          <HeaderM>{nodes[0].technologies.join(", ")}</HeaderM>
+          <HeaderM>{data.technologies.join(", ")}</HeaderM>
           <ButtonContainer>
-            <Button text="Link" to={nodes[0].site} external={true} />
-            <Github githubLink={nodes[0].github} />
+            <Button text="Link" to={data.site} external={true} />
+            <Github githubLink={data.github} />
           </ButtonContainer>
         </Section>
         <ImageContainer ref={imgRef}>
-          <GatsbyImage
-            image={nodes[0].image.gatsbyImageData}
-            alt={nodes[0].title}
-          />
+          <GatsbyImage image={data.image.gatsbyImageData} alt={data.title} />
         </ImageContainer>
       </Container>
       <ColorfulBar ref={barRef}>OPIS PROJEKTU</ColorfulBar>
       <ContainerBody ref={bodyRef}>
         <SectionBody>
-          <MDXRenderer>
-            {nodes[0].content.markdownNode.childMdx.body}
-          </MDXRenderer>
+          <MDXRenderer>{data.content.markdownNode.childMdx.body}</MDXRenderer>
         </SectionBody>
       </ContainerBody>
     </div>
   );
 };
-
-export const query = graphql`
-  query($slug: String!) {
-    allGraphCmsProject(filter: { slug: { eq: $slug } }) {
-      nodes {
-        content {
-          html
-          markdownNode {
-            childMdx {
-              body
-            }
-          }
-        }
-        title
-        technologies
-        github
-        date
-        site
-        image {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-    }
-  }
-`;
 
 export default ProjectPage;
