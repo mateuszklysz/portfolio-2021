@@ -1,15 +1,38 @@
 import styled, { css } from "styled-components";
 import media from "../../../utils/media";
 
+export const HoverText = styled.p`
+  visibility: ${({ show }) => show};
+  z-index: 1000;
+  position: fixed;
+  color: ${({ theme: { color } }) => color.white};
+  background-color: ${({ theme: { color } }) => color.secondary};
+  padding: 5px 15px;
+`;
+
 export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  background-color: ${({ theme: { color } }) => color.secondary};
-  height: 900px;
+  align-items: center;
   width: 100%;
-  ${media.phone`
-    height: 600px;
-  `}
+  ${({ used }) =>
+    used
+      ? css`
+          flex-direction: column;
+          padding: 20px 0;
+          background: linear-gradient(
+            90deg,
+            rgb(18, 18, 18) 0%,
+            rgb(28, 28, 28) 100%
+          );
+        `
+      : css`
+          background-color: ${({ theme: { color } }) => color.secondary};
+          height: 900px;
+          ${media.phone`
+             height: 600px;
+          `}
+        `}
 `;
 
 export const Container = styled.div`
@@ -57,7 +80,6 @@ export const Option = styled.div`
 `;
 
 export const Header = styled.p`
-  line-height: 100px;
   color: ${({ theme: { color } }) => color.white};
   font-size: ${({ theme: { font } }) => font.size.l};
   font-weight: bold;
@@ -97,6 +119,14 @@ export const Icon = styled.div`
       height: 25px;
     }
   `}
+`;
+
+export const IconsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 0 15px;
 `;
 
 export const Text = styled.p`

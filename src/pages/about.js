@@ -42,18 +42,6 @@ const Projects = ({
       ease: "none",
     });
     gsap.fromTo(
-      skillsRef.current.children,
-      { autoAlpha: 0 },
-      {
-        autoAlpha: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: skillsRef.current,
-          start: "0 40%",
-        },
-      }
-    );
-    gsap.fromTo(
       infoRef.current.children,
       { x: "-=100", autoAlpha: 0 },
       {

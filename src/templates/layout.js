@@ -33,13 +33,17 @@ const Layout = ({ children }) => {
 
   const setBodyHeight = () => {
     if (mq.matches && scrollHeight !== document.body.style.height) {
-      scrollHeight = `calc(${
-        scrollRef.current.getBoundingClientRect().height
-      }px + 50px)`;
+      if (scrollRef.current) {
+        scrollHeight = `calc(${
+          scrollRef.current.getBoundingClientRect().height
+        }px + 50px)`;
+      }
     } else if (!mq.matches && scrollHeight !== document.body.style.height) {
-      scrollHeight = `calc(${
-        scrollRef.current.getBoundingClientRect().height
-      }px + 100px)`;
+      if (scrollRef.current) {
+        scrollHeight = `calc(${
+          scrollRef.current.getBoundingClientRect().height
+        }px + 100px)`;
+      }
     }
     if (document.body.style.height === scrollHeight) {
       return;

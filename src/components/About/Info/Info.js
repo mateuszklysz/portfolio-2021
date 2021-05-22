@@ -11,7 +11,7 @@ const InfoSection = () => (
       <br /> <br />
       Wstęp do <span style={{ color: "#ffb04c" }}>JavaScript</span> był dzięki
       temu bardzo płynny, a sam{" "}
-      <span style={{ color: "#5472d3" }}>Typescript</span> nie był aż tak ciężki
+      <span style={{ color: "#5472d3" }}>TypeScript</span> nie był aż tak ciężki
       do nauki.
     </Text>
     <StyledCode />

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../../assets/svg/github.svg";
+import logo from "../../../assets/svg/gh.svg";
 import media from "../../../utils/media";
 
 export const GithubLink = styled.a`
