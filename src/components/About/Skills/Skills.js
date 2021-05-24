@@ -17,7 +17,7 @@ import TypeScript from "../../../assets/svg/about/typescript.svg";
 import Gatsby from "../../../assets/svg/about/gatsby.svg";
 import Sass from "../../../assets/svg/about/sass.svg";
 import ThreeJS from "../../../assets/svg/about/threejs.svg";
-import Golang from "../../../assets/svg/about/golang.svg";
+import Rust from "../../../assets/svg/about/rust.svg";
 import Electron from "../../../assets/svg/about/electron.svg";
 import Rwd from "../../../assets/svg/about/RWD.svg";
 import Linux from "../../../assets/svg/about/linux.svg";
@@ -139,9 +139,9 @@ const Skills = () => {
           </Option>
           <Option>
             <Icon>
-              <Golang />
+              <Rust />
             </Icon>
-            <Text>Golang</Text>
+            <Text>Rust</Text>
           </Option>
           <Option>
             <Icon>
