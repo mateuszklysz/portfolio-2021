@@ -22,7 +22,8 @@ COPY . .
 RUN ["npm", "run", "build"]
 RUN mkdir -p /run/nginx             
 COPY /nginx-config/nginx.conf /etc/nginx/
-RUN rm -r nginx-config                                                 
+RUN rm -r nginx-config   
+EXPOSE 80                                              
 CMD ["nginx", "-g", "daemon off;"]
 
 
