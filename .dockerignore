@@ -1,0 +1,13 @@
+.github/workflows/firebase.yml
+node_modules
+firebase.json
+Dockerfile
+.git
+.github
+.firebaserc
+.dockerignore
+.env
+.prettierignore
+.prettierrc
+README.md
+LICENSE
