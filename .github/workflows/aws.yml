@@ -27,6 +27,15 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Create environment file
+      run: |
+        touch .env.production
+        echo GATSBY_SERVICE_ID=${{ secrets.GATSBY_SERVICE_ID }} >> .env.production
+        echo GATSBY_SERVICE_ID=${{ secrets.GATSBY_SERVICE_ID }} >> .env.production
+        echo GATSBY_SITE_KEY=${{ secrets.GATSBY_SITE_KEY }} >> .env.production
+        echo GATSBY_TEMPLATE_ID=${{ secrets.GATSBY_TEMPLATE_ID }} >> .env.production
+        echo GATSBY_USERID=${{ secrets.GATSBY_USERID }} >> .env.production
+
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
@@ -40,6 +49,7 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
@@ -56,3 +66,4 @@ jobs:
         service: my-website-service
         cluster: my-website-cluster
         wait-for-service-stability: true
+        
