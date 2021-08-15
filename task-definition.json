@@ -25,7 +25,7 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 500,
+      "memory": 512,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
@@ -50,7 +50,7 @@
     }
   ],
   "placementConstraints": [],
-  "memory": null,
+  "memory": "900",
   "taskRoleArn": null,
   "compatibilities": [
     "EXTERNAL",
@@ -71,7 +71,7 @@
     "EC2"
   ],
   "networkMode": null,
-  "cpu": null,
+  "cpu": "1024",
   "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
