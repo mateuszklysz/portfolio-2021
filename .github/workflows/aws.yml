@@ -26,7 +26,7 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-
+        
     - name: Create environment file
       run: |
         touch .env.production
@@ -46,7 +46,11 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+        --build-arg OVH_AK=${{ secrets.OVH_APP }} \
+        --build-arg OVH_AS=${{ secrets.OVH_APP_SECRET }} \
+        --build-arg OVH_CK=${{ secrets.OVH_CONSUMER }} \
+        .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         
